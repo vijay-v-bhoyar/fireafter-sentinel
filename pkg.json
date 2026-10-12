@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedAt": "2026-10-12T15:37:22.329265+00:00",
+  "generatedAt": "2026-10-12T16:18:36.575975+00:00",
   "project": {
     "name": "fireafter-sentinel",
     "root": "C:/Users/vijay/OneDrive/Documents/ChatGPT/Nebius nvidia",
@@ -8713,6 +8713,13 @@
       "type": "[File]",
       "path": "supabase/migrations/20261012150000_operator_issuance_lock_volatility.sql",
       "role": "Forward recovery repair in Sentinel only: VOLATILE for authenticated operator locking read; unchanged body/grants plus fail-closed current retention-probe postcondition. Native unchanged recovery oracle passes."
+    },
+    {
+      "id": "function:src/app/api/auth/login/route.ts#loginRequestOrigin",
+      "type": "[Function]",
+      "file": "src/app/api/auth/login/route.ts",
+      "name": "loginRequestOrigin",
+      "role": "Select browser Origin only after existing same-origin/cross-site guard accepts it; otherwise retain internal request origin. Fixes loopback alias CSP form redirects without relaxing CSP or allowing rejected origins."
     }
   ],
   "apiContracts": [
@@ -13206,6 +13213,18 @@
           "exported": true,
           "signature": "runFailureMessage(code: string): string",
           "sideEffects": "None; fixed public explanation"
+        }
+      ]
+    },
+    {
+      "file": "src/app/api/auth/login/route.ts",
+      "functions": [
+        {
+          "id": "function:src/app/api/auth/login/route.ts#loginRequestOrigin",
+          "type": "[Function]",
+          "exported": false,
+          "signature": "loginRequestOrigin(request: Request): string",
+          "sideEffects": "None; reads request headers and validates origin using existing guard"
         }
       ]
     }
@@ -27415,6 +27434,21 @@
       "from": "file:supabase/migrations/20261012150000_operator_issuance_lock_volatility.sql",
       "to": "file:supabase/migrations/20260915120000_trusted_operator_account_identity.sql",
       "type": "[extends]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/app/api/auth/login/route.ts#loginRequestOrigin",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:src/app/api/auth/login/route.ts",
+      "to": "function:src/app/api/auth/login/route.ts#loginRequestOrigin",
+      "type": "[calls]"
+    },
+    {
+      "from": "function:src/app/api/auth/login/route.ts#loginRequestOrigin",
+      "to": "file:src/lib/request-origin.ts",
+      "type": "[calls]"
     }
   ],
   "dataFlow": [
@@ -28573,7 +28607,8 @@
       "Sentinel optional feedback is atomic with review, scoped to original immutable source and receipt; reuse requires current owner-provisioned exact-purpose/grantee/destination/retention grant. Synthetic tests do not establish human permission; no egress or automatic promotion. No full UI/hosted acceptance.",
       "History/briefings: scoped append sequence, complete retained lineage, role-derived redaction, separate observed validity, immutable UTF-8 receipts and bounded complete-client verification. Original hash references do not reconstruct withheld raw source/asset/native rows. Browser artifact fixture does not prove full hosted reviewer journey.",
       "2026-10-12 Sentinel: Node22 local full suite3714+148 passes; fresh-checkout fixture directory repaired, synthetic export diagnostics only. Own Vercel Hobby project created, no deployment. Separate local Postgres17/PostGIS applied46 migrations and forward operator-lock volatility repair; unchanged recovery SQL passes. Historical operator scripts do not all match the current chain and native capability tests may require superuser privileges unavailable to postgres. Original FireAfter untouched; hosted database blocked by two-active-free-project account limit, spend ceiling0.",
-      "2026-10-12 CI repair: fixed-size FIFO ring removes Map iterator eviction scans without changing geometry/query/time caps. Full GeoJSON parity oracle now runs after consuming the response at the same declared instant; full91511 rows,715 REC reads and feature hashes remain. Local101 focused checks pass; new full Linux CI qualification pending. Hosted DB provisioning on hold only; local build/testing continues, spend ceiling0."
+      "2026-10-12 CI repair: fixed-size FIFO ring removes Map iterator eviction scans without changing geometry/query/time caps. Full GeoJSON parity oracle now runs after consuming the response at the same declared instant; full91511 rows,715 REC reads and feature hashes remain. Local101 focused checks pass; new full Linux CI qualification pending. Hosted DB provisioning on hold only; local build/testing continues, spend ceiling0.",
+      "2026-10-12 real local Auth journey exposed Next internal localhost versus browser127.0.0.1 redirects blocked by unchanged form-action self CSP. Login redirects now preserve only validated browser Origin; rejected/cross-site Origin retains request origin. Original legacy assertions unchanged, two new cases and73 focused auth/input regressions pass; actual three-role/six-view mobile empty-workspace journey passes. Hosted/compiled positive/provider/full evidence-to-approved-briefing remains pending."
     ],
     "sentinelPlanning": {
       "updated_at": "2026-10-12T13:25:20.045360+00:00",
@@ -28630,7 +28665,7 @@
       "scope": "Document reconciliation, validator consistency checks and catalog only; no runtime changes",
       "runtimeGraphStatus": "CURRENT_STRUCTURAL_CODE_ONLY; SQL/DOC SEMANTICS EXPLICITLY CATALOGED",
       "nextAction": "Local/CI quality repair continues; hosted Supabase provisioning explicitly on hold, existing projects untouched, spend0; sponsor credits/configuration and full authenticated/domain journey pending.",
-      "graphSourceDigest": "d3ed7ba90a6785b43eea6383878d8018c99d2db7266daf92f52d5f71a27ea204",
+      "graphSourceDigest": "cd8d0d3c45be574c8d7408568650ea8d0b8020561915e91a06bb77d1db7e1c78",
       "graphSourceFiles": 515,
       "documentEvidence": ".codex/evidence/document-reconciliation.json",
       "driftRisk": "Provider retries/escalation, future endpoints and hypothetical env knobs must not be described as current behavior. Document PASS does not qualify a release."

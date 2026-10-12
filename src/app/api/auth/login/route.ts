@@ -37,7 +37,7 @@ export async function POST(request: Request) {
     if (contentType.includes("application/json")) {
       return loginErrorResponse(request, "Invalid login request", 400);
     }
-    const redirectUrl = new URL("/login", request.url);
+    const redirectUrl = new URL("/login", loginRequestOrigin(request));
     redirectUrl.searchParams.set("error", "Invalid login request");
     return Response.redirect(redirectUrl, 303);
   }
@@ -81,7 +81,16 @@ export async function POST(request: Request) {
     return Response.json({ ok: true });
   }
 
-  return Response.redirect(new URL(returnTo, request.url), 303);
+  return Response.redirect(new URL(returnTo, loginRequestOrigin(request)), 303);
+}
+
+function loginRequestOrigin(request: Request) {
+  const origin = request.headers.get("origin");
+  // A trusted loopback alias may differ from Next's internal request hostname.
+  // Preserve the browser's validated origin without trusting a rejected header.
+  return origin && !isCrossOriginMutation(request)
+    ? new URL(origin).origin
+    : new URL(request.url).origin;
 }
 
 function loginErrorResponse(
@@ -94,7 +103,7 @@ function loginErrorResponse(
   if (contentType.includes("application/json")) {
     return Response.json({ error: message }, { status });
   }
-  const redirectUrl = new URL("/login", request.url);
+  const redirectUrl = new URL("/login", loginRequestOrigin(request));
   redirectUrl.searchParams.set("error", message);
   const safeReturnTo = safeInternalPath(returnTo);
   if (safeReturnTo !== "/") {

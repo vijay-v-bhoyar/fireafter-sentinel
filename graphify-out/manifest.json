@@ -1,7 +1,7 @@
 {
   "project": "FireAfter Sentinel",
   "root": "C:\\Users\\vijay\\OneDrive\\Documents\\ChatGPT\\Nebius nvidia",
-  "generated_at_utc": "2026-10-12T15:33:36.523976+00:00",
+  "generated_at_utc": "2026-10-12T16:10:44.129116+00:00",
   "coverage": "Structural source/config/test extraction only; no semantic agents or provider calls; SQL/docs excluded",
   "source_files": {
     "eslint.config.mjs": "9d858fc9e015f862856b59fc48a9eab2d74db007541453b47e93364cca28c7a1",
@@ -70,8 +70,8 @@
     "src/app/api/assets/import/status/route.ts": "c69959d259f653206f6e336680e3804634773621ea039924e0e37dffcfb757fb",
     "src/app/api/assets/page/route.test.ts": "9fc1c1b786099d9f6e42b54ab72651cba3a2504efbf6cf28f758aba725bf3c9d",
     "src/app/api/assets/page/route.ts": "e74e55c457dc6b2dff0eb219cc8b2c47fd435ef9b8aab8675fd677edb73c5b86",
-    "src/app/api/auth/login/route.test.ts": "7b27f622666c85441b10628e4433c1d0f56d55360f4c1584fc51120b51f05f03",
-    "src/app/api/auth/login/route.ts": "4257b1e373856389779b6f2f6babea41d4fc6166126027b0f18888cd78e12a5c",
+    "src/app/api/auth/login/route.test.ts": "a8e2d07b03903db7066f55dafc7134663157aa5388684d25af08eed43c2b03d9",
+    "src/app/api/auth/login/route.ts": "8ab7f2962eb62ffa2ffb0c107e47e5af5bf8a636bd675bb54b351b368e0197d4",
     "src/app/api/auth/logout/route.test.ts": "e95bd0ac73430a7481f4bf927e34158d0b91040f89f402843d2fa15fededa913",
     "src/app/api/auth/logout/route.ts": "2a82e4c6774fcf9108e5c40bac799d7c75aa753ebee08ed3b0491902408f7a7f",
     "src/app/api/auth/password/recovery/route.test.ts": "87f88fbc60f3122989fe4527200cd2668dbb877e1f9d9bcb3875bf92b4a45544",
@@ -520,7 +520,7 @@
     "src/workflows/sentinel.ts": "c18b2422f05b681a3b094f8d663aab24d82a4ca3a6a814351112c092acaf48e8",
     "vitest.config.ts": "6fea9800c0a67ac9ed6ae60942057382ed0c14a5e0ebe1158fbd704553e96123"
   },
-  "source_digest": "d3ed7ba90a6785b43eea6383878d8018c99d2db7266daf92f52d5f71a27ea204",
-  "nodes": 3709,
-  "edges": 11152
+  "source_digest": "cd8d0d3c45be574c8d7408568650ea8d0b8020561915e91a06bb77d1db7e1c78",
+  "nodes": 3710,
+  "edges": 11156
 }

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "edition": "FINAL_PLANNING",
-  "created_at_utc": "2026-10-12T15:37:29.336245+00:00",
+  "created_at_utc": "2026-10-12T16:18:52.723344+00:00",
   "status": "FINAL_SPECIFICATIONS_LOCAL_BASELINE_ACCEPTANCE_PENDING",
   "counts": {
     "requirements": 25,
@@ -27,8 +27,8 @@
     },
     {
       "path": "PROVENANCE.md",
-      "sha256": "c505742973d2fe914eccb268e44f5a5a49dab3bef122e78acdf774039cb68571",
-      "bytes": 14599
+      "sha256": "03d1f36e7b4b3722b4017c89744ada9686a043e55091a70bb0a6c21ed1371a2b",
+      "bytes": 15024
     },
     {
       "path": "README.md",
@@ -47,8 +47,8 @@
     },
     {
       "path": "docs/DECISIONS_AND_BUILD_GATE.md",
-      "sha256": "89464bbe0601392b2508a587ac08e6f9f2d308d18aa500eb846fa5be722e8f51",
-      "bytes": 28941
+      "sha256": "d1796fc258761fa02062db0567b6f14474ffe8c45f3df26badfccb75db4833ce",
+      "bytes": 29695
     },
     {
       "path": "docs/DOMAIN_DISCOVERY.md",

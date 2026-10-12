@@ -129,6 +129,29 @@ describe("POST /api/auth/login", () => {
     );
   });
 
+  it("retains the validated browser origin when the internal URL uses a loopback alias", async () => {
+    const { POST } = await import("./route");
+    const response = await POST(new Request("http://localhost:30331/api/auth/login", {
+      method: "POST",
+      headers: { "content-type": "application/x-www-form-urlencoded", origin: "http://127.0.0.1:30331" },
+      body: new URLSearchParams({ email: "commander@example.com", password: "correct-password", returnTo: "/sentinel?mode=synthetic" }),
+    }));
+    expect(response.status).toBe(303);
+    expect(response.headers.get("location")).toBe("http://127.0.0.1:30331/sentinel?mode=synthetic");
+  });
+
+  it("does not use a rejected browser origin for the form error redirect", async () => {
+    const { POST } = await import("./route");
+    const response = await POST(new Request("http://localhost:30331/api/auth/login", {
+      method: "POST",
+      headers: { "content-type": "application/x-www-form-urlencoded", origin: "https://attacker.example" },
+      body: new URLSearchParams({ email: "commander@example.com", password: "correct-password" }),
+    }));
+    expect(response.status).toBe(303);
+    expect(new URL(response.headers.get("location")!).origin).toBe("http://localhost:30331");
+    expect(signInWithPasswordMock).not.toHaveBeenCalled();
+  });
+
   it.each([
     "https://attacker.example/phish",
     "//attacker.example/phish",
