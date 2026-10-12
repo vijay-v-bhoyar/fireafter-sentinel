@@ -28596,7 +28596,7 @@
     }
   },
   "documentationReview": {
-    "reviewedAt": "2026-10-12T14:01:15.574277+00:00",
-    "boundary": "Recovery diagnostics and new private repository, all existing requirements retained; full external acceptance pending."
+    "reviewedAt": "2026-10-12T14:18:37.168131+00:00",
+    "boundary": "Final source-delivery disclosure corrected after private push; application source/config/schema unchanged from qualified recovery candidate."
   }
 }
