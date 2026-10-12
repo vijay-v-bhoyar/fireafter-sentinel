@@ -1,0 +1,126 @@
+@import "tailwindcss" source("../");
+
+:root {
+  --background: #06111c;
+  --foreground: #eff6ff;
+  --ops-panel: #0b1d2d;
+  --ops-inset: #081827;
+  --ops-header: #07131f;
+}
+
+/* Warm field-notebook surfaces; status hues remain semantic, not decorative. */
+.fireafter-workspace {
+  --ops-panel: #fffdf8;
+  --ops-inset: #f2eee4;
+  --ops-header: #f6f2e9;
+  --color-slate-100: #242d29;
+  --color-slate-200: #35423b;
+  --color-slate-300: #46554c;
+  --color-slate-400: #57645b;
+  --color-slate-500: #788278;
+  --color-slate-600: #a9afa1;
+  --color-slate-700: #c5cabb;
+  --color-slate-800: #e3e5d9;
+  --color-slate-900: #f4f2e9;
+  --color-slate-950: #fffdf8;
+  --color-sky-100: #164b48;
+  --color-sky-200: #165651;
+  --color-sky-300: #17645b;
+  --color-sky-400: #23786d;
+  --color-sky-500: #226d63;
+  --color-sky-600: #1e665f;
+  --color-sky-950: #dcece3;
+  --color-emerald-100: #164c36;
+  --color-emerald-200: #1c583e;
+  --color-emerald-300: #226b49;
+  --color-emerald-400: #26764c;
+  --color-emerald-600: #226145;
+  --color-emerald-950: #deedde;
+  --color-amber-100: #64420d;
+  --color-amber-200: #70480d;
+  --color-amber-300: #825110;
+  --color-amber-400: #a26917;
+  --color-amber-950: #f4e5bc;
+  --color-orange-100: #773715;
+  --color-orange-200: #86411c;
+  --color-orange-300: #9a471c;
+  --color-orange-500: #ad471e;
+  --color-orange-950: #f5dfcf;
+  --color-red-100: #812926;
+  --color-red-200: #922c26;
+  --color-red-300: #a63028;
+  --color-red-400: #b33028;
+  --color-red-950: #f4ddda;
+  color: #242d29;
+  background: radial-gradient(ellipse at 90% 0%, #dbe4d7 0%, transparent 45%), #eae6dc;
+}
+
+.fireafter-workspace .ops-chrome {
+  --ops-inset: #23372f;
+  --ops-header: #1b2c25;
+  --color-slate-100: #f5f0e5;
+  --color-slate-200: #e4e8da;
+  --color-slate-300: #d2d9ca;
+  --color-slate-400: #b3c0b0;
+  --color-slate-700: #526359;
+  --color-slate-800: #35493e;
+  --color-slate-900: #273c31;
+  --color-sky-300: #ecb378;
+  --color-sky-400: #d89856;
+  --color-emerald-300: #9edbb4;
+  --color-emerald-400: #91d6a6;
+  --color-amber-300: #f2cd87;
+  color: #f5f0e5;
+}
+
+.ops-navigation [aria-current="page"] {
+  background: #a54822;
+  color: #fff8ee;
+  box-shadow: inset 3px 0 #f4c58d;
+}
+
+.fireafter-workspace :is(input, textarea, select) { color-scheme: light; }
+.fireafter-workspace :is(button, a, input, textarea, select):focus-visible {
+  outline: 3px solid #b85a25;
+  outline-offset: 3px;
+}
+.fireafter-workspace .ops-scrollbar { scrollbar-color: #9aa590 #eae6dc; }
+.fireafter-workspace .ops-scrollbar::-webkit-scrollbar-track { background: #eae6dc; }
+.fireafter-workspace .ops-scrollbar::-webkit-scrollbar-thumb { background: #9aa590; }
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, monospace;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: ui-sans-serif, system-ui, sans-serif;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+.ops-scrollbar {
+  scrollbar-color: #24445d #081827;
+}
+
+.ops-scrollbar::-webkit-scrollbar {
+  width: 10px;
+}
+
+.ops-scrollbar::-webkit-scrollbar-track {
+  background: #081827;
+}
+
+.ops-scrollbar::-webkit-scrollbar-thumb {
+  background: #24445d;
+  border-radius: 999px;
+}

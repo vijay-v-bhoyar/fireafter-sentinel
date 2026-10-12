@@ -1,0 +1,159 @@
+{
+  "schema_version": 1,
+  "edition": "FINAL_PLANNING",
+  "created_at_utc": "2026-10-12T14:01:22.919548+00:00",
+  "status": "FINAL_SPECIFICATIONS_LOCAL_BASELINE_ACCEPTANCE_PENDING",
+  "counts": {
+    "requirements": 25,
+    "tasks": 24,
+    "evaluation_cases": 39,
+    "red_team_probes": 24,
+    "cognitive_demand_rows": 10,
+    "compliance_rows": 26
+  },
+  "artifact_counts": {
+    "markdown": 18,
+    "csv": 7,
+    "json": 3,
+    "validator": 1,
+    "total": 29
+  },
+  "hash_scope": "All 27 final planning source artifacts; runtime, instructions, manifest and current validation excluded",
+  "files": [
+    {
+      "path": "BUILD_PLAN.md",
+      "sha256": "35f8ec1c383aac5b85e60e4f78d3ae4d0ffd345d20c9545d2f02b7085e08b92f",
+      "bytes": 6019
+    },
+    {
+      "path": "PROVENANCE.md",
+      "sha256": "9f09c056c8ac7ec0bf5499cae595c9bd176e68777e0da142ef49aae34353d2ed",
+      "bytes": 13379
+    },
+    {
+      "path": "README.md",
+      "sha256": "903eeca6e8dde880511b0004f103ce8527defebeff92eb80e4c44b7368a84f0b",
+      "bytes": 7460
+    },
+    {
+      "path": "docs/ARCHITECTURE.md",
+      "sha256": "255d47d089d3490f52223272e07b1af2239b6779b91ea0ef5256333ed59d947c",
+      "bytes": 35920
+    },
+    {
+      "path": "docs/DATA_AND_API_CONTRACTS.md",
+      "sha256": "46dd5f30a69ae1798668d7e177c9f288dbcd6149bbdef35ecb51393597f62ddc",
+      "bytes": 51401
+    },
+    {
+      "path": "docs/DECISIONS_AND_BUILD_GATE.md",
+      "sha256": "033b84ab6a8cdcdf5ecfece5fddba65f09301035209b7a95bc8c274bd91bef1c",
+      "bytes": 24708
+    },
+    {
+      "path": "docs/DOMAIN_DISCOVERY.md",
+      "sha256": "e4208491327fe3a28e8b3795ee5588a1603722141efb8d9b90cd0fff8347abad",
+      "bytes": 3832
+    },
+    {
+      "path": "docs/EVALUATION_AND_TEST_PLAN.md",
+      "sha256": "542f2e4bad1439662e5ac26fb1dc4ce5ad551850f71ae2fb4c4d411d1f32573c",
+      "bytes": 10989
+    },
+    {
+      "path": "docs/FIREAFTER_BASELINE.md",
+      "sha256": "57ec14ac0b5a5e331bea01afcee03b056566e4321e79f2822eaabacef054dbf0",
+      "bytes": 6865
+    },
+    {
+      "path": "docs/OPERATIONS_AND_COST_PLAN.md",
+      "sha256": "55a1d58404581470935469e0c2a2326e13c04ff4cc9cf39dc8a93decedbc88d5",
+      "bytes": 11085
+    },
+    {
+      "path": "docs/PRODUCT_REQUIREMENTS.md",
+      "sha256": "0bf1175dd44e9aa88412975fd8b4fcc4e294219b7ca10dc4ec07ffdc628b24a0",
+      "bytes": 8777
+    },
+    {
+      "path": "docs/PRODUCT_STRATEGY.md",
+      "sha256": "b9ccf90fb3b1b815aa3640964ef5214ca292e1f90f02bca81a56e9685a1c86c5",
+      "bytes": 8675
+    },
+    {
+      "path": "docs/PROJECT_ISOLATION.md",
+      "sha256": "1560212c5b209d17036dfc736e4f17f7fed9688535d52bfa581aee7afeb8d244",
+      "bytes": 5955
+    },
+    {
+      "path": "docs/RED_TEAM_PLAN.md",
+      "sha256": "37a8b4dbb2c911c48c2b4a1ca5cf7ca45fe932fcdb1f8eb95bf66f4a19ef5fb4",
+      "bytes": 6815
+    },
+    {
+      "path": "docs/SECURITY_AND_HUMAN_REVIEW.md",
+      "sha256": "e44be25f77dc8a86642894ab02947bee6b6cb8a3eae03653c577d75d5a946c4a",
+      "bytes": 6834
+    },
+    {
+      "path": "docs/SOURCE_AND_TOOL_CONTRACTS.md",
+      "sha256": "c8492aa4a5b0532b7834e9dd451c9a90b2c7d21ba40c2633ef8ee16c90f8dedf",
+      "bytes": 10538
+    },
+    {
+      "path": "docs/SUBMISSION_PLAN.md",
+      "sha256": "405f981b8f4aeb39fe0ea980839af90865f2ca81ba8fcfba23e48b99c2c7db57",
+      "bytes": 9529
+    },
+    {
+      "path": "docs/UX_SPEC.md",
+      "sha256": "9d82c05cb16ee311248738d04b1d83146a6c3e3d0f108ea234e29a7dec0baa39",
+      "bytes": 7347
+    },
+    {
+      "path": "docs/backlog.csv",
+      "sha256": "563daa1251802adafbca011b4053b67b4e6b49d63b7033cee61e8a2985832f8a",
+      "bytes": 8129
+    },
+    {
+      "path": "docs/cognitive_demands.csv",
+      "sha256": "819a1f998e74718a5d768c6382f4d52112eb55c5e6408e9a18b950d2aa137504",
+      "bytes": 3386
+    },
+    {
+      "path": "docs/evaluation_cases.csv",
+      "sha256": "24383b665e7d13692bfa41e827190e953e3d2bb1b34a0b7d07f5db4b4373ab2a",
+      "bytes": 7116
+    },
+    {
+      "path": "docs/evidence/source-baseline.json",
+      "sha256": "ef0519f96e9930bc3b4da83746f30fbd87882b805d03bcb0b08e2df7b598960e",
+      "bytes": 90225
+    },
+    {
+      "path": "docs/evidence/validate_documents.py",
+      "sha256": "4cf5db44d763ea1124e3f7e2617a0e2f31ae58227bc6ca07b79ee33a1dc94391",
+      "bytes": 38994
+    },
+    {
+      "path": "docs/hackathon_compliance.csv",
+      "sha256": "b2153855a0b4ce27050edd2212b8ca8d4be17a214d81b324235d1930b2e9e9a3",
+      "bytes": 5825
+    },
+    {
+      "path": "docs/red_team_probes.csv",
+      "sha256": "f60910d80f64d7d43347e65726ddd2726409e426b1bf29b3826c91ae3e9a2d8a",
+      "bytes": 6857
+    },
+    {
+      "path": "docs/requirements.csv",
+      "sha256": "9d6756668edcbf446d958028e799e1e968a9e17b7846f7db3f7ca1a632c59960",
+      "bytes": 5409
+    },
+    {
+      "path": "docs/traceability.csv",
+      "sha256": "45dc0c66d64b5981bac66011b5053345586f2468f07b4d7282adea8278f57561",
+      "bytes": 2299
+    }
+  ]
+}

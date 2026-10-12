@@ -1,0 +1,261 @@
+{
+  "schema_version": 1,
+  "edition": "FINAL_PLANNING",
+  "validated_at_utc": "2026-10-12T14:01:22.922548+00:00",
+  "scope": "Executed document, structured-reference and source-preservation checks only",
+  "outcome": "PASS",
+  "validation_exit_code": 0,
+  "counts": {
+    "requirements": 25,
+    "tasks": 24,
+    "evaluation_cases": 39,
+    "red_team_probes": 24,
+    "cognitive_demand_rows": 10,
+    "compliance_rows": 26
+  },
+  "checks": [
+    {
+      "check": "Exactly one final planning set; runtime and instructions excluded",
+      "outcome": "PASS",
+      "failures": [],
+      "details": {
+        "expected": 29,
+        "markdown": 18,
+        "csv": 7,
+        "json": 3,
+        "validator": 1,
+        "boundary": "docs/ and root planning Markdown; AGENTS.md and runtime excluded"
+      }
+    },
+    {
+      "check": "Stable IDs, counts and structured schemas",
+      "outcome": "PASS",
+      "failures": [],
+      "details": {
+        "requirements": 25,
+        "tasks": 24,
+        "evaluation_cases": 39,
+        "red_team_probes": 24,
+        "cognitive_demand_rows": 10,
+        "compliance_rows": 26
+      }
+    },
+    {
+      "check": "References, independent oracles and truthful runtime states",
+      "outcome": "PASS",
+      "failures": [],
+      "details": null
+    },
+    {
+      "check": "Single task dependency DAG and consistent acceptance dates",
+      "outcome": "PASS",
+      "failures": [],
+      "details": {
+        "visited": 24,
+        "date_authority": "docs/backlog.csv"
+      }
+    },
+    {
+      "check": "Every requirement has a final specification, owning tasks and defined check",
+      "outcome": "PASS",
+      "failures": [],
+      "details": null
+    },
+    {
+      "check": "Final index coverage, local links, section structure and no stale version references",
+      "outcome": "PASS",
+      "failures": [],
+      "details": null
+    },
+    {
+      "check": "Existing prototype and partial local checks do not imply product acceptance",
+      "outcome": "PASS",
+      "failures": [],
+      "details": {
+        "prototype": "design/sentinel-workflow.html",
+        "user_review": "PENDING",
+        "local_baseline": "CHECKS_STARTED_ACCEPTANCE_PENDING"
+      }
+    },
+    {
+      "check": "Started scoped-record task retains concrete partial implementation",
+      "outcome": "PASS",
+      "failures": [],
+      "details": {
+        "task": "SEN-T06 IN_PROGRESS",
+        "acceptance": "PENDING_FULL_COMMAND_AND_TARGET_PROOF"
+      }
+    },
+    {
+      "check": "Started durable-run task is partial and retains concrete commands",
+      "outcome": "PASS",
+      "failures": [],
+      "details": {
+        "task": "SEN-T08 IN_PROGRESS",
+        "acceptance": "PENDING_DISPATCH_PROVIDER_AND_TARGET_PROOF"
+      }
+    },
+    {
+      "check": "Started comparison task retains concrete drafts and pending acceptance",
+      "outcome": "PASS",
+      "failures": [],
+      "details": {
+        "task": "SEN-T10 IN_PROGRESS",
+        "acceptance": "PENDING_MODEL_SEMANTIC_MARKER_AND_TARGET_PROOF"
+      }
+    },
+    {
+      "check": "Started planning task retains concrete constraints and pending approval",
+      "outcome": "PASS",
+      "failures": [],
+      "details": {
+        "task": "SEN-T11 IN_PROGRESS",
+        "acceptance": "PENDING_PERSISTED_EVIDENCE_PLAN_AND_DECISION_PROOF"
+      }
+    },
+    {
+      "check": "Partial implementation, observed failures and per-action role statements agree",
+      "outcome": "PASS",
+      "failures": [],
+      "details": {
+        "scope": "Document consistency only; actual runtime results retain separate receipts"
+      }
+    },
+    {
+      "check": "Partial reviewer source and historical verification coverage remain distinct",
+      "outcome": "PASS",
+      "failures": [],
+      "details": {
+        "task": "SEN-T17 IN_PROGRESS",
+        "runtime_checks": "LOCAL_ONLY_FULL_TARGET_PENDING"
+      }
+    },
+    {
+      "check": "One continuous provenance history without detached version rows",
+      "outcome": "PASS",
+      "failures": [],
+      "details": {
+        "scope": "Dated history remains separate from the current decision register"
+      }
+    },
+    {
+      "check": "Existing claim/feedback capability and single schedule authority agree",
+      "outcome": "PASS",
+      "failures": [],
+      "details": {
+        "scope": "Document conflicts/configuration names only; current route count is separately compared with source"
+      }
+    },
+    {
+      "check": "Project map retains only existing final document owners",
+      "outcome": "PASS",
+      "failures": [],
+      "details": {
+        "scope": "Documentation catalog only; inherited runtime graph remains provisional"
+      }
+    },
+    {
+      "check": "Implemented table mappings and run API contract match the current partial foundation",
+      "outcome": "PASS",
+      "failures": [],
+      "details": {
+        "implemented_tables": 48,
+        "implemented_routes": 26,
+        "scope": "Document/source comparison, not runtime acceptance"
+      }
+    },
+    {
+      "check": "One complete allocation contract and explicit missing-estimate semantics",
+      "outcome": "PASS",
+      "failures": [],
+      "details": {
+        "scope": "Specification consistency only; no scheduling/runtime test executed"
+      }
+    },
+    {
+      "check": "Current proposal failures cannot become current broad or approval acceptance",
+      "outcome": "PASS",
+      "failures": [],
+      "details": {
+        "scope": "Dated source/status reconciliation; original failure receipts remain outside the pack"
+      }
+    },
+    {
+      "check": "One final typed strategy handoff with three conditional seeds",
+      "outcome": "PASS",
+      "failures": [],
+      "details": {
+        "added_feature_groups": 5,
+        "established_moats": 0,
+        "grader": "Earlier independent blind design assessment"
+      }
+    },
+    {
+      "check": "All numbered rules retained with explicit pending fulfillment",
+      "outcome": "PASS",
+      "failures": [],
+      "details": {
+        "sections": 15,
+        "obligations": 26,
+        "registration_submission_terms": "NOT_PERFORMED"
+      }
+    },
+    {
+      "check": "Concrete conflict resolutions retained in their final owner specifications",
+      "outcome": "PASS",
+      "failures": [],
+      "details": {
+        "scope": "Clause presence and consistency only; not runtime enforcement"
+      }
+    },
+    {
+      "check": "Provisional effort and single schedule ownership",
+      "outcome": "PASS",
+      "failures": [],
+      "details": {
+        "submission_hours": [
+          128,
+          207
+        ],
+        "upward_rounded_contingency": [
+          154,
+          249
+        ],
+        "ongoing_judging_operations": "ADDITIONAL_UNESTIMATED"
+      }
+    },
+    {
+      "check": "Consistent imported-but-unaccepted status and complete copy provenance",
+      "outcome": "PASS",
+      "failures": [],
+      "details": {
+        "copied_files": 444,
+        "task": "SEN-T01 IN_PROGRESS",
+        "scope": "Import history integrity; not current runtime acceptance"
+      }
+    },
+    {
+      "check": "Original FireAfter remains unchanged",
+      "outcome": "PASS",
+      "failures": [],
+      "details": {
+        "files": 1572,
+        "selected_fingerprints": 22,
+        "boundary": "Local tracked/non-ignored-untracked fingerprints only; no production call"
+      }
+    },
+    {
+      "check": "Current final manifest hashes",
+      "outcome": "PASS",
+      "failures": [],
+      "details": {
+        "hashed_files": 27
+      }
+    }
+  ],
+  "app_runtime": "LOCAL_BASELINE_CHECKS_STARTED_ACCEPTANCE_PENDING",
+  "runtime_red_team": "NOT_RUN_NO_SENTINEL_TARGET",
+  "formal_loop": "NOT_ADMITTED",
+  "release": "NOT_EVALUATED",
+  "hackathon_fulfillment": "PENDING_HUMAN_AND_RUNTIME_EVIDENCE"
+}

@@ -1,0 +1,36 @@
+# Interface specification
+
+Target interface specification. A local /sentinel reviewer candidate now binds Evidence, Constraints, Plan, History, Briefing and Settings to private APIs. Synthetic component/browser checks exercise roles, uncertainty recovery and narrow rendering; full authenticated/provider and user design acceptance remain pending. The decision register owns current implementation and verification status. References: live public FireAfter shell and feature guide, [requirements](PRODUCT_REQUIREMENTS.md), and [contracts](DATA_AND_API_CONTRACTS.md).
+
+**Visual direction:** retain the recognizable green incident shell, cream workspace and restrained orange interaction accents. Give evidence state text equal importance to colored badges. Keep status visible without crowding the main decision area. Imported FireAfter assets must not be published until rights/notices are confirmed.
+
+**Navigation:** Overview, Changes, Plan, Map, Assets, History, Briefing, Settings. Keep the selected incident and data mode in every route. Changes and Plan are the new primary workflow; inherited views remain available. The selected nav item must match the visible page. Place detailed model/provider traces behind an expandable Run details panel.
+
+| Screen | Required layout and behavior | Critical states |
+| --- | --- | --- |
+| Entry / demo chooser | Explain the product in one sentence; Open live workspace and Replay example are distinct; show scope/source time before entry | No incident, target unavailable, unauthorized workspace, replay unavailable |
+| Overview | Incident and fire identity; current evidence summary; latest approved plan; changed items and pending reviews; map context | Unknown risk, no validated basin match, old plan, partial sources |
+| Changes | Group by issuer/document; show unresolved/material/conflict labels and affected items with reasons; interactive filters are a later extension | No changes versus not checked; classifier failed; identity needs review |
+| Evidence detail | Desktop old/new excerpts side by side; mobile stacked; source links, publication/effective/retrieval times; highlights and cited claims | Unknown publication time; extracted text incomplete; source withdrawn |
+| Plan | Proposed tasks with crew/time/capability requirements; current constraints; affected items; alternatives; accept/modify/reject with note | No feasible allocation; estimates missing; changed evidence; conflicting reviewer |
+| History | Timeline of versioned proposals and human decisions; open original evidence snapshot; show later changes separately | Partial/unavailable history; restricted detail |
+| Briefing | Preview revision, reviewer, evidence time, mode, tasks and limits; verified bounded JSON download plus printable HTML/browser Save as PDF | Export unavailable, revision changed, incomplete or hash-mismatched download |
+| Settings | Source registry/policy and budget/model/job status; operator-reviewed activation and disabled monitor state; no model/browser self-admission or key-entry form | Keys not configured; budget stop; unhealthy worker |
+
+**Desktop wireframe:** incident header above left navigation; main content split into a changes/task list and selected evidence/plan detail. Use a map only when geographic context helps the decision. **Mobile:** persistent compact incident/mode header; list first; detail opens a separate view with explicit back navigation; old/new evidence stacks; decision controls stay reachable without hiding evidence.
+
+**Run recovery:** an admitted run whose startup is unconfirmed stays visible and retains its original saved command. Retry sends the same body/UUID; it never invents a replacement run merely because startup is uncertain. Reading status is independent of that retry. Queue confirmation does not mean retrieval or human approval completed. A failed run shows a fixed plain-text recovery explanation while keeping its original ID, deadline and usage visible. Context overflow states that text was retained in full and interpretation stopped; it does not offer automatic retry or truncation.
+
+**Review interaction:** selecting a change shows the precise supporting excerpt and affected dependency. A proposal is visibly Draft/Needs review. Approval summarizes evidence versions, unresolved limitations, crew constraints and actor role. If a dependency changes before commit, show a conflict explaining what changed and require a refreshed review. Never show a success toast before a confirmed receipt. A lost response offers Check decision status using the original command identity.
+
+**Capacity and oversight:** apply [release bounds](PRODUCT_REQUIREMENTS.md) to editable crews/tasks; reject excess rather than dropping it. Present missing estimates and unassigned tasks explicitly. During unclassified source changes, show approval blocked at incident level; unaffected classification does not reuse an old-generation approval request. Only incident_commander sees accept/reject controls, and the server enforces the same policy. A persuasive generated summary cannot collapse source limitations or dismiss the review banner. Show Download prepared only after client byte/hash verification; browser print has no automatic save confirmation.
+
+**Copy:** use Source unavailable, Publication time unknown, New evidence needs review, and Evidence changed during approval. Show a confirmed zero as No changes found in the checked sources. Show incomplete acquisition as Check incomplete. Keep hazard screening, evidence-review priority and manual operational priority separate. A restricted user sees enough context to understand the restriction without receiving sensitive names/coordinates.
+
+**Accessibility acceptance SEN-R020:** keyboard-accessible comparison and decision flow; visible focus; heading/landmark hierarchy; labeled inputs; announced asynchronous progress and errors; readable error recovery at narrow heights; no color-only information; adequate contrast and practical touch targets; no horizontal clipping at 360 px and tablet widths. Verify rendered states, not visibility assertions alone.
+
+**Design review deliverable:** the [clickable prototype](../design/sentinel-workflow.html) contains the golden scenario and stale/conflict/provider-failure states. It uses synthetic data and simulated decisions; it does not implement provider calls, database receipts or field actions. A desktop browser walkthrough exercised revision and pending-decision states. User review remains pending; full authenticated mobile/accessibility acceptance remains pending. Basic rendered synthetic-fixture observations are owned by the decision register. SEN-T05 is IN_PROGRESS. Treat the prototype and current partial components as review candidates; obtain user design review and bind the completed screens to rendered browser acceptance.
+
+## Optional correction in the review form
+
+Offer a bounded correction and reason selector inside the existing claim/plan review form, using [data/API contracts](DATA_AND_API_CONTRACTS.md). No correction is required for every accept. Owner-authorized learning reuse is separate from operational approval and never gates the full workflow. History/Briefing show original lineage, observed later validity and rights/export limits. No standalone moat screen is required.

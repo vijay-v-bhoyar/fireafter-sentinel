@@ -1,0 +1,30 @@
+import {createHmac} from 'node:crypto';
+import {beforeAll,beforeEach,afterEach,afterAll,describe,it,expect} from 'vitest';
+import {sentinelEvidenceSqlFixture} from '@/test/sentinel-evidence-sql-fixture';
+import {prepareDocumentVersion} from './evidence';
+import {nativeRowFrame} from './native-provenance';
+const id=(n:number)=>`71000000-0000-4000-8000-${String(n).padStart(12,'0')}`;
+const scope={organizationId:id(1),incidentId:id(2),mode:'live'},keyId=id(3),secret=Buffer.from('ab'.repeat(32),'hex');
+const version=prepareDocumentVersion({scope,documentId:id(4),sourceConfigRevision:id(5),issuer:'Fixture issuer',jurisdiction:'Fixture county',canonicalUrl:'https://example.gov/fixture',rawText:'Synthetic',publishedAt:null,effectiveFrom:null,effectiveUntil:null,availability:'available',contentPermission:'full_text'},{id:id(6),retrievedAt:'2026-10-12T00:00:00Z'}).version;
+let fixture:Awaited<ReturnType<typeof sentinelEvidenceSqlFixture>>;
+beforeAll(async()=>{fixture=await sentinelEvidenceSqlFixture();},20000);
+beforeEach(async()=>{await fixture.db.exec('begin');await fixture.seed(version,id(9),'analyst');await fixture.db.query(`insert into public.sentinel_native_signing_keys(organization_id,id,secret_key,authority_evidence_hash,valid_from,valid_until) values($1,$2,$3,$4,clock_timestamp()-interval '1 hour',clock_timestamp()+interval '1 hour')`,[scope.organizationId,keyId,secret,'a'.repeat(64)]);await fixture.db.query(`insert into public.source_snapshots(id,incident_id,source_name,fetched_at,status,stale,freshness_label,raw_payload) values($1,$2,'Fixture NWS',$3,'online',false,'Current',$4::jsonb)`,[id(7),scope.incidentId,'2026-10-12T00:00:00.000Z',JSON.stringify({sentinelMode:'live',dataOrigin:'live',sourceKey:'nws',rawPayload:{rainfall:2}})]);});
+afterEach(async()=>{await fixture.db.exec('rollback');});afterAll(async()=>{await fixture?.close();});
+async function sign(signingId=keyId){const row=(await fixture.db.query<Record<string,unknown>>('select * from public.source_snapshots where id=$1',[id(7)])).rows[0],frame=nativeRowFrame(row),text=[signingId,scope.organizationId,scope.incidentId,'live',frame].join('\n'),binding={schemaVersion:1,keyId:signingId,organizationId:scope.organizationId,mode:'live',frame,signature:createHmac('sha256',secret).update(text).digest('hex')};await fixture.db.query(`update public.source_snapshots set raw_payload=jsonb_set(raw_payload,'{sentinelNativeBinding}',$2::jsonb) where id=$1`,[id(7),JSON.stringify(binding)]);return binding;}
+const valid=async(org=scope.organizationId,incident=scope.incidentId,mode='live')=>(await fixture.db.query<{ok:boolean}>('select public.sentinel_native_binding_valid(n,$2,$3,$4,clock_timestamp()) as ok from public.source_snapshots n where n.id=$1',[id(7),org,incident,mode])).rows[0].ok;
+describe('applied signed native binding, synthetic source and key only',()=>{
+ it('matches independent Node HMAC-SHA256 bytes for RFC2104 inputs',async()=>{for(const message of ['Hi There','日本語\n'+('x'.repeat(100))]){const r=(await fixture.db.query<{hash:string}>(`select encode(public.sentinel_hmac_sha256($1,$2),'hex') as hash`,[secret,Buffer.from(message)])).rows[0].hash;expect(r).toBe(createHmac('sha256',secret).update(message).digest('hex'));}});
+ it('does not accept plain mode flags as native evidence authority',async()=>{expect(await valid()).toBe(false);await sign();expect(await valid()).toBe(true);});
+ it.each([`stale=true`,`status='offline'`,`fetched_at=fetched_at+interval '1 microsecond'`,`raw_payload=jsonb_set(raw_payload,'{rawPayload,rainfall}','100')`])('invalidates changed stored snapshot %s',async mutation=>{await sign();await fixture.db.exec(`update public.source_snapshots set ${mutation}`);expect(await valid()).toBe(false);});
+ it('refuses cross-organization, cross-incident and cross-mode binding',async()=>{await sign();expect(await valid(id(99))).toBe(false);expect(await valid(scope.organizationId,id(99))).toBe(false);expect(await valid(scope.organizationId,scope.incidentId,'replay')).toBe(false);});
+ it('refuses a damaged signature and arbitrary source frame',async()=>{await sign();await fixture.db.exec(`update public.source_snapshots set raw_payload=jsonb_set(raw_payload,'{sentinelNativeBinding,signature}','"${'0'.repeat(64)}"')`);expect(await valid()).toBe(false);await sign();await fixture.db.exec(`update public.source_snapshots set raw_payload=jsonb_set(raw_payload,'{sentinelNativeBinding,frame}','"{}"')`);expect(await valid()).toBe(false);});
+ it('revocation blocks current use and cannot be undone or expanded',async()=>{await sign();await fixture.db.exec('update public.sentinel_native_signing_keys set revoked_at=clock_timestamp()');expect(await valid()).toBe(false);await fixture.db.exec('savepoint undo_key');await expect(fixture.db.exec('update public.sentinel_native_signing_keys set revoked_at=null')).rejects.toMatchObject({code:'42501'});await fixture.db.exec('rollback to savepoint undo_key;release savepoint undo_key');});
+ it('checks key authority against actual wall time even when a caller supplies a historical scenario clock',async()=>{
+  const expiredId=id(30);
+  await fixture.db.query(`insert into public.sentinel_native_signing_keys(organization_id,id,secret_key,authority_evidence_hash,valid_from,valid_until) values($1,$2,$3,$4,clock_timestamp()-interval '2 hours',clock_timestamp()-interval '1 hour')`,[scope.organizationId,expiredId,secret,'b'.repeat(64)]);
+  await sign(expiredId);
+  expect((await fixture.db.query<{ok:boolean}>(`select public.sentinel_native_binding_valid(n,$2,$3,'live',clock_timestamp()-interval '90 minutes') as ok from public.source_snapshots n where n.id=$1`,[id(7),scope.organizationId,scope.incidentId])).rows[0].ok).toBe(false);
+  await sign();expect(await valid()).toBe(true);
+ });
+ it('keeps secret key rows inaccessible to runtime roles',async()=>{await fixture.db.exec('savepoint private_key;set role service_role');await expect(fixture.db.exec('select secret_key from public.sentinel_native_signing_keys')).rejects.toMatchObject({code:'42501'});await fixture.db.exec('rollback to savepoint private_key;reset role;release savepoint private_key');});
+});

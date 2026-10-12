@@ -1,0 +1,9 @@
+{
+  "capturedAt": "2026-10-02",
+  "provider": "USGS Post-Wildfire Debris-Flow Hazard Assessments",
+  "sourceUrl": "https://earthquake.usgs.gov/arcgis/rest/services/ls/pwfdf/MapServer/4/query?f=json&where=fire_id%3D%27Plaskett_2026-08-26_v1.0%27&outSR=4326&outFields=OBJECTID,BP_Legend,BV_Legend,BCH_Legend,fire_id,assessment_date,version&returnGeometry=true&resultRecordCount=501",
+  "sha256": "5ffb2b8a42b770d5a15774e41139ec2e7c78197ac12815f5d8c80b76284913a4",
+  "featureCount": 197,
+  "inputVertices": 39631,
+  "purpose": "Offline regression only. Never substitute this captured assessment for live incident acquisition. Compression is lossless; no coordinates are rounded or simplified."
+}

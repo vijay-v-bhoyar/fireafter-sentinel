@@ -1,0 +1,9 @@
+# Historical repair snapshots are non-source evidence and can contain stale imports.
+.loop/
+.loop/**
+/public/code-graph.html
+/public/vendor/vis-network.min.js
+/graphify-out/
+/pkg.json
+/output/
+/.playwright-mcp/

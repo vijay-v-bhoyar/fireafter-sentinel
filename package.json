@@ -1,0 +1,69 @@
+{
+  "name": "fireafter-sentinel",
+  "version": "0.1.0",
+  "private": true,
+  "overrides": {
+    "baseline-browser-mapping": "2.11.21",
+    "nanoid": "3.3.18",
+    "@workflow/core": {
+      "devalue": "5.9.3"
+    }
+  },
+  "scripts": {
+    "publish:code-graph": "node scripts/publish-code-graph.mjs",
+    "capture:judge-evidence": "node scripts/capture-judge-evidence.mjs",
+    "dev": "next dev -p 3020",
+    "build": "node scripts/build-release.mjs",
+    "start": "next start -p 3020",
+    "lint": "eslint",
+    "test": "vitest run && node --test scripts/operator-account.test.mjs scripts/operator-account-recovery.node-test.mjs scripts/issuer-entrypoints.node-test.mjs scripts/auth-smoke-config.test.mjs scripts/verify-server-owned-writes.test.mjs scripts/migration-contract-verifier.node-test.mjs scripts/authenticated-refresh-contract.node-test.mjs scripts/product-promise-report.test.mjs scripts/verify-product-promise.node-test.mjs scripts/release-artifact.node-test.mjs scripts/release-lifecycle.node-test.mjs scripts/ci-workflow-contract.node-test.mjs scripts/publish-code-graph.node-test.mjs",
+    "test:operator-account": "node --test scripts/operator-account.test.mjs scripts/operator-account-recovery.node-test.mjs scripts/issuer-entrypoints.node-test.mjs",
+    "test:auth-smoke-config": "node --test scripts/auth-smoke-config.test.mjs",
+    "test:authenticated-refresh": "node --test scripts/authenticated-refresh-contract.node-test.mjs",
+    "test:write-boundary": "node --test scripts/verify-server-owned-writes.test.mjs",
+    "test:migration-contract": "node --test scripts/migration-contract-verifier.node-test.mjs",
+    "test:watch": "vitest",
+    "issue:account": "node scripts/issue-account.mjs",
+    "record:demo": "node scripts/record-demo-video.mjs",
+    "verify:browser": "node scripts/verify-browser-smoke.mjs",
+    "verify:authenticated": "node scripts/verify-authenticated-smoke.mjs",
+    "verify:graph": "node scripts/verify-graph-health.mjs",
+    "verify:local": "node scripts/verify-local-readiness.mjs",
+    "verify:migration-contract": "node scripts/migration-contract-verifier.mjs",
+    "verify:production": "node scripts/verify-production-smoke.mjs",
+    "verify:product-promise": "node scripts/verify-product-promise.mjs",
+    "verify:write-boundary": "node scripts/verify-server-owned-writes.mjs",
+    "verify:submission-storyboard": "node scripts/submission-storyboard.mjs"
+  },
+  "dependencies": {
+    "@supabase/ssr": "^0.12.0",
+    "@supabase/supabase-js": "^2.108.2",
+    "lucide-react": "^1.21.0",
+    "next": "16.3.6",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "server-only": "^0.0.1",
+    "sharp": "0.35.4",
+    "workflow": "5.1.0",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "0.5.8",
+    "@tailwindcss/postcss": "^4",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.3.6",
+    "jsdom": "^29.1.1",
+    "libpg-query": "17.7.4",
+    "playwright": "^1.61.1",
+    "pptxgenjs": "^4.0.1",
+    "tailwindcss": "^4",
+    "typescript": "^5",
+    "vis-network": "9.1.6",
+    "vitest": "^4.1.9"
+  }
+}
