@@ -6,4 +6,4 @@ Generated structural snapshot of this Sentinel checkout.
 
 Scope: source/config/test AST extraction and real directory membership. SQL, documentation and semantic claims are excluded. This graph is navigation evidence, not runtime or release acceptance.
 
-Source digest: c15f1d18e5bf1ad3d650b9a1e5061e6c0b3926e96da002a30453667fa92a3112
+Source digest: d3ed7ba90a6785b43eea6383878d8018c99d2db7266daf92f52d5f71a27ea204

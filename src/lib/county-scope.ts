@@ -49,6 +49,8 @@ export function prepareCountyScope(incident: Pick<Incident, "locationContext">) 
   const preparationBudget = geometryBudget();
   const classifiers = polygons.map(polygon => polygon.map(ring => prepareRingClassifier(ring, preparationBudget)));
   const cache = new Map<string, boolean>();
+  const cacheKeys = new Array<string>(20_000);
+  let nextCacheSlot = 0;
   let queries = 0;
   const deadline = performance.now() + 5_000;
   const contains = (point: Position) => {
@@ -66,7 +68,11 @@ export function prepareCountyScope(incident: Pick<Incident, "locationContext">) 
     });
     // Cache capacity is a memory bound, not an inventory truncation rule.
     // Evicted points are recomputed under the same deadline and query budget.
-    if (cache.size >= 20_000) cache.delete(cache.keys().next().value!);
+    // A fresh Map iterator scans deleted slots after sustained eviction. Keep
+    // insertion order in a bounded ring so FIFO eviction remains constant-time.
+    if (cache.size >= cacheKeys.length) cache.delete(cacheKeys[nextCacheSlot]);
+    cacheKeys[nextCacheSlot] = key;
+    nextCacheSlot = (nextCacheSlot + 1) % cacheKeys.length;
     cache.set(key, result);
     return result;
   };

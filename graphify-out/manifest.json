@@ -1,7 +1,7 @@
 {
   "project": "FireAfter Sentinel",
   "root": "C:\\Users\\vijay\\OneDrive\\Documents\\ChatGPT\\Nebius nvidia",
-  "generated_at_utc": "2026-10-12T15:00:40.492402+00:00",
+  "generated_at_utc": "2026-10-12T15:33:36.523976+00:00",
   "coverage": "Structural source/config/test extraction only; no semantic agents or provider calls; SQL/docs excluded",
   "source_files": {
     "eslint.config.mjs": "9d858fc9e015f862856b59fc48a9eab2d74db007541453b47e93364cca28c7a1",
@@ -222,7 +222,7 @@
     "src/lib/compact-refresh-page.ts": "9a138c639475e887bd4f97627a32f70f7ec3e58f9638bc293a6277d5b0d22679",
     "src/lib/compact-refresh-sql.test.ts": "b96f208144c5b3396efa2c158c75cc15bf648a27870ca18896cde724ebdfb1de",
     "src/lib/county-scope.test.ts": "16dd53508530cf5ffeaf7587664536825543891b0c2c8807d20d8b766865a22a",
-    "src/lib/county-scope.ts": "32d6e91022530d3d014830e6925c5f7ef3bc4bbd2d913200fa7c5da5ee1fb2d5",
+    "src/lib/county-scope.ts": "2dd939c649c2647b2e5b4dd361fe0f87e5a757e9a326933a6e038a488ed789b8",
     "src/lib/cron-discovery.test.ts": "10be2e66e28af7c1347d9df956f4c3bb4b2c94860eff662bb2ad839d2c518fd3",
     "src/lib/crossing-checkpoint.test.ts": "ba6057b945e0cd48d0523b6c6d5ef18a4229c19b0760f416ebcc00d50b9a8ea0",
     "src/lib/crossing-checkpoint.ts": "92fde7a695f9960541b93e4669e96f1275e1dbef7dbcb246518141c63f7db714",
@@ -246,7 +246,7 @@
     "src/lib/fireafter-supabase.ts": "7d0a6b9d5bd29b9beae1bfb958f773abac29b0698a3400cf9377a51ee7506880",
     "src/lib/geo.test.ts": "258302df2fc4a97989875b1167e3d5063b6506659c8b8a248bf8e2c77871cd4b",
     "src/lib/geo.ts": "43ef76d56cb43d43634b05e6c387dabcc02e26a1eda2cde82cc4609b2b7b4848",
-    "src/lib/geojson-export-reader.test.ts": "c7e567cf2873af31173709516d727b13fbd35b2e9072b82771e4a4b93e7da7e0",
+    "src/lib/geojson-export-reader.test.ts": "194f78c22872cf161ea02264079e6b4a3e36a9a7c3bfd346aa2e340f2a5b2db0",
     "src/lib/geojson-export-stream.test.ts": "7db06f4e5d4f6c0056bf1140482c22082331db090ae0b2406854b64e6297f60d",
     "src/lib/geojson-export-stream.ts": "efa7db6b4a22a7fa3b8772180bd967967156dc5579c91908de5288d5696df294",
     "src/lib/geojson-export.test.ts": "e129b4b7f026f1e6c9ffce69555338801e2a526f2bf5c7214e18f514b4d90343",
@@ -520,7 +520,7 @@
     "src/workflows/sentinel.ts": "c18b2422f05b681a3b094f8d663aab24d82a4ca3a6a814351112c092acaf48e8",
     "vitest.config.ts": "6fea9800c0a67ac9ed6ae60942057382ed0c14a5e0ebe1158fbd704553e96123"
   },
-  "source_digest": "c15f1d18e5bf1ad3d650b9a1e5061e6c0b3926e96da002a30453667fa92a3112",
+  "source_digest": "d3ed7ba90a6785b43eea6383878d8018c99d2db7266daf92f52d5f71a27ea204",
   "nodes": 3709,
   "edges": 11152
 }

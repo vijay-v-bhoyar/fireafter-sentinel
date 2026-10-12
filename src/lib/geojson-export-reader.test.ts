@@ -235,7 +235,7 @@ async function verifyFullExport({ incident, payload }: Awaited<ReturnType<typeof
     });
   }
   const expectedHash = createHash("sha256"), actualHash = createHash("sha256");
-  const requestedAt = Date.now(); let metadataSeen = false;
+  const requestedAt = Date.now(); let metadataSeen = false, generatedAt = "";
   const response = await route(incident.id); expect(response.status).toBe(200);
   const reader = response.body!.getReader(), decoder = new TextDecoder(); let tail = "", count = 0, bytes = 0;
   for (;;) {
@@ -249,9 +249,7 @@ async function verifyFullExport({ incident, payload }: Awaited<ReturnType<typeof
         const metadata = JSON.parse(line.slice(0, -',"features":['.length) + '}');
         expect(Date.parse(metadata.generatedAt)).toBeGreaterThanOrEqual(requestedAt);
         expect(Date.parse(metadata.generatedAt)).toBeLessThanOrEqual(Date.now());
-        // Full and streamed projections must use the same declared instant. Real deadline clocks stay active.
-        const expected = dashboardBundleToGeoJson({ ...mapSupabaseRowsToBundle({ ...payload, responderActions: [], auditEvents: [] }), generatedAt: metadata.generatedAt }).features;
-        for (const feature of expected) expectedHash.update(JSON.stringify(feature));
+        generatedAt = metadata.generatedAt;
         continue;
       }
       const value = JSON.parse(line.replace(/^,/, "")); actualHash.update(JSON.stringify(value)); count++;
@@ -260,6 +258,11 @@ async function verifyFullExport({ incident, payload }: Awaited<ReturnType<typeof
   tail += decoder.decode(); const receipt = JSON.parse(tail.slice('],"fireafterExport":'.length, -1));
   expect(receipt).toMatchObject({ complete: true, exported: 91511, scanned: 91511 });
   expect(metadataSeen).toBe(true);
+  // Compare at the export's declared instant after consuming the stream. The
+  // independent whole-inventory oracle must not block active HTTP/page timers.
+  // Delivery deadlines, full row counts and byte-for-byte feature hashes remain checked.
+  const expected = dashboardBundleToGeoJson({ ...mapSupabaseRowsToBundle({ ...payload, responderActions: [], auditEvents: [] }), generatedAt }).features;
+  for (const feature of expected) expectedHash.update(JSON.stringify(feature));
   expect(count).toBe(91511); expect(actualHash.digest("hex")).toBe(expectedHash.digest("hex"));
   expect(requests.filter(name => name === "recommendations")).toHaveLength(715);
   expect(mocks.fallback).not.toHaveBeenCalled();

@@ -12,7 +12,7 @@ Sentinel project root: C:/Users/vijay/OneDrive/Documents/ChatGPT/Nebius nvidia. 
 | --- | --- | --- |
 | Git | Independent .git and new remote; no shared worktree/submodule/origin | Independent local .git; new private vijay-v-bhoyar/fireafter-sentinel remote linked; commit/push evidence belongs to the decision register |
 | App | Separate hosting project, app URL and deployment binding | Separate Vercel Hobby project created; deployment pending |
-| Database | Fresh Supabase project/database and migrations | Separate local Postgres17/PostGIS database, complete chain plus forward recovery repair applied; hosted fresh project blocked by free capacity |
+| Database | Fresh Supabase project/database and migrations | Separate local Postgres17/PostGIS database, complete chain plus forward recovery repair applied; hosted fresh project blocked by free capacity and explicitly on hold; local build/CI continues |
 | Auth | New project's users, sessions, issuer and redirect URLs | Not created |
 | Storage | New project's buckets and policies | Not created |
 | Automation | Separate workflow, cron and webhook targets | Disabled/not created |

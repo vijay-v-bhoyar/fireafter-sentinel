@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedAt": "2026-10-12T14:56:08.102573+00:00",
+  "generatedAt": "2026-10-12T15:37:22.329265+00:00",
   "project": {
     "name": "fireafter-sentinel",
     "root": "C:/Users/vijay/OneDrive/Documents/ChatGPT/Nebius nvidia",
@@ -3448,7 +3448,7 @@
       "id": "file:src/lib/geojson-export-reader.test.ts",
       "type": "[File]",
       "path": "src/lib/geojson-export-reader.test.ts",
-      "role": "Embedded production-table SQL and actual SDK/HTTP through export route, exact full-mapper parity, 91511 synthetic rows, optional saved Monterey geometry, lower provider caps, authority/generation/source/expiry faults, read-only execution and SQL drift. Auth controlled, explicit SQL query translator and unused PostGIS substitution; not hosted acceptance. Full synthetic export failures emit test-only class/code/request-count diagnostics; production safe errors and all export budgets unchanged."
+      "role": "Embedded production-table SQL and actual SDK/HTTP through export route, exact full-mapper parity, 91511 synthetic rows, optional saved Monterey geometry, lower provider caps, authority/generation/source/expiry faults, read-only execution and SQL drift. Auth controlled, explicit SQL query translator and unused PostGIS substitution; not hosted acceptance. Full synthetic export failures emit test-only class/code/request-count diagnostics; production safe errors and all export budgets unchanged. Independent full-mapper comparison runs after response consumption at captured generatedAt; all feature hashes/counts/deadline and failure checks retained."
     },
     {
       "id": "file:src/lib/geojson-export-stream.test.ts",
@@ -5989,7 +5989,7 @@
       "type": "[Function]",
       "name": "prepareCountyScope",
       "file": "src/lib/county-scope.ts",
-      "role": "Validate topology once, index complete edges and retain exact inclusive county containment. Cache evicts at 20000 results independently from 100000 uncached point queries; five-second deadline and per-query geometry work stay bounded. No rectangle fallback."
+      "role": "Validate topology once, index complete edges and retain exact inclusive county containment. Cache evicts at 20000 results independently from 100000 uncached point queries; five-second deadline and per-query geometry work stay bounded. No rectangle fallback. Fixed20000-slot ring retains FIFO cache eviction in constant time; unchanged100000 query ceiling and5000ms processing budget."
     },
     {
       "id": "function:src/lib/crossing-checkpoint.ts#checkpointCrossingInference",
@@ -28572,7 +28572,8 @@
       "Hard-coded secret or API key in source, tests, docs, or PKG.",
       "Sentinel optional feedback is atomic with review, scoped to original immutable source and receipt; reuse requires current owner-provisioned exact-purpose/grantee/destination/retention grant. Synthetic tests do not establish human permission; no egress or automatic promotion. No full UI/hosted acceptance.",
       "History/briefings: scoped append sequence, complete retained lineage, role-derived redaction, separate observed validity, immutable UTF-8 receipts and bounded complete-client verification. Original hash references do not reconstruct withheld raw source/asset/native rows. Browser artifact fixture does not prove full hosted reviewer journey.",
-      "2026-10-12 Sentinel: Node22 local full suite3714+148 passes; fresh-checkout fixture directory repaired, synthetic export diagnostics only. Own Vercel Hobby project created, no deployment. Separate local Postgres17/PostGIS applied46 migrations and forward operator-lock volatility repair; unchanged recovery SQL passes. Historical operator scripts do not all match the current chain and native capability tests may require superuser privileges unavailable to postgres. Original FireAfter untouched; hosted database blocked by two-active-free-project account limit, spend ceiling0."
+      "2026-10-12 Sentinel: Node22 local full suite3714+148 passes; fresh-checkout fixture directory repaired, synthetic export diagnostics only. Own Vercel Hobby project created, no deployment. Separate local Postgres17/PostGIS applied46 migrations and forward operator-lock volatility repair; unchanged recovery SQL passes. Historical operator scripts do not all match the current chain and native capability tests may require superuser privileges unavailable to postgres. Original FireAfter untouched; hosted database blocked by two-active-free-project account limit, spend ceiling0.",
+      "2026-10-12 CI repair: fixed-size FIFO ring removes Map iterator eviction scans without changing geometry/query/time caps. Full GeoJSON parity oracle now runs after consuming the response at the same declared instant; full91511 rows,715 REC reads and feature hashes remain. Local101 focused checks pass; new full Linux CI qualification pending. Hosted DB provisioning on hold only; local build/testing continues, spend ceiling0."
     ],
     "sentinelPlanning": {
       "updated_at": "2026-10-12T13:25:20.045360+00:00",
@@ -28628,8 +28629,8 @@
       "reviewedAt": "2026-10-12T13:25:20.045360+00:00",
       "scope": "Document reconciliation, validator consistency checks and catalog only; no runtime changes",
       "runtimeGraphStatus": "CURRENT_STRUCTURAL_CODE_ONLY; SQL/DOC SEMANTICS EXPLICITLY CATALOGED",
-      "nextAction": "Current Linux CI recheck, independent hosted database/free capacity, real sponsor credits/configuration, authenticated workflow and domain acceptance pending. $0 authorized spend.",
-      "graphSourceDigest": "c15f1d18e5bf1ad3d650b9a1e5061e6c0b3926e96da002a30453667fa92a3112",
+      "nextAction": "Local/CI quality repair continues; hosted Supabase provisioning explicitly on hold, existing projects untouched, spend0; sponsor credits/configuration and full authenticated/domain journey pending.",
+      "graphSourceDigest": "d3ed7ba90a6785b43eea6383878d8018c99d2db7266daf92f52d5f71a27ea204",
       "graphSourceFiles": 515,
       "documentEvidence": ".codex/evidence/document-reconciliation.json",
       "driftRisk": "Provider retries/escalation, future endpoints and hypothetical env knobs must not be described as current behavior. Document PASS does not qualify a release."
