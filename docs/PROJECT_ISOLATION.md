@@ -1,18 +1,18 @@
 # New app, new repository, new database
 
-Final planning specification. This is a mandatory implementation constraint from the user, not an optional hosting choice. A 444-file local baseline import exists; no new cloud resources or target-guard acceptance has been established. This cleanup changes documents only. Requirement SEN-R001 owns this boundary.
+Final planning specification. This is a mandatory implementation constraint from the user, not an optional hosting choice. A 444-file local baseline import exists; new private Git and separate Vercel project exist; full hosted target-guard acceptance remains pending. Requirement SEN-R001 owns this boundary.
 
 ## Protected source and destinations
 
 FireAfter checkout: C:/Users/vijay/OneDrive/Documents/FireAfter. Protected remote: https://github.com/vijay-v-bhoyar/FireAfter.git. Protected deployment: https://fireafter-app.vercel.app/. Its database/auth/storage/project identifiers must be placed in a private deny-list before credentialed work; do not discover them by calling production or copying secret values. Owner-supplied identifiers are sufficient. Missing protected identifiers or destination identity means live writes cannot start.
 
-Sentinel project root: C:/Users/vijay/OneDrive/Documents/ChatGPT/Nebius nvidia. This workspace has its own independent initialized Git repository; current commit/push evidence belongs to the decision register. Its new private remote is https://github.com/vijay-v-bhoyar/fireafter-sentinel.git, created and linked October12. Source is committed and pushed privately on main; verified local/remote commit receipts belong to the decision register. Hosting app/project/domain and the fresh Supabase database remain unselected. Public source licensing/publication remains pending. A separate schema or organization in FireAfter's database does not satisfy this requirement.
+Sentinel project root: C:/Users/vijay/OneDrive/Documents/ChatGPT/Nebius nvidia. This workspace has its own independent initialized Git repository; current commit/push evidence belongs to the decision register. Its new private remote is https://github.com/vijay-v-bhoyar/fireafter-sentinel.git, created and linked October12. Source is committed and pushed privately on main; verified local/remote commit receipts belong to the decision register. Separate Vercel project fireafter-sentinel exists in selected team vijayvbhoyar-8312s-projects; no deployment/domain binding yet. A separate local Supabase database exists; hosted Supabase org xegngvhpnyggiwsvupji is selected but at its active-free-project limit. No existing project is paused/upgraded, and authorized spend is $0. Public source licensing/publication remains pending. A separate schema or organization in FireAfter's database does not satisfy this requirement.
 
 | Resource | Required new identity | Current status |
 | --- | --- | --- |
 | Git | Independent .git and new remote; no shared worktree/submodule/origin | Independent local .git; new private vijay-v-bhoyar/fireafter-sentinel remote linked; commit/push evidence belongs to the decision register |
-| App | Separate hosting project, app URL and deployment binding | Not created |
-| Database | Fresh Supabase project/database and migrations | Not created |
+| App | Separate hosting project, app URL and deployment binding | Separate Vercel Hobby project created; deployment pending |
+| Database | Fresh Supabase project/database and migrations | Separate local Postgres17/PostGIS database, complete chain plus forward recovery repair applied; hosted fresh project blocked by free capacity |
 | Auth | New project's users, sessions, issuer and redirect URLs | Not created |
 | Storage | New project's buckets and policies | Not created |
 | Automation | Separate workflow, cron and webhook targets | Disabled/not created |

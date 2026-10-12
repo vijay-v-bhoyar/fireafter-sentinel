@@ -14,6 +14,7 @@ const eslintConfig = defineConfig([
     "output/**",
     "public/vendor/**",
     ".codex/evidence/ui-browser/**", // Generated browser fixture bundles, including vendored React.
+    ".codex/evidence/recovery-browser/**", // Generated recovery fixture bundle, including vendored React.
     "build/**",
     "next-env.d.ts",
   ]),

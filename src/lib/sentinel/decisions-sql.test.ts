@@ -18,7 +18,7 @@ import { briefingResponse } from "./briefing-http";
 import { GET as briefingGet } from "../../app/api/sentinel/briefings/[revision]/route";
 import { GET as artifactGet } from "../../app/api/sentinel/briefing-artifacts/[id]/route";
 import { GET as historyGet } from "../../app/api/sentinel/history/route";
-import { writeFile } from "node:fs/promises";
+import { mkdir, writeFile } from "node:fs/promises";
 import { createRequire } from "node:module";
 const {JSDOM}=createRequire(import.meta.url)("jsdom") as {JSDOM:new(html?:string)=>{window:{DOMParser:typeof DOMParser;document:Document;close():void}}};
 
@@ -304,6 +304,7 @@ describe("Scoped history and immutable portable briefing through exact SQL and H
   const dom=new JSDOM();vi.stubGlobal("DOMParser",dom.window.DOMParser);
   try{const out=await verifyBriefingDelivery(briefingResponse(a!),deliveryScope(saved.revision.id,"html"));expect(out.receipt.sourceArtifactId).toBe(out.payload.id);
    expect(a!.content).toContain("Inspection tasks");expect(a!.content).toContain("application/json");
+   await mkdir(".codex/evidence",{recursive:true});
    await writeFile(".codex/evidence/sentinel-briefing-render-fixture.html",a!.content,"utf8");
    await writeFile(".codex/evidence/sentinel-briefing-render-fixture.json",JSON.stringify({content:a!.content,receipt:a!.receipt,expected:deliveryScope(saved.revision.id,"html")}),"utf8");
   }finally{vi.unstubAllGlobals();dom.window.close();}

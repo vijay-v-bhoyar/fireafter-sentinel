@@ -220,14 +220,14 @@ it("preserves public/viewer and disabled-path behavior instead of exposing priva
   expect((await route(incident.id)).status).toBe(200); expect(mocks.auth).not.toHaveBeenCalled();
 });
 async function verifyFullExport({ incident, payload }: Awaited<ReturnType<typeof fixture>>) {
-  if (process.env.FIREAFTER_SAVED_EXPORT_FIXTURE === "true") {
+  {
     const readerModule = await import("./fireafter-supabase"), original = readerModule.getSupabaseGeoJsonExportSource;
     vi.spyOn(readerModule, "getSupabaseGeoJsonExportSource").mockImplementation(async (...args) => {
       const result = await original(...args), pages = result.pages;
       result.pages = async function* (signal) {
         try { yield* pages(signal); } catch (error) {
           const detail = error as { name?: string; code?: string; issues?: Array<{ code: string; path: unknown[] }> };
-          console.info("Saved export reader diagnostic", { name: detail.name, code: detail.code, issues: detail.issues?.map(issue => ({ code: issue.code, path: issue.path })) });
+          console.info("Export reader diagnostic", { name: detail.name, code: detail.code, requests: requests.length, issues: detail.issues?.map(issue => ({ code: issue.code, path: issue.path })) });
           throw error;
         }
       };

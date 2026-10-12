@@ -1,10 +1,10 @@
 {
   "project": "FireAfter Sentinel",
   "root": "C:\\Users\\vijay\\OneDrive\\Documents\\ChatGPT\\Nebius nvidia",
-  "generated_at_utc": "2026-10-12T13:58:15.797128+00:00",
+  "generated_at_utc": "2026-10-12T15:00:40.492402+00:00",
   "coverage": "Structural source/config/test extraction only; no semantic agents or provider calls; SQL/docs excluded",
   "source_files": {
-    "eslint.config.mjs": "b7dc3a702e986bba44320236690b1f047c0afbaac98dd0d7339a5e2255be977e",
+    "eslint.config.mjs": "9d858fc9e015f862856b59fc48a9eab2d74db007541453b47e93364cca28c7a1",
     "next.config.ts": "8108b1871f0aac948e18bc0592138a26178f8c5feab8e3070c13cd8dd12cfb8b",
     "postcss.config.mjs": "dfac7ac2d86d326a0e5adb024e7943c181393ed17a5fcb8f0315b24c7da6ddde",
     "scripts/auth-smoke-config.mjs": "406827da04618dc58503814f8affb3c2912010faef36378e851eebb970ebc8cb",
@@ -246,7 +246,7 @@
     "src/lib/fireafter-supabase.ts": "7d0a6b9d5bd29b9beae1bfb958f773abac29b0698a3400cf9377a51ee7506880",
     "src/lib/geo.test.ts": "258302df2fc4a97989875b1167e3d5063b6506659c8b8a248bf8e2c77871cd4b",
     "src/lib/geo.ts": "43ef76d56cb43d43634b05e6c387dabcc02e26a1eda2cde82cc4609b2b7b4848",
-    "src/lib/geojson-export-reader.test.ts": "5700f77208de26f6af7eca1adf1433891cae80884df68d6ffc8b6dd97ead47dd",
+    "src/lib/geojson-export-reader.test.ts": "c7e567cf2873af31173709516d727b13fbd35b2e9072b82771e4a4b93e7da7e0",
     "src/lib/geojson-export-stream.test.ts": "7db06f4e5d4f6c0056bf1140482c22082331db090ae0b2406854b64e6297f60d",
     "src/lib/geojson-export-stream.ts": "efa7db6b4a22a7fa3b8772180bd967967156dc5579c91908de5288d5696df294",
     "src/lib/geojson-export.test.ts": "e129b4b7f026f1e6c9ffce69555338801e2a526f2bf5c7214e18f514b4d90343",
@@ -411,7 +411,7 @@
     "src/lib/sentinel/contracts.ts": "42f1d8da8f498f389db57dc1c40f9cac9f794e0a7e6dacf764f2ab299b986e69",
     "src/lib/sentinel/decision-contracts.ts": "23c3dd668b854093390d6934662636201a4544ce3273eea600f2b76888d1a7da",
     "src/lib/sentinel/decision-http.ts": "aa5efaa7033936b401792b83d87e66cd15cb60ec9e6232ce07c6794e4330c622",
-    "src/lib/sentinel/decisions-sql.test.ts": "e8e95802a7e869a7064710dce6b9a17f9f7fff04c4c39e4036fe9f9aa468ea69",
+    "src/lib/sentinel/decisions-sql.test.ts": "f78e1bd45841c82611420fc6bcd69988dc0725f56d4707ed57e64a4a58e82645",
     "src/lib/sentinel/decisions.test.ts": "a9116d0b2fc4104f08bc88bee017dd3df81c0dc28abc8dced8763d13121e0deb",
     "src/lib/sentinel/decisions.ts": "5a280c87e41d641586dbddd0c55d7410dbd16959628b5e32c6e7579d66012ca9",
     "src/lib/sentinel/dispatch.test.ts": "1d952f135c219a15d9be11a8be8fa9e78e47f099bbe657e4c6b73c62aa6559ee",
@@ -520,7 +520,7 @@
     "src/workflows/sentinel.ts": "c18b2422f05b681a3b094f8d663aab24d82a4ca3a6a814351112c092acaf48e8",
     "vitest.config.ts": "6fea9800c0a67ac9ed6ae60942057382ed0c14a5e0ebe1158fbd704553e96123"
   },
-  "source_digest": "ecba526cee50091381a061906630cb12e2be29db508a400e97bfda94fc650bfd",
+  "source_digest": "c15f1d18e5bf1ad3d650b9a1e5061e6c0b3926e96da002a30453667fa92a3112",
   "nodes": 3709,
   "edges": 11152
 }

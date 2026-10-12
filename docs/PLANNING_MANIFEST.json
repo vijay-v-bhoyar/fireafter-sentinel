@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "edition": "FINAL_PLANNING",
-  "created_at_utc": "2026-10-12T14:18:43.356034+00:00",
+  "created_at_utc": "2026-10-12T15:02:09.112005+00:00",
   "status": "FINAL_SPECIFICATIONS_LOCAL_BASELINE_ACCEPTANCE_PENDING",
   "counts": {
     "requirements": 25,
@@ -27,8 +27,8 @@
     },
     {
       "path": "PROVENANCE.md",
-      "sha256": "05b3a049ac3f127203683941f2f97696957675df3f82fda1bf8f4507013303ea",
-      "bytes": 13724
+      "sha256": "bc8536effc74c6c01f46233a32c6767c53eb9a16144f40f105a9c90fda079f9b",
+      "bytes": 14195
     },
     {
       "path": "README.md",
@@ -47,8 +47,8 @@
     },
     {
       "path": "docs/DECISIONS_AND_BUILD_GATE.md",
-      "sha256": "0dd48b48ab2f439cd15fc715cd4500f23fa162a26c645af39e90cf29894f4262",
-      "bytes": 24967
+      "sha256": "b59c39fb3395367d81cd43ba8d5b731c5e18b1fdd601ab804ce4519787d45d89",
+      "bytes": 27938
     },
     {
       "path": "docs/DOMAIN_DISCOVERY.md",
@@ -82,8 +82,8 @@
     },
     {
       "path": "docs/PROJECT_ISOLATION.md",
-      "sha256": "5b107024490a379caa48ef1854de2e9f92e7550d3b04535a754543a9172eee64",
-      "bytes": 6102
+      "sha256": "94f350e14327d41df76ac40ebdfd4fb8af20b348f2196cf3cfee79721cc5f7a6",
+      "bytes": 6528
     },
     {
       "path": "docs/RED_TEAM_PLAN.md",

@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedAt": "2026-10-12T14:12:14.379375+00:00",
+  "generatedAt": "2026-10-12T14:56:08.102573+00:00",
   "project": {
     "name": "fireafter-sentinel",
     "root": "C:/Users/vijay/OneDrive/Documents/ChatGPT/Nebius nvidia",
@@ -2108,7 +2108,8 @@
     {
       "id": "file:eslint.config.mjs",
       "type": "[File]",
-      "path": "eslint.config.mjs"
+      "path": "eslint.config.mjs",
+      "role": "ESLint configuration Excludes generated ui-browser and recovery-browser evidence bundles; active src/scripts rules unchanged."
     },
     {
       "id": "file:next.config.ts",
@@ -3447,7 +3448,7 @@
       "id": "file:src/lib/geojson-export-reader.test.ts",
       "type": "[File]",
       "path": "src/lib/geojson-export-reader.test.ts",
-      "role": "Embedded production-table SQL and actual SDK/HTTP through export route, exact full-mapper parity, 91511 synthetic rows, optional saved Monterey geometry, lower provider caps, authority/generation/source/expiry faults, read-only execution and SQL drift. Auth controlled, explicit SQL query translator and unused PostGIS substitution; not hosted acceptance."
+      "role": "Embedded production-table SQL and actual SDK/HTTP through export route, exact full-mapper parity, 91511 synthetic rows, optional saved Monterey geometry, lower provider caps, authority/generation/source/expiry faults, read-only execution and SQL drift. Auth controlled, explicit SQL query translator and unused PostGIS substitution; not hosted acceptance. Full synthetic export failures emit test-only class/code/request-count diagnostics; production safe errors and all export budgets unchanged."
     },
     {
       "id": "file:src/lib/geojson-export-stream.test.ts",
@@ -4429,7 +4430,7 @@
       "id": "file:src/lib/sentinel/decisions-sql.test.ts",
       "type": "[File]",
       "path": "src/lib/sentinel/decisions-sql.test.ts",
-      "role": "Exact SQL/helper/HTTP terminal uniqueness, role, replay, modification, snapshots and rollback cases."
+      "role": "Exact SQL/helper/HTTP terminal uniqueness, role, replay, modification, snapshots and rollback cases. Creates its ignored render-evidence directory on fresh checkouts; assertions unchanged."
     },
     {
       "id": "file:src/lib/sentinel/decisions.test.ts",
@@ -8694,6 +8695,24 @@
       "type": "[Function]",
       "name": "runFailureMessage",
       "file": "src/lib/sentinel/run-failure.ts"
+    },
+    {
+      "id": "file:supabase/config.toml",
+      "type": "[File]",
+      "path": "supabase/config.toml",
+      "role": "Independent fireafter-sentinel-local development target with ports55320-55329; seed disabled; no hosted link or FireAfter target."
+    },
+    {
+      "id": "file:supabase/.gitignore",
+      "type": "[File]",
+      "path": "supabase/.gitignore",
+      "role": "Exclude local CLI link/branch state and local env secrets."
+    },
+    {
+      "id": "file:supabase/migrations/20261012150000_operator_issuance_lock_volatility.sql",
+      "type": "[File]",
+      "path": "supabase/migrations/20261012150000_operator_issuance_lock_volatility.sql",
+      "role": "Forward recovery repair in Sentinel only: VOLATILE for authenticated operator locking read; unchanged body/grants plus fail-closed current retention-probe postcondition. Native unchanged recovery oracle passes."
     }
   ],
   "apiContracts": [
@@ -27376,6 +27395,26 @@
       "from": "file:pkg.json",
       "to": "file:src/lib/sentinel/run-failure.test.ts",
       "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:supabase/config.toml",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:supabase/.gitignore",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:supabase/migrations/20261012150000_operator_issuance_lock_volatility.sql",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:supabase/migrations/20261012150000_operator_issuance_lock_volatility.sql",
+      "to": "file:supabase/migrations/20260915120000_trusted_operator_account_identity.sql",
+      "type": "[extends]"
     }
   ],
   "dataFlow": [
@@ -28532,7 +28571,8 @@
       "Removing the package-level PostCSS override before Next no longer pulls a vulnerable transitive postcss<8.5.10 package.",
       "Hard-coded secret or API key in source, tests, docs, or PKG.",
       "Sentinel optional feedback is atomic with review, scoped to original immutable source and receipt; reuse requires current owner-provisioned exact-purpose/grantee/destination/retention grant. Synthetic tests do not establish human permission; no egress or automatic promotion. No full UI/hosted acceptance.",
-      "History/briefings: scoped append sequence, complete retained lineage, role-derived redaction, separate observed validity, immutable UTF-8 receipts and bounded complete-client verification. Original hash references do not reconstruct withheld raw source/asset/native rows. Browser artifact fixture does not prove full hosted reviewer journey."
+      "History/briefings: scoped append sequence, complete retained lineage, role-derived redaction, separate observed validity, immutable UTF-8 receipts and bounded complete-client verification. Original hash references do not reconstruct withheld raw source/asset/native rows. Browser artifact fixture does not prove full hosted reviewer journey.",
+      "2026-10-12 Sentinel: Node22 local full suite3714+148 passes; fresh-checkout fixture directory repaired, synthetic export diagnostics only. Own Vercel Hobby project created, no deployment. Separate local Postgres17/PostGIS applied46 migrations and forward operator-lock volatility repair; unchanged recovery SQL passes. Historical operator scripts do not all match the current chain and native capability tests may require superuser privileges unavailable to postgres. Original FireAfter untouched; hosted database blocked by two-active-free-project account limit, spend ceiling0."
     ],
     "sentinelPlanning": {
       "updated_at": "2026-10-12T13:25:20.045360+00:00",
@@ -28588,8 +28628,8 @@
       "reviewedAt": "2026-10-12T13:25:20.045360+00:00",
       "scope": "Document reconciliation, validator consistency checks and catalog only; no runtime changes",
       "runtimeGraphStatus": "CURRENT_STRUCTURAL_CODE_ONLY; SQL/DOC SEMANTICS EXPLICITLY CATALOGED",
-      "nextAction": "Recovery codes/UI locally qualified; independent DB/hosting, real provider/account/scheduler, source-policy and domain acceptance remain pending.",
-      "graphSourceDigest": "ecba526cee50091381a061906630cb12e2be29db508a400e97bfda94fc650bfd",
+      "nextAction": "Current Linux CI recheck, independent hosted database/free capacity, real sponsor credits/configuration, authenticated workflow and domain acceptance pending. $0 authorized spend.",
+      "graphSourceDigest": "c15f1d18e5bf1ad3d650b9a1e5061e6c0b3926e96da002a30453667fa92a3112",
       "graphSourceFiles": 515,
       "documentEvidence": ".codex/evidence/document-reconciliation.json",
       "driftRisk": "Provider retries/escalation, future endpoints and hypothetical env knobs must not be described as current behavior. Document PASS does not qualify a release."

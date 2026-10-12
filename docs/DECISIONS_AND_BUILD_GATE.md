@@ -8,8 +8,8 @@ Final planning set. Baseline SOURCE_IMPORTED_UNVERIFIED (444 files); Sentinel-sp
 | SEN-D02 Source baseline | Local 444-file import recorded; prior source checks pass on their captured snapshot; the new UI/claim route has local focused and synthetic browser evidence; native source-bound gates are historical passes; the repaired worker now passes all local gates on its frozen snapshot; fresh-target/provider/concurrent acceptance remains pending; original preserved | Builder/user | Baseline acceptance |
 | SEN-D03 Ownership/license | Ownership and notices unresolved; MIT only if compatible | User | Public source publication |
 | SEN-D04 Daily availability/team | No answer yet; sustained daily work assumed | User | Reliable effort/schedule commitment |
-| SEN-D05 Paid ceiling | Credits-first; no paid-spend authority granted | User | Any paid execution |
-| SEN-D06 Cloud/database targets | New private GitHub repo vijay-v-bhoyar/fireafter-sentinel created; separate hosting app and fresh database/auth/storage identities unresolved | User | Credentialed provisioning/migration/deployment |
+| SEN-D05 Paid ceiling | User-authorized maximum total spend $0; free resources/credits only; no upgrade or paid usage | User | Any paid execution |
+| SEN-D06 Cloud/database targets | New private GitHub repo vijay-v-bhoyar/fireafter-sentinel; Vercel Hobby project prj_g5h7Xzod1NIJYPTCuOjfG7eH5op8 in team_bF8jcyr2SDbxzOJwykYin02s created; separate local database fireafter-sentinel-local created; hosted Supabase org xegngvhpnyggiwsvupji selected but free capacity exhausted | User | Credentialed provisioning/migration/deployment |
 | SEN-D07 Provider access/models | Nemotron via Token Factory + Tavily; exact IDs/config not tested | User/builder | Real inference/retrieval proof |
 | SEN-D08 Scenario | One county/fire with suitable notice sequence; selection unresolved | Joint | Demo corpus acceptance |
 | SEN-D09 Practitioner validation | Hypotheses and unsent agenda; no endorsement | User | User-impact/quote claims |
@@ -25,7 +25,7 @@ Final planning set. Baseline SOURCE_IMPORTED_UNVERIFIED (444 files); Sentinel-sp
 | SEN-D19 Formal loop admission | Independent local baseline committed; governed config/state/admission absent; no admitted cycle | User/builder | Governed adapter invocation, not ordinary supervised local work |
 | SEN-D20 Red-team target/caps | Disposable Sentinel only; 24 seeds plus capped adaptive trajectories; live paid ceiling unresolved | User/builder | Runtime campaign |
 | SEN-D21 Eligibility/support history | Entrant/representative and FireAfter/Sentinel sponsor-support checks pending | User | Hackathon entry |
-| SEN-D22 Protected/new target registry | Protected IDs and new positive destination identities unselected; fail closed | Builder/user | Every credentialed/live write |
+| SEN-D22 Protected/new target registry | Protected FireAfter database jrddupkptuybyylgilmw; Sentinel Git/Vercel/local DB identities recorded; hosted positive Supabase destination missing, fail closed | Builder/user | Every credentialed/live write |
 | SEN-D23 Feedback permission/retention | Data-owner processing and offline-purpose grants unresolved; use safe fixtures meanwhile | User/data owner | Real private feedback or offline reuse |
 | SEN-D24 Buyer authority/repeat usage | Hypotheses; no customer/purchasing/adoption proof | User/domain reviewer | Company/moat or demand claims |
 
@@ -63,9 +63,9 @@ Seventeen additive Sentinel migration files declare48 tables; 26 HTTP methods ex
 
 ### Current verification and coverage
 
-**Current checkout: LOCAL_PROVIDER_RECOVERY_LOCAL_GATES_PASS_FULL_ACCEPTANCE_PENDING.** Safe worker failure codes and visible recovery explanations pass local qualification. Complete provider/target/domain/hosted acceptance remains pending; no task is accepted from these tests alone.
+**Current checkout: LOCAL_PROVIDER_RECOVERY_NATIVE_REPAIR_VERIFIED_CI_RECHECK_PENDING.** GitHub run38262129334 failed four tests (fixture-directory ENOENT, export verification failure, two timeouts). The directory is now created by the unchanged briefing oracle; export failures have test-only safe diagnostics. The full Windows Node22.23.3 suite passes3,714 Vitest +148 Node, with10 conditional skips. Linux CI remains unqualified until rerun. The isolated local database has applied the complete46-migration chain plus the new forward locking-read repair; unchanged native account recovery SQL passes. Complete provider/domain/hosted acceptance remains pending; no task is accepted from these tests alone.
 
-| Current recovery candidate | Observed result | Receipt / boundary |
+| Prior frozen recovery snapshot B | Observed result | Receipt / boundary |
 | --- | --- | --- |
 | Related worker/HTTP/UI/SQL regressions | PASS: 85 cases across9 files | .codex/evidence/sentinel-readiness-20261012b-focused.json; counts overlap the broad suite |
 | Full regression | PASS: 3,714 Vitest +148 Node =3,862;10 conditional skips | .codex/evidence/sentinel-readiness-20261012b-test.json/.log; October12 14:02:20–14:07:26 UTC |
@@ -77,9 +77,9 @@ Seventeen additive Sentinel migration files declare48 tables; 26 HTTP methods ex
 | Structural source graph | 515 captured files;3,709 nodes/11,152 edges;zero integrity issues | Current source-bound structural extraction and published viewer; SQL/document semantics excluded |
 | Final documents / protected original | Separate executed document check | evidence/document-validation.json; document PASS never establishes readiness or hackathon fulfillment |
 
-All five gates and the focused receipt bind unchanged snapshot 90e7e9639a9459a8c318a5a41985de6589674447feb847522a881ffd517ba74c. Only this later status prose changed among captured inputs. .codex/evidence/sentinel-readiness-20261012b-proof.json reconciles current source, graph, release seal, compiled boundaries, final documents and original FireAfter fingerprints. There is no real provider/account/tokenizer or concurrent-session proof.
+All five gates and the focused receipt bind unchanged snapshot 90e7e9639a9459a8c318a5a41985de6589674447feb847522a881ffd517ba74c. These are historical snapshot-B receipts; subsequent test/config/migration edits require new qualification. .codex/evidence/sentinel-readiness-20261012b-proof.json reconciles current source, graph, release seal, compiled boundaries, final documents and original FireAfter fingerprints. There is no real provider/account/tokenizer or concurrent-session proof.
 
-Embedded fixtures apply all seventeen Sentinel migrations exactly, with substituted inherited spatial columns and synthetic auth/SDK adapters. They do not apply the complete inherited chain or prove PostGIS, real JWTs, multiple sessions or scheduler delivery. Signing keys, real account funds and the new database/hosting target remain unconfigured. Read-only account discovery did not query or mutate FireAfter's production data.
+Embedded fixtures apply all seventeen Sentinel migrations exactly, with substituted inherited spatial columns and synthetic auth/SDK adapters. They do not apply the complete inherited chain or prove PostGIS, real JWTs, multiple sessions or scheduler delivery. Signing keys, real provider account credits and hosted runtime remain unconfigured; later local/Vercel provisioning is recorded above. Read-only account discovery did not query or mutate FireAfter's production data.
 
 Known capacity/source/citation failures have fixed safe codes and plain-text explanations. Unknown exceptions remain verification_failed. Context overflow retains source text in full and dispatches no model request. Original run identities/deadlines/usage remain visible; an explanation never authorizes a retry, budget renewal, truncated evidence or approval. Original uncertain write commands survive browser-session recovery; not_observed remains no proof of rollback.
 
@@ -96,10 +96,18 @@ These are historical passes for their captured inputs. Original failures, logs, 
 | Acceptance still missing | Observed boundary |
 | --- | --- |
 | Strict production browser smoke (unconfigured) | FAIL: county-coverage control unavailable; original sentinel-local-browser.log retained |
-| Fresh-target integration, real sponsor execution, runtime red-team and hosted journey | NOT_RUN; new database/hosting identity, provider configuration and cost ceiling unresolved |
+| Fresh-target integration, real sponsor execution, runtime red-team and hosted journey | Full local migration application and native recovery verified; hosted workflow NOT_RUN. Vercel identity created; hosted Supabase free capacity exhausted, provider configuration/credit proof missing; spend ceiling $0 |
 | Complete domain/source-policy/reviewer acceptance | Pending historical/restricted/withdrawn/quarantine resolution, qualified incident corpus, independent labels, user design review and full authenticated journey |
-| Real local multiconnection database | Docker engine unavailable after installed Desktop launch; no new container/database created |
+| Real local multiconnection database | Separate fireafter-sentinel-local Postgres17/PostGIS target created, ports55320–55329; complete chain applied. No opposing-session Sentinel race or real Auth/PostgREST journey yet. Seven historical assertion scripts originally failed; one native read script passed, repaired unchanged recovery script now passes; remaining qualification needs current-contract fixtures/appropriate capability |
 | Submission and operations | Public-compatible license/rights, entrant facts, public package/video, received submission and sustained judge access pending |
+
+### New resource and CI receipts
+
+The user selected GitHub vijay-v-bhoyar, Supabase org xegngvhpnyggiwsvupji and Vercel team vijayvbhoyar-8312s-projects, with maximum total spend $0. No existing project was paused/upgraded. Supabase dashboard confirmed the account has two active free projects and cannot create a third. The connector cost operation is unavailable. Vercel connector access failed403; the CLI independently verified OWNER access to the requested Hobby team and created the separate empty Sentinel project. It has no deployment, Git auto-deployment binding or secrets. Receipts: .codex/evidence/vercel-sentinel-create.log and vercel-sentinel-project.json.
+
+Local SQL receipts: sentinel-native-migration-inventory.log, sentinel-native-migration-final.log and sentinel-native-operator-recovery-repaired.log. Original SQL failures and rejected first repair postcondition are retained. The first postcondition referenced a superseded issuance probe; the repaired postcondition requires the actual final retention probe20260915130000 and exact effective privileges. No original recovery assertion was altered. These local scripts use only the named disposable new container; they do not qualify a hosted deployment or sponsor inference.
+
+Node22 receipts: node22-full-ci-diagnostic.log (3714 passed/10 skipped), node22-node-regressions.log (148 passed), node22-export-original.log (failure and accidental archive discovery retained), node22-export-diagnostic.log (unchanged export assertions pass in isolation). Archived source bytes now have non-executable .snapshot suffixes. The original export failure under concurrent load remains unexplained until diagnostic CI returns; no production limit or test deadline was relaxed.
 
 ### Retained failures and unresolved review
 
