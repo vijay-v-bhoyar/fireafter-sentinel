@@ -22,7 +22,7 @@ Final planning set. Baseline SOURCE_IMPORTED_UNVERIFIED (444 files); Sentinel-sp
 | SEN-D16 Supported release | One incident, five registered English-text documents, ten tasks/two crews/eight-hour shift; complete workflow | User/builder | Build contract, with explicit agreement before later scope changes |
 | SEN-D17 Durable runtime | Reuse inherited Workflow package first; new target/step retry/reservation proof pending | Builder | Integrated retrieval and monitor activation |
 | SEN-D18 Privilege policy | Actual incident_commander/analyst/viewer; commander-only plan terminal decisions; isolated demo commander account | User/builder | Applied authorization tests and judge issuance |
-| SEN-D19 Formal loop admission | No initial Git commit/config/state; discovery only; no admitted cycle | User/builder | Governed adapter invocation, not ordinary supervised local work |
+| SEN-D19 Formal loop admission | Independent local baseline committed; governed config/state/admission absent; no admitted cycle | User/builder | Governed adapter invocation, not ordinary supervised local work |
 | SEN-D20 Red-team target/caps | Disposable Sentinel only; 24 seeds plus capped adaptive trajectories; live paid ceiling unresolved | User/builder | Runtime campaign |
 | SEN-D21 Eligibility/support history | Entrant/representative and FireAfter/Sentinel sponsor-support checks pending | User | Hackathon entry |
 | SEN-D22 Protected/new target registry | Protected IDs and new positive destination identities unselected; fail closed | Builder/user | Every credentialed/live write |
@@ -38,7 +38,7 @@ Final planning set. Baseline SOURCE_IMPORTED_UNVERIFIED (444 files); Sentinel-sp
 
 **Review checklist:** coherent requirements and acceptance; all 25 inherited features accounted for; meaningful new contribution distinguished; public live findings dated; data/tool/API boundaries typed; state/concurrency/recovery rules explicit; missingness and evidence modes preserved; complete UX and evaluation plan; backlog dependency graph valid; every requirement linked to tasks and verification; open decisions have owner and phase.
 
-**Next available work:** address explicit worker recovery diagnostics and remaining source-resolution policies, then finish authenticated reviewer acceptance. The local signed native bridge and manual worker exist; actual scheduler, full inherited schema/PostGIS/auth, opposing-session races and real account/provider qualification need the admitted independent targets/configuration. Finish baseline configured-browser and user design acceptance. These are pending checks, not reasons to repeat local implementation or declare the full product ready.
+**Next available work:** finish remaining source-resolution policies and authenticated reviewer acceptance after admitting independent target/provider configuration; recovery diagnostics are locally qualified. The local signed native bridge and manual worker exist; actual scheduler, full inherited schema/PostGIS/auth, opposing-session races and real account/provider qualification need the admitted independent targets/configuration. Finish baseline configured-browser and user design acceptance. These are pending checks, not reasons to repeat local implementation or declare the full product ready.
 
 ## Observed local progress
 
@@ -63,41 +63,43 @@ Seventeen additive Sentinel migration files declare48 tables; 26 HTTP methods ex
 
 ### Current verification and coverage
 
-**Current checkout: LOCAL_PROVIDER_RECOVERY_DIAGNOSTICS_FOCUSED_PASS_BROAD_REQUALIFICATION_PENDING.** The worker qualification below is now historical for the captured snapshot. New fixed recovery codes and their UI explanation pass20 focused cases; broader qualification is pending for the changed source. The refreshed structural graph covers515 source/config/test files,3709 nodes and11152 edges with zero integrity issues; SQL/document semantics remain explicit. These are synthetic/local checks, not real-account, real-scheduler or full-product acceptance. Subsequent implementation must qualify its affected surface again.
+**Current checkout: LOCAL_PROVIDER_RECOVERY_LOCAL_GATES_PASS_FULL_ACCEPTANCE_PENDING.** Safe worker failure codes and visible recovery explanations pass local qualification. Complete provider/target/domain/hosted acceptance remains pending; no task is accepted from these tests alone.
 
-| Historical worker gate before recovery diagnostics | Observed result | Receipt / scope |
+| Current recovery candidate | Observed result | Receipt / boundary |
 | --- | --- | --- |
-| Focused worker/route/UI/SQL | PASS: 76 cases | .codex/evidence/sentinel-readiness-20261012a-focused.json; synthetic HTTP/Workflow stubs and seventeen exact embedded migrations |
-| Full regression | PASS: 3,705 Vitest + 148 Node = 3,853; 10 conditional skips | .codex/evidence/sentinel-readiness-20261012a-test.json and .log; October 12, 13:37:07–13:42:05 UTC |
-| Types / lint | PASS, exit 0; 24 existing lint warnings | .codex/evidence/sentinel-readiness-20261012a-types.json and -lint.json |
-| Static migration contracts | PASS, exit 0 | .codex/evidence/sentinel-readiness-20261012a-migrations.json; inherited static verifier, not full inherited-chain/PostGIS proof |
-| Production build | PASS | .codex/evidence/sentinel-readiness-20261012a-build.json; release ded538729bf416fb39a79fd3743a449848e4379dda7c5484ee6b92cb3321400f |
-| Compiled private API/entry boundaries | PASS: 171 checks | .codex/evidence/sentinel-readiness-20261012a-build-api-smoke.json; matching seal, owned unconfigured server stopped; no authenticated positive/provider/database proof |
-| Structural source graph | 513 source/config/test files; 3,704 nodes / 11,138 edges; zero recorded integrity issues | Source-bound graph; SQL/document semantics excluded and tracked through explicit contracts/tests |
-| Final document validation | Separate document-only check | evidence/document-validation.json; document PASS never grants product or compliance acceptance |
+| Related worker/HTTP/UI/SQL regressions | PASS: 85 cases across9 files | .codex/evidence/sentinel-readiness-20261012b-focused.json; counts overlap the broad suite |
+| Full regression | PASS: 3,714 Vitest +148 Node =3,862;10 conditional skips | .codex/evidence/sentinel-readiness-20261012b-test.json/.log; October12 14:02:20–14:07:26 UTC |
+| Types / lint | PASS, exit0;24 existing lint warnings | .codex/evidence/sentinel-readiness-20261012b-types.json and -lint.json; no new active recovery warning |
+| Static inherited migration contracts | PASS, exit0 | .codex/evidence/sentinel-readiness-20261012b-migrations.json; not full inherited-chain/PostGIS proof |
+| Production build | PASS | .codex/evidence/sentinel-readiness-20261012b-build.json; release bdbd650722aa21d04ddeb9e2656a242b6d5ad1fe90d5be3b3cabd5314edaa6ad |
+| Compiled API / entry boundaries | PASS:171 checks | .codex/evidence/sentinel-readiness-20261012b-build-api-smoke.json; matching seal, owned unconfigured server stopped |
+| Real browser, synthetic recovery transport | PASS:360/768/1280px, no overflow or browser errors | .codex/evidence/recovery-browser/result.json and screenshots; actual current component/CSS, three synthetic status GETs; no authenticated/database/provider acceptance |
+| Structural source graph | 515 captured files;3,709 nodes/11,152 edges;zero integrity issues | Current source-bound structural extraction and published viewer; SQL/document semantics excluded |
+| Final documents / protected original | Separate executed document check | evidence/document-validation.json; document PASS never establishes readiness or hackathon fulfillment |
 
-All five gates and the focused receipt bind unchanged snapshot e14e14e345a7a10772b91efb181c5ecdfeae69e8b0adf31f45b9e79d1e52c30b. The later status prose is the only subsequent captured-input change. .codex/evidence/sentinel-readiness-20261012a-proof.json reconciles source hashes, graph, build, compiled boundaries, documents and protected FireAfter fingerprints. Focused counts overlap the broad suite and must not be added. There is no real provider/account/tokenizer or concurrent-session proof.
+All five gates and the focused receipt bind unchanged snapshot 90e7e9639a9459a8c318a5a41985de6589674447feb847522a881ffd517ba74c. Only this later status prose changed among captured inputs. .codex/evidence/sentinel-readiness-20261012b-proof.json reconciles current source, graph, release seal, compiled boundaries, final documents and original FireAfter fingerprints. There is no real provider/account/tokenizer or concurrent-session proof.
 
-Embedded fixtures apply all seventeen Sentinel migrations exactly, but substitute inherited spatial columns and synthetic auth/SDK adapters. They do not apply the full inherited chain or prove PostGIS, real JWTs, multiple database sessions or scheduler delivery. Native signing, real account funds and the new database/hosting target remain unconfigured. Read-only account discovery did not query or mutate FireAfter's production data.
+Embedded fixtures apply all seventeen Sentinel migrations exactly, with substituted inherited spatial columns and synthetic auth/SDK adapters. They do not apply the complete inherited chain or prove PostGIS, real JWTs, multiple sessions or scheduler delivery. Signing keys, real account funds and the new database/hosting target remain unconfigured. Read-only account discovery did not query or mutate FireAfter's production data.
 
-The reviewer candidate retains original scoped write commands through uncertain responses. Retry never invents a replacement command. Definitive denial releases a rejected intent; corrupt/unavailable recovery storage blocks new writes. Receipt reconciliation remains actor-scoped; not_observed is not rollback proof. Manual admission reports dispatchPending separately from queue confirmation.
+Known capacity/source/citation failures have fixed safe codes and plain-text explanations. Unknown exceptions remain verification_failed. Context overflow retains source text in full and dispatches no model request. Original run identities/deadlines/usage remain visible; an explanation never authorizes a retry, budget renewal, truncated evidence or approval. Original uncertain write commands survive browser-session recovery; not_observed remains no proof of rollback.
 
-| Superseded qualification | Historical receipt | Limit |
-| --- | --- | --- |
-| First worker broad run | .codex/evidence/sentinel-worker-final-test.json | One failed / 3,703 passed / 10 skipped; Node phase not reached; original route-fixture failure retained |
-| Native bridge | .codex/evidence/sentinel-native-final-proof.json | Historical snapshot 9b7d041ff66dcd06aa3eb0148f865acef2b017eb9f734abfe18ab4be08d476a4; 3,813 passes, 10 skips |
-| Provider foundation | .codex/evidence/sentinel-providers-final-proof.json | Historical snapshot 263af30b6867b678a973dcd71ae58bc1f2e376953a10d8f4410feb8fa2bf577c |
-| Reviewer / briefings | .codex/evidence/sentinel-ui-final-proof.json and sentinel-briefings-final-proof.json | Their original synthetic/browser artifact observations only |
+Git: an independent baseline commit exists and the new private origin is https://github.com/vijay-v-bhoyar/fireafter-sentinel.git. The actual branch/commit/push proof is retained in .codex/evidence/sentinel-repository-push.json. This is private source delivery, not a public license, deployed app or completed hackathon package.
 
-These are historical passes for their declared snapshots. Original logs, seals, failures, inputs and repair oracles remain in .codex/evidence and .loop/repairs. Structural repair helpers never establish independent fixture acceptance, parent completion or release authority.
+| Historical qualification | Authoritative receipt / limitation |
+| --- | --- |
+| Worker before recovery diagnostics | .codex/evidence/sentinel-readiness-20261012a-proof.json;3,853 passes/10 skips on its earlier snapshot |
+| Initial worker broad failure | .codex/evidence/sentinel-worker-final-test.json;one failed/3,703 passed/10 skipped; Node phase not reached |
+| Native / provider / reviewer / briefing | sentinel-native-final-proof.json; sentinel-providers-final-proof.json; sentinel-ui-final-proof.json; sentinel-briefings-final-proof.json in .codex/evidence; their declared synthetic/local snapshots only |
+
+These are historical passes for their captured inputs. Original failures, logs, oracles and subjects remain in .codex/evidence and .loop/repairs. The new capacity oracle exposed setup field mistakes; its corrected retention assertion follows the actual saved-stage version. Repair helpers remain REPAIR_OR_HELP_REQUIRED, parent_complete=false, authority=none pending independent replacement-oracle and full-target acceptance.
 
 | Acceptance still missing | Observed boundary |
 | --- | --- |
-| Strict production browser smoke (local, unconfigured) | FAIL: county-coverage control unavailable with unconfigured database; sentinel-local-browser.log retained |
-| Fresh-target integration, real sponsor execution, runtime red-team and hosted journey | NOT_RUN; new database/hosting identities, provider configuration and cost boundary unresolved |
-| Complete reviewer/domain/source-policy acceptance | Pending independent semantic review, alternate source resolution, chosen incident corpus, user design review and authenticated positive journey |
-| Real multi-session local database | Docker engine unavailable; installed Desktop launch attempted, no usable Linux engine established; no database/container created |
-| Hackathon obligations | Human/runtime obligations remain pending in hackathon_compliance.csv; no public license, Sentinel deployment, real sponsor proof, final video or received entry |
+| Strict production browser smoke (unconfigured) | FAIL: county-coverage control unavailable; original sentinel-local-browser.log retained |
+| Fresh-target integration, real sponsor execution, runtime red-team and hosted journey | NOT_RUN; new database/hosting identity, provider configuration and cost ceiling unresolved |
+| Complete domain/source-policy/reviewer acceptance | Pending historical/restricted/withdrawn/quarantine resolution, qualified incident corpus, independent labels, user design review and full authenticated journey |
+| Real local multiconnection database | Docker engine unavailable after installed Desktop launch; no new container/database created |
+| Submission and operations | Public-compatible license/rights, entrant facts, public package/video, received submission and sustained judge access pending |
 
 ### Retained failures and unresolved review
 
@@ -131,7 +133,7 @@ The read-only Docker check found the engine named pipe unavailable; no multi-ses
 
 ## Governed development remains separate
 
-Status remains NOT_ADMITTED. Earlier discovery returned DISCOVERY_ONLY/init_required, exit 2; the local adapter snapshot refused with git-command-failed:rev-parse, exit 2, because this workspace has no initial commit. Local repair records retain failures and verification evidence, but no governed command policy, admitted cycle, engine receipt or unattended runner exists. RED_TEAM_PLAN records the absent ai-red-team runner reference. Blind strategy grading is a document assessment, not a product-loop cycle.
+Status remains NOT_ADMITTED. Earlier discovery returned DISCOVERY_ONLY/init_required, exit 2; the local adapter snapshot refused with git-command-failed:rev-parse, exit 2, because this workspace had no initial commit at that time. An independent local baseline now exists; it does not admit governed execution. Local repair records retain failures and verification evidence, but no governed command policy, admitted cycle, engine receipt or unattended runner exists. RED_TEAM_PLAN records the absent ai-red-team runner reference. Blind strategy grading is a document assessment, not a product-loop cycle.
 
 Future governed execution requires a legitimate source-bound Git baseline, reviewed/pinned command and adapter/config hashes, finite cycle/wall/expiry limits, externally retained cumulative budget, actual admission and a genuine receipt with separate semantic acceptance. Discovery does not admit execution. The portable lane does not establish full v13 execution, a sandbox guarantee, parent acceptance or release authority.
 
