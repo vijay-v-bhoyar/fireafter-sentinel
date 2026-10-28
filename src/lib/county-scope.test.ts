@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from "vitest";
 import { readFileSync } from "node:fs";
-import { CountyScopeError, countyQueryGeometry, normalizeCountyBoundary, prepareCountyScope } from "./county-scope";
+import { CountyScopeError, countyQueryGeometry, normalizeCountyBoundary, prepareCountyScope, prepareCountyScopeFactory } from "./county-scope";
 import { containsBasinPoint } from "./pwfdf-geometry";
 import type { Incident } from "./types";
 
@@ -81,6 +81,37 @@ describe("county scope", () => {
       expect(scope.contains([1, 1])).toBe(true);
       clock.mockReturnValue(5001);
       expect(() => scope.contains([1.5, 1])).toThrow(CountyScopeError);
+    } finally { clock.mockRestore(); }
+  });
+
+  it("reuses a private topology snapshot with independent page deadlines and isolated result geometry", () => {
+    const clock = vi.spyOn(performance, "now").mockReturnValue(0);
+    try {
+      const input = incident(), nextPage = prepareCountyScopeFactory(input);
+      const first = nextPage();
+      expect(first.contains([1, 1])).toBe(true);
+      input.locationContext!.boundary = { type: "Polygon", coordinates: [island] };
+      input.locationContext!.bbox = [10, 0, 12, 2];
+      if (first.boundary?.type === "MultiPolygon") first.boundary.coordinates[0][0][0] = [99, 99];
+      clock.mockReturnValue(5001);
+      expect(() => first.contains([1.5, 1])).toThrow(CountyScopeError);
+      const second = nextPage();
+      expect(second.contains([1.5, 1])).toBe(true);
+      expect(second.contains([3, 3])).toBe(false);
+      expect(second.contains([11, 1])).toBe(true);
+      expect(second.boundary).not.toEqual(first.boundary);
+      clock.mockReturnValue(10002);
+      expect(() => second.contains([1.6, 1])).toThrow(CountyScopeError);
+    } finally { clock.mockRestore(); }
+  });
+
+  it("keeps the original uncached query ceiling in every factory window after cache eviction", () => {
+    const clock = vi.spyOn(performance, "now").mockReturnValue(0);
+    try {
+      const nextPage = prepareCountyScopeFactory(incident()), first = nextPage();
+      for (let index = 0; index < 100_000; index++) expect(first.contains([1 + index / 1_000_000, 1])).toBe(true);
+      expect(() => first.contains([1.2, 1])).toThrow(CountyScopeError);
+      expect(nextPage().contains([1.2, 1])).toBe(true);
     } finally { clock.mockRestore(); }
   });
 

@@ -11,6 +11,25 @@ spec.loader.exec_module(refresh)
 
 
 class GraphCleanupTests(unittest.TestCase):
+    def test_report_identity_uses_package_and_receipt_not_checkout_folder(self):
+        report = "# Graph Report - Arbitrary folder (2000-01-01)\n\n## Summary\nretained"
+        fixed = refresh.stamp_report(report, "fireafter-sentinel", "2026-10-20T00:13:24+00:00")
+        self.assertEqual(fixed, "# Graph Report - FireAfter Sentinel (2026-10-20)\n\n## Summary\nretained")
+        with self.assertRaises(ValueError):
+            refresh.stamp_report(report, "unrelated", "2026-10-20T00:13:24+00:00")
+
+    def test_locked_dependency_is_external_but_unknown_source_still_fails(self):
+        graph = nx.DiGraph()
+        graph.add_node("caller", label="caller", source_file="scripts/setup.mjs")
+        graph.add_node("sdk", label="sdk", source_file="@supabase/supabase-js")
+        graph.add_edge("caller", "sdk")
+        result, _ = refresh.connect_inventory(graph, ["scripts/setup.mjs"], {"@supabase/supabase-js"})
+        self.assertEqual(result.nodes["sdk"]["source_file"], "")
+        self.assertEqual(result.nodes["sdk"]["external_module"], "@supabase/supabase-js")
+        graph.nodes["sdk"]["source_file"] = "unknown-package"
+        with self.assertRaises(ValueError):
+            refresh.connect_inventory(graph, ["scripts/setup.mjs"], {"@supabase/supabase-js"})
+
     def test_standalone_files_and_symbols_are_preserved_with_real_ownership(self):
         graph = nx.DiGraph()
         graph.add_node("empty_module", label="config.ts", source_file="config.ts")

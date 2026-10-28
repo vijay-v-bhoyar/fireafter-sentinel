@@ -21,7 +21,7 @@ const routes = [
   {
     path: "/map",
     navLabel: "Map View",
-    requiredText: ["Map View", "Selected Map Priorities"],
+    requiredText: ["Map View"],
   },
   {
     path: "/assets",
@@ -259,6 +259,16 @@ try {
         runtimeIssues.push(`stale fallback label visible: ${staleFallbackLabel}`);
       }
       for (const text of result.missingText) runtimeIssues.push(`missing text: ${text}`);
+      if (route.path === "/map") {
+        const unavailable = page.getByRole("alert", { name: "Live incident data unavailable" });
+        if (await unavailable.isVisible()) {
+          if (await page.getByText("Selected Map Priorities", { exact: true }).count()) {
+            runtimeIssues.push("unavailable map exposes unverified priority positions");
+          }
+        } else {
+          await page.getByRole("heading", { name: "Selected Map Priorities", exact: true }).waitFor();
+        }
+      }
       if (result.duplicateIds.length > 0) {
         runtimeIssues.push(`duplicate element ids: ${result.duplicateIds.join(", ")}`);
       }
@@ -373,10 +383,10 @@ try {
         }
       }
       if (route.path === "/features") {
-        const feature = page.getByRole("button", { name: /Any-county coverage/ });
+        const feature = page.getByRole("button", { name: /County discovery and saved incidents/ });
         await feature.focus();
         await feature.press("Enter");
-        if (!(await page.getByRole("heading", { name: "Any-county coverage" }).isVisible())) {
+        if (!(await page.getByRole("heading", { name: "County discovery and saved incidents" }).isVisible())) {
           runtimeIssues.push("keyboard selection did not update the feature detail panel");
         }
         if (viewport.name === "desktop") {
@@ -435,7 +445,12 @@ try {
   }
   await navigationPage.getByRole("link", { name: "Map View", exact: true }).click();
   await navigationPage.waitForURL(mapUrl.href);
-  await navigationPage.getByText("Selected Map Priorities", { exact: true }).waitFor();
+  const selectedPriorities = navigationPage.getByRole("heading", { name: "Selected Map Priorities", exact: true });
+  const unavailableMap = navigationPage.getByRole("alert", { name: "Live incident data unavailable" });
+  await selectedPriorities.or(unavailableMap).first().waitFor();
+  if (await unavailableMap.isVisible() && await selectedPriorities.count()) {
+    navigationIssues.push("unavailable map exposes unverified priority positions after navigation");
+  }
   const mapActiveHref = await navigationPage.evaluate(() =>
     document.querySelector('nav a[aria-current="page"]')?.getAttribute("href") ?? null,
   );

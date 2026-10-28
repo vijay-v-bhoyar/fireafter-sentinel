@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
   "edition": "FINAL_PLANNING",
-  "validated_at_utc": "2026-10-12T16:39:37.343331+00:00",
+  "validated_at_utc": "2026-10-28T17:12:05.711959+00:00",
   "scope": "Executed document, structured-reference and source-preservation checks only",
-  "outcome": "PASS",
-  "validation_exit_code": 0,
+  "outcome": "FAIL",
+  "validation_exit_code": 1,
   "counts": {
     "requirements": 25,
     "tasks": 24,
@@ -24,7 +24,12 @@
         "csv": 7,
         "json": 3,
         "validator": 1,
-        "boundary": "docs/ and root planning Markdown; AGENTS.md and runtime excluded"
+        "boundary": "docs/ and root planning Markdown; AGENTS.md and runtime excluded",
+        "companion_records": [
+          "devpost-submission.md",
+          "docs/hackathon/RUNBOOK.md",
+          "docs/hackathon/STATE.md"
+        ]
       }
     },
     {
@@ -236,8 +241,12 @@
     },
     {
       "check": "Original FireAfter remains unchanged",
-      "outcome": "PASS",
-      "failures": [],
+      "outcome": "FAIL",
+      "failures": [
+        "Full protected working-tree fingerprint changed",
+        "Protected source file count changed",
+        "Protected source dirty_status changed"
+      ],
       "details": {
         "files": 1572,
         "selected_fingerprints": 22,

@@ -20,7 +20,7 @@ const incident = {
 type Stage = "first-page" | "later-page" | "final-count" | "body";
 
 // The real client factory and bounded transport talk only to this isolated server.
-async function fixture(options: { stall?: Stage; releaseMs?: number; failPage?: number } = {}) {
+async function fixture(options: { stall?: Stage; releaseMs?: number; failPage?: number; onStall?: () => void } = {}) {
   const calls: { table: string; method: string; after: string | null }[] = [];
   const timers: ReturnType<typeof setTimeout>[] = [];
   let pages = 0;
@@ -55,6 +55,7 @@ async function fixture(options: { stall?: Stage; releaseMs?: number; failPage?: 
       options.stall === "body" && pages === 1 && method !== "HEAD";
     if (shouldStall) {
       stalled = true;
+      if(options.onStall)setImmediate(options.onStall);
       response.once("close", () => { if (!response.writableEnded) canceled = true; });
       if (options.stall === "body") {
         response.writeHead(200, { "content-type": "application/json", "content-range": "0-0/3" });
@@ -91,14 +92,20 @@ async function fixture(options: { stall?: Stage; releaseMs?: number; failPage?: 
   };
 }
 
-beforeEach(() => { vi.resetModules(); vi.spyOn(console, "warn").mockImplementation(() => undefined); });
+beforeEach(async () => {
+  vi.resetModules(); vi.spyOn(console, "warn").mockImplementation(() => undefined);
+  // Keep module transformation outside the HTTP cancellation oracle.
+  await import("./fireafter-supabase");
+}, 20_000);
 afterEach(() => { vi.restoreAllMocks(); vi.unstubAllGlobals(); vi.unstubAllEnvs(); });
 
 describe("FA13-I inventory acquisition deadline", () => {
   it.each(["first-page", "later-page", "final-count", "body"] as const)("cancels real HTTP at %s before returning a partial bundle", async stall => {
-    const server = await fixture({ stall });
+    const expiry = new AbortController();
+    const server = await fixture({ stall, onStall: () => expiry.abort(new DOMException("Test inventory deadline", "TimeoutError")) });
     const nativeTimeout = AbortSignal.timeout.bind(AbortSignal);
-    const timer = vi.spyOn(AbortSignal, "timeout").mockImplementation(ms => nativeTimeout(ms === 30_000 ? 300 : ms));
+    const timer = vi.spyOn(AbortSignal, "timeout").mockImplementation(ms => ms === 30_000
+      ? AbortSignal.any([nativeTimeout(ms), expiry.signal]) : nativeTimeout(ms));
     try {
       const { getSupabaseIncidentBundle } = await import("./fireafter-supabase");
       await expect(getSupabaseIncidentBundle(domainId)).rejects.toMatchObject({ code: "read_budget", status: 503 });
@@ -151,9 +158,11 @@ describe("FA13-I inventory acquisition deadline", () => {
   it("blocks actual import persistence and live refresh after an expired inventory read", async () => {
     // Test production failure semantics, not Vitest's explicit in-memory fixture mode.
     vi.stubEnv("NODE_ENV", "production");
-    const server = await fixture({ stall: "final-count" });
+    const expiry = new AbortController();
+    const server = await fixture({ stall: "final-count", onStall: () => expiry.abort(new DOMException("Test inventory deadline", "TimeoutError")) });
     const nativeTimeout = AbortSignal.timeout.bind(AbortSignal);
-    vi.spyOn(AbortSignal, "timeout").mockImplementation(ms => nativeTimeout(ms === 30_000 ? 300 : ms));
+    vi.spyOn(AbortSignal, "timeout").mockImplementation(ms => ms === 30_000
+      ? AbortSignal.any([nativeTimeout(ms), expiry.signal]) : nativeTimeout(ms));
     try {
       const { importIncidentAssets } = await import("./fireafter-data");
       await expect(importIncidentAssets({ operationId, incidentId: domainId, fileName: "test-only.csv", content: "name,longitude,latitude\nCrossing,-119.1,34.3",
@@ -166,9 +175,15 @@ describe("FA13-I inventory acquisition deadline", () => {
 
   it.each([false, true])("valid import reaches downstream boundaries only without expiry (expired=%s)", async expired => {
     vi.stubEnv("NODE_ENV", "production");
-    const server = await fixture({ stall: expired ? "final-count" : undefined });
+    // Expire only after the intended HTTP boundary is reached. A 300ms wall-clock
+    // shortcut can kill a valid multi-page import under full-suite contention.
+    // Retain the real production deadline as a watchdog in both cases.
+    const expiry = new AbortController();
+    const server = await fixture({ stall: expired ? "final-count" : undefined,
+      onStall: () => expiry.abort(new DOMException("Test inventory deadline", "TimeoutError")) });
     const nativeTimeout = AbortSignal.timeout.bind(AbortSignal);
-    vi.spyOn(AbortSignal, "timeout").mockImplementation(ms => nativeTimeout(ms === 30_000 ? 300 : ms));
+    vi.spyOn(AbortSignal, "timeout").mockImplementation(ms => ms === 30_000
+      ? AbortSignal.any([nativeTimeout(ms), expiry.signal]) : nativeTimeout(ms));
     try {
       const persistence = await import("./fireafter-supabase");
       const persist = vi.spyOn(persistence, "persistImportedAssetsToSupabase").mockImplementation(async input => ({ ...input, receipt: { ...importReceipt, incidentId, requestHash: input.importOperation.requestHash }, replayed: false }));
@@ -186,6 +201,8 @@ describe("FA13-I inventory acquisition deadline", () => {
       expect(persist).toHaveBeenCalledTimes(expired ? 0 : 1);
       expect(refresh).toHaveBeenCalledTimes(expired ? 0 : 1);
       if (!expired) expect(persist.mock.calls[0][0].assets).toHaveLength(1);
+      else await vi.waitFor(() => expect(server.state()).toEqual({stalled:true,canceled:true}));
+      expect(expiry.signal.aborted).toBe(expired);
     } finally { await server.close(); }
   });
 });

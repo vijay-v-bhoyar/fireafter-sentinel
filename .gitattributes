@@ -1,0 +1,2 @@
+# Preserve byte-pinned NVIDIA assets across Git checkout settings.
+/src/lib/sentinel/tokenizer-data/* -text

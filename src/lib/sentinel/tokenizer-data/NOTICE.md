@@ -1,0 +1,7 @@
+# NVIDIA Nemotron tokenizer data
+
+The tokenizer/config/template here are unmodified public files from NVIDIA's `NVIDIA-Nemotron-3-Nano-30B-A3B-BF16` repository, revision `bf77c3174f68ad409e1c2aa60daeb46e32d1c606`. `provenance.json` records exact URLs, SHA-256 values and the model-card license link. They retain the NVIDIA Nemotron Open Model License; the application's MIT license does not relicense these files. MODEL_CARD.md retains NVIDIA's attribution and license metadata. No model weights or remote Python code are included or executed.
+
+The server uses Hugging Face's Apache-2.0 `@huggingface/tokenizers`0.2.0 package locally. It reads these hash-pinned files with no runtime download and renders only the exact system/user-only branch of the pinned chat template, including the default thinking-generation prefix. No tools, assistant history or custom chat-template options are supported by this counter. The same512-token envelope is added before the unchanged24,000-token admission cap; actual provider usage must still fit the original reservation.
+
+This qualifies local encoding against the pinned open tokenizer, not the account's funding, server revision, bill or persistent application workflow. The existing owner/model/price evidence hash remains mandatory. Unrecognized model IDs retain the old conservative byte-bound path. No automatic provider switch, credential use or budget increase is enabled.

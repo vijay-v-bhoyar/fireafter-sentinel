@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedAt": "2026-10-12T16:18:36.575975+00:00",
+  "generatedAt": "2026-10-28T01:18:59.652Z",
   "project": {
     "name": "fireafter-sentinel",
     "root": "C:/Users/vijay/OneDrive/Documents/ChatGPT/Nebius nvidia",
@@ -100,7 +100,34 @@
     "[links_to]",
     "[generates]",
     "[verifies]",
-    "[catalogs]"
+    "[catalogs]",
+    "[binds]",
+    "[configures]",
+    "[defined_in]",
+    "[defines]",
+    "[defines_contract]",
+    "[documents]",
+    "[ignores]",
+    "[implemented_by]",
+    "[implements]",
+    "[indexes]",
+    "[loads]",
+    "[navigates]",
+    "[persists_to]",
+    "[provides_evidence]",
+    "[requires_version]",
+    "[runs]",
+    "[shares_contract]",
+    "[supersedes_probe]",
+    "[uses]",
+    "[validates]",
+    "[validates_static_contract]",
+    "applies-exact-migration",
+    "defines",
+    "documents",
+    "imports",
+    "reads",
+    "type-imports"
   ],
   "nodes": [
     {
@@ -1942,21 +1969,21 @@
       "type": "[File]",
       "path": "docs/DECISIONS_AND_BUILD_GATE.md",
       "role": "Sole current verification owner; recovery source has3862 local passes and171 compiled boundaries; full acceptance pending.",
-      "documentCatalogReviewedAt": "2026-10-12T13:46:40.037774+00:00"
+      "documentCatalogReviewedAt": "2026-10-14T03:02:33.369029+00:00"
     },
     {
       "id": "file:docs/DOMAIN_DISCOVERY.md",
       "type": "[File]",
       "path": "docs/DOMAIN_DISCOVERY.md",
       "role": "Final Sentinel planning artifact; authored specification/evidence, not runtime acceptance.",
-      "documentCatalogReviewedAt": "2026-10-12T13:21:11.673301+00:00"
+      "documentCatalogReviewedAt": "2026-10-14T03:02:33.369029+00:00"
     },
     {
       "id": "file:docs/EVALUATION_AND_TEST_PLAN.md",
       "type": "[File]",
       "path": "docs/EVALUATION_AND_TEST_PLAN.md",
-      "role": "Final acceptance design and sole inherited-control table; partial local observations delegated to decision register.",
-      "documentCatalogReviewedAt": "2026-10-12T13:21:11.673301+00:00"
+      "role": "Final acceptance design, sole inherited-control table and persona/manual E2E guide with embedded canonical user suite; observed runtime results delegated to decision register.",
+      "documentCatalogReviewedAt": "2026-10-14T03:02:33.369029+00:00"
     },
     {
       "id": "file:docs/FIREAFTER_BASELINE.md",
@@ -1970,7 +1997,7 @@
       "type": "[File]",
       "path": "docs/OPERATIONS_AND_COST_PLAN.md",
       "role": "Final Sentinel planning artifact; authored specification/evidence, not runtime acceptance.",
-      "documentCatalogReviewedAt": "2026-10-12T13:21:11.673301+00:00"
+      "documentCatalogReviewedAt": "2026-10-14T03:02:33.369029+00:00"
     },
     {
       "id": "file:docs/PLANNING_MANIFEST.json",
@@ -1984,14 +2011,14 @@
       "type": "[File]",
       "path": "docs/PRODUCT_REQUIREMENTS.md",
       "role": "Final full-scope owner; complete bounded assignment, missing estimates incomplete, no partial task omission; all 25 requirements retained.",
-      "documentCatalogReviewedAt": "2026-10-12T13:21:11.673301+00:00"
+      "documentCatalogReviewedAt": "2026-10-14T03:02:33.369029+00:00"
     },
     {
       "id": "file:docs/PRODUCT_STRATEGY.md",
       "type": "[File]",
       "path": "docs/PRODUCT_STRATEGY.md",
       "role": "Final Sentinel planning artifact; authored specification/evidence, not runtime acceptance.",
-      "documentCatalogReviewedAt": "2026-10-12T13:21:11.673301+00:00"
+      "documentCatalogReviewedAt": "2026-10-14T03:02:33.369029+00:00"
     },
     {
       "id": "file:docs/PROJECT_ISOLATION.md",
@@ -2005,7 +2032,7 @@
       "type": "[File]",
       "path": "docs/RED_TEAM_PLAN.md",
       "role": "Final unexecuted adversarial campaign; distinct from local isolation/evidence checks.",
-      "documentCatalogReviewedAt": "2026-10-12T13:21:11.673301+00:00"
+      "documentCatalogReviewedAt": "2026-10-14T03:02:33.369029+00:00"
     },
     {
       "id": "file:docs/SECURITY_AND_HUMAN_REVIEW.md",
@@ -2033,7 +2060,7 @@
       "type": "[File]",
       "path": "docs/UX_SPEC.md",
       "role": "Final Sentinel planning artifact; authored specification/evidence, not runtime acceptance.",
-      "documentCatalogReviewedAt": "2026-10-12T13:21:11.673301+00:00"
+      "documentCatalogReviewedAt": "2026-10-14T03:02:33.369029+00:00"
     },
     {
       "id": "file:docs/backlog.csv",
@@ -2103,7 +2130,7 @@
       "type": "[File]",
       "path": "docs/traceability.csv",
       "role": "Final Sentinel planning artifact; authored specification/evidence, not runtime acceptance.",
-      "documentCatalogReviewedAt": "2026-10-12T13:21:11.673301+00:00"
+      "documentCatalogReviewedAt": "2026-10-14T03:02:33.369029+00:00"
     },
     {
       "id": "file:eslint.config.mjs",
@@ -2181,7 +2208,7 @@
       "id": "file:scripts/build-release.mjs",
       "type": "[File]",
       "path": "scripts/build-release.mjs",
-      "role": "FA14 build identity or verifier scope; hosted/configuration acceptance remains separate."
+      "role": "FA14 build identity or verifier scope; hosted/configuration acceptance remains separate. Proposed Windows-only Webpack default; compiler argv matches sealed release metadata. Existing explicit --webpack remains supported."
     },
     {
       "id": "file:scripts/capture-judge-evidence.mjs",
@@ -2949,7 +2976,7 @@
       "id": "file:src/components/feature-graph.test.tsx",
       "type": "[File]",
       "path": "src/components/feature-graph.test.tsx",
-      "role": "Validates native focusable controls, all stage/card selections, full details and references, complete forward/back sequence, textual relationships, full index, all 25 features' county-scoped links, and encoded query safety."
+      "role": "Validates native focusable controls, all stage/card selections, full details and references, complete forward/back sequence, textual relationships, full index, all 25 features' county-scoped links, and encoded query safety. Local test queries scope accessible controls to their containing stage/list/detail/index to avoid unrelated page traversal; every node/edge, focus and reference assertion and original timeout remain."
     },
     {
       "id": "file:src/components/feature-graph.tsx",
@@ -3321,7 +3348,7 @@
       "id": "file:src/lib/county-scope.ts",
       "type": "[File]",
       "path": "src/lib/county-scope.ts",
-      "role": "Lossless county topology, immutable containment and exact Esri query polygon conversion. Prevents neighboring-county envelope points from entering queues, exports or new terrain/ranking. Preserves every query vertex, shell/hole/island and source coordinates; no historical row rewrites."
+      "role": "Lossless county topology, immutable containment and exact Esri query polygon conversion. Prevents neighboring-county envelope points from entering queues, exports or new terrain/ranking. Preserves every query vertex, shell/hole/island and source coordinates; no historical row rewrites. Exposes a factory over one validated private topology/classifier snapshot with independent bounded processing windows; original single-window API unchanged."
     },
     {
       "id": "file:src/lib/cron-discovery.test.ts",
@@ -3430,7 +3457,7 @@
       "id": "file:src/lib/fireafter-supabase.ts",
       "type": "[File]",
       "path": "src/lib/fireafter-supabase.ts",
-      "role": "Atomic authorized bundle persistence, inventory-fenced readback, and losslessly compressed large source snapshots; safe size/timing diagnostics without raw data. Reuses source operational classification only within each mapping, after payload decoding and credential redaction. Hydrates county topology without dropping islands."
+      "role": "Atomic authorized bundle persistence, inventory-fenced readback, and losslessly compressed large source snapshots; safe size/timing diagnostics without raw data. Reuses source operational classification only within each mapping, after payload decoding and credential redaction. Hydrates county topology without dropping islands. Streaming export reuses only immutable county preparation; each page retains fresh five-second geometry/query bounds and unchanged SQL/authority/freshness/byte/order/full-output guards."
     },
     {
       "id": "file:src/lib/geo.test.ts",
@@ -3718,7 +3745,7 @@
       "id": "file:src/lib/inventory-deadline.test.ts",
       "type": "[File]",
       "path": "src/lib/inventory-deadline.test.ts",
-      "role": "Ten tests: real Supabase factory/SDK and native loopback HTTP cancellation, exact shared-parent plus three inventory timers without per-page resets, 29..33 second unscaled ceiling, capped pages, no retry, and production-mode import boundaries. Downstream positive-control persistence/refresh are test spies."
+      "role": "Ten real loopback HTTP tests; deterministic boundary-triggered expiry with original 30-second watchdogs, exact four timers/no page resets, unscaled 29..33 second ceiling and positive/negative downstream import boundaries."
     },
     {
       "id": "file:src/lib/inventory-error.ts",
@@ -3748,7 +3775,7 @@
       "id": "file:src/lib/judge-presentation.test.ts",
       "type": "[File]",
       "path": "src/lib/judge-presentation.test.ts",
-      "role": "Five tests covering canonical timed notes, missing/duplicate sections, fail-closed rehearsal status, exact retained note and prevention of stale failed-load or uploaded-confidence claims."
+      "role": "Six tests for a single seven-segment under-three-minute storyboard, matching narration timings, malformed sections and truthful evidence boundaries."
     },
     {
       "id": "file:src/lib/live-county-diagnostic.test.ts",
@@ -5342,7 +5369,9 @@
       "type": "[Function]",
       "name": "public.sentinel_create_briefing",
       "file": "supabase/migrations/20261012005000_sentinel_history_briefings.sql",
-      "role": "Explicit SQL trace; fixed search path, fresh scope/role and immutable bounded export."
+      "role": "Explicit SQL trace; fixed search path, fresh scope/role and immutable bounded export.",
+      "implementationFile": "supabase/migrations/20261013014825_sentinel_unreviewed_briefing_null.sql",
+      "driftRisk": "Historical definition is superseded by forward null-review redaction repair; previous immutable artifact bytes remain unchanged."
     },
     {
       "id": "function:public.sentinel_create_html_briefing",
@@ -8063,7 +8092,7 @@
       "id": "file:src/components/sentinel/sentinel-constraints.tsx",
       "type": "[File]",
       "path": "src/components/sentinel/sentinel-constraints.tsx",
-      "role": "Sentinel reviewer candidate, recovery, route or fixture; local verification only; full target acceptance pending."
+      "role": "Authors scoped inputs and reads stored assets through the existing bounded authority-bearing inventory client."
     },
     {
       "id": "file:src/components/sentinel/sentinel-evidence.tsx",
@@ -8081,7 +8110,8 @@
       "id": "file:src/components/sentinel/sentinel-plan.tsx",
       "type": "[File]",
       "path": "src/components/sentinel/sentinel-plan.tsx",
-      "role": "Sentinel reviewer candidate, recovery, route or fixture; local verification only; full target acceptance pending."
+      "role": "Sentinel reviewer candidate, recovery, route or fixture; local verification only; full target acceptance pending.",
+      "remainingLocalWorkflowChange": "2026-10-15: verified workspace-owned receipt feedback; real native retest and regression binding in remainingNativePersonaWorkflows20261015."
     },
     {
       "id": "file:src/components/sentinel/sentinel-policy.tsx",
@@ -8093,7 +8123,8 @@
       "id": "file:src/components/sentinel/sentinel-ui-roles.test.tsx",
       "type": "[File]",
       "path": "src/components/sentinel/sentinel-ui-roles.test.tsx",
-      "role": "Sentinel reviewer candidate, recovery, route or fixture; local verification only; full target acceptance pending."
+      "role": "Sentinel reviewer candidate, recovery, route or fixture; local verification only; full target acceptance pending.",
+      "remainingLocalWorkflowChange": "2026-10-15: verified workspace-owned receipt feedback; real native retest and regression binding in remainingNativePersonaWorkflows20261015."
     },
     {
       "id": "file:src/components/sentinel/sentinel-ui.test.tsx",
@@ -8105,7 +8136,8 @@
       "id": "file:src/components/sentinel/sentinel-workspace.tsx",
       "type": "[File]",
       "path": "src/components/sentinel/sentinel-workspace.tsx",
-      "role": "Sentinel reviewer candidate, recovery, route or fixture; local verification only; full target acceptance pending."
+      "role": "Sentinel reviewer candidate, recovery, route or fixture; local verification only; full target acceptance pending.",
+      "remainingLocalWorkflowChange": "2026-10-15: verified workspace-owned receipt feedback; real native retest and regression binding in remainingNativePersonaWorkflows20261015."
     },
     {
       "id": "file:src/components/sentinel/sentinel.css",
@@ -8208,7 +8240,8 @@
       "type": "[Component]",
       "name": "SentinelPlan",
       "file": "src/components/sentinel/sentinel-plan.tsx",
-      "role": "API-bound reviewer candidate or original-command recovery; full target/provider acceptance pending."
+      "role": "API-bound reviewer candidate or original-command recovery; full target/provider acceptance pending.",
+      "decisionConfirmation": "Confirmed message passed through onDecisionConfirmed to parent workspace state; survives revision-keyed remount, scoped by existing identity/incident/mode workspace key."
     },
     {
       "id": "component:SentinelPolicy",
@@ -8222,7 +8255,8 @@
       "type": "[Component]",
       "name": "SentinelWorkspace",
       "file": "src/components/sentinel/sentinel-workspace.tsx",
-      "role": "API-bound reviewer candidate or original-command recovery; full target/provider acceptance pending."
+      "role": "API-bound reviewer candidate or original-command recovery; full target/provider acceptance pending.",
+      "decisionConfirmation": "Confirmed message passed through onDecisionConfirmed to parent workspace state; survives revision-keyed remount, scoped by existing identity/incident/mode workspace key."
     },
     {
       "id": "function:src/components/sentinel/use-sentinel-command.tsx#parseIntent",
@@ -8307,7 +8341,7 @@
       "type": "[Function]",
       "name": "searchRegisteredSources",
       "file": "src/lib/sentinel/providers.ts",
-      "role": "Closed server-only provider/funding boundary; exact implementation signature and side effects are source-owned."
+      "role": "Bounded exact-host discovery; withhold and count provider sibling-host hits without registry expansion; all-outside/duplicates fail; provider credit accounting unchanged."
     },
     {
       "id": "function:src/lib/sentinel/providers.ts#extractRegisteredSources",
@@ -8321,7 +8355,7 @@
       "type": "[Function]",
       "name": "completeNemotron",
       "file": "src/lib/sentinel/providers.ts",
-      "role": "Closed server-only provider/funding boundary; exact implementation signature and side effects are source-owned."
+      "role": "Closed server-only provider/funding boundary; pinned nonthinking template plus JSON-object response mode; strict structured output, usage ceilings and uncertainty holds."
     },
     {
       "id": "function:src/lib/sentinel/provider-budget.ts#readProviderPrice",
@@ -8505,37 +8539,49 @@
       "id": "function:src/lib/sentinel/interpretation.ts#executionId",
       "type": "[Function]",
       "name": "executionId",
-      "file": "src/lib/sentinel/interpretation.ts"
+      "file": "src/lib/sentinel/interpretation.ts",
+      "exported": true,
+      "signature": "executionId(runId:string,slot:string)"
     },
     {
       "id": "function:src/lib/sentinel/interpretation.ts#qualifiedPrompt",
       "type": "[Function]",
       "name": "qualifiedPrompt",
-      "file": "src/lib/sentinel/interpretation.ts"
+      "file": "src/lib/sentinel/interpretation.ts",
+      "exported": true,
+      "signature": "qualifiedPrompt(system:string,data:unknown,model=process.env.SENTINEL_NEMOTRON_EXTRACTION_MODEL)"
     },
     {
       "id": "function:src/lib/sentinel/interpretation.ts#extractionPrompt",
       "type": "[Function]",
       "name": "extractionPrompt",
-      "file": "src/lib/sentinel/interpretation.ts"
+      "file": "src/lib/sentinel/interpretation.ts",
+      "exported": true,
+      "signature": "extractionPrompt(version:DocumentVersion)"
     },
     {
       "id": "function:src/lib/sentinel/interpretation.ts#extractClaims",
       "type": "[Function]",
       "name": "extractClaims",
-      "file": "src/lib/sentinel/interpretation.ts"
+      "file": "src/lib/sentinel/interpretation.ts",
+      "exported": true,
+      "signature": "extractClaims(output:unknown,versionInput:DocumentVersion,assets:{id:string;name:string}[],runId:string,modelVersion:string)"
     },
     {
       "id": "function:src/lib/sentinel/interpretation.ts#comparisonPrompt",
       "type": "[Function]",
       "name": "comparisonPrompt",
-      "file": "src/lib/sentinel/interpretation.ts"
+      "file": "src/lib/sentinel/interpretation.ts",
+      "exported": true,
+      "signature": "comparisonPrompt(pairs:ComparisonPair[])"
     },
     {
       "id": "function:src/lib/sentinel/interpretation.ts#extractChanges",
       "type": "[Function]",
       "name": "extractChanges",
-      "file": "src/lib/sentinel/interpretation.ts"
+      "file": "src/lib/sentinel/interpretation.ts",
+      "exported": true,
+      "signature": "extractChanges(output:unknown,pairs:ComparisonPair[],runId:string,modelVersion:string)"
     },
     {
       "id": "file:src/lib/sentinel/interpretation.test.ts",
@@ -8720,6 +8766,502 @@
       "file": "src/app/api/auth/login/route.ts",
       "name": "loginRequestOrigin",
       "role": "Select browser Origin only after existing same-origin/cross-site guard accepts it; otherwise retain internal request origin. Fixes loopback alias CSP form redirects without relaxing CSP or allowing rejected origins."
+    },
+    {
+      "id": "file:supabase/migrations/20261013014825_sentinel_unreviewed_briefing_null.sql",
+      "type": "[File]",
+      "path": "supabase/migrations/20261013014825_sentinel_unreviewed_briefing_null.sql",
+      "role": "Forward repair of absent claim-review serialization before viewer briefing redaction; immutable prior artifacts remain unchanged."
+    },
+    {
+      "id": "file:.loop/repairs/SEN-QA-20261013-keyless/record.json",
+      "type": "[File]",
+      "path": ".loop/repairs/SEN-QA-20261013-keyless/record.json",
+      "role": "Durable original failure/repair history; current corrected-oracle tests pass, portable legacy closure remains pending; no authority."
+    },
+    {
+      "id": "file:.loop/repairs/SEN-QA-20261013-keyless/subject.json",
+      "type": "[File]",
+      "path": ".loop/repairs/SEN-QA-20261013-keyless/subject.json",
+      "role": "Local source/configuration scope only; excludes external deployment/domain acceptance."
+    },
+    {
+      "id": "file:.loop/repairs/SEN-QA-20261013-keyless/evidence-index.json",
+      "type": "[File]",
+      "path": ".loop/repairs/SEN-QA-20261013-keyless/evidence-index.json",
+      "role": "Mapping of frozen repair snapshots to current artifacts and explicit corrected-oracle evidence limits."
+    },
+    {
+      "id": "file:.loop/repairs/SEN-QA-provider-hosts-20261013/record.json",
+      "type": "[File]",
+      "path": ".loop/repairs/SEN-QA-provider-hosts-20261013/record.json",
+      "role": "Source-bound Tavily defect repair evidence only; no Nebius inference, persistent worker, deployment or release authority."
+    },
+    {
+      "id": "file:.loop/repairs/SEN-QA-provider-hosts-20261013/subject.json",
+      "type": "[File]",
+      "path": ".loop/repairs/SEN-QA-provider-hosts-20261013/subject.json",
+      "role": "Source-bound Tavily defect repair evidence only; no Nebius inference, persistent worker, deployment or release authority."
+    },
+    {
+      "id": "component:SentinelGettingStarted",
+      "type": "[Component]",
+      "file": "src/components/sentinel/sentinel-workspace.tsx",
+      "role": "Read-only ordered role-specific first-use and recovery guidance; uses incident/mode-scoped links and grants no authority."
+    },
+    {
+      "id": "file:tsconfig.json",
+      "type": "[File]",
+      "path": "tsconfig.json",
+      "role": "TypeScript/Next compiler input scope; keeps source/tests/generated Next types, excludes generated verification output and toy test projects. JSON excluded from structural AST graph; direct config proof required."
+    },
+    {
+      "id": "function:src/lib/county-scope.ts#prepareCountyScopeFactory",
+      "type": "[Function]",
+      "name": "prepareCountyScopeFactory",
+      "file": "src/lib/county-scope.ts",
+      "exported": true,
+      "role": "Validate and privately compile one complete county snapshot; create independent scope windows with original 5000ms deadline, 100000 uncached-query ceiling, 20000-slot cache and per-query geometry budgets."
+    },
+    {
+      "id": "file:scripts/sentinel-local-app.mjs",
+      "type": "[File]",
+      "path": "scripts/sentinel-local-app.mjs",
+      "role": "Portable native-loopback development launcher; provider keys excluded; no database setup."
+    },
+    {
+      "id": "file:scripts/sentinel-local-app.node-test.mjs",
+      "type": "[File]",
+      "path": "scripts/sentinel-local-app.node-test.mjs",
+      "role": "Negative target, credential and inherited-environment boundary tests."
+    },
+    {
+      "id": "file:scripts/sentinel-native-workspace.mjs",
+      "type": "[File]",
+      "path": "scripts/sentinel-native-workspace.mjs",
+      "role": "Exclusive file-only native workspace preparation; exact migration copies; no credentials or database execution."
+    },
+    {
+      "id": "file:scripts/sentinel-native-workspace.node-test.mjs",
+      "type": "[File]",
+      "path": "scripts/sentinel-native-workspace.node-test.mjs",
+      "role": "Migration integrity, inherited baseline, isolation and overwrite-refusal tests."
+    },
+    {
+      "id": "file:scripts/sentinel-native-claims.sql",
+      "type": "[File]",
+      "path": "scripts/sentinel-native-claims.sql",
+      "role": "Local native compatibility hook; verified-role equality, invoker rights and empty search path. Not a hosted migration."
+    },
+    {
+      "id": "file:scripts/sentinel-native-start.py",
+      "type": "[File]",
+      "path": "scripts/sentinel-native-start.py",
+      "role": "Fresh-only Linux native stack startup; identity, ports, migration hashes, CLI version and isolated environment guards; private logs."
+    },
+    {
+      "id": "file:scripts/sentinel-native-start_test.py",
+      "type": "[File]",
+      "path": "scripts/sentinel-native-start_test.py",
+      "role": "Mocked startup boundary tests: existing home, tampered inventory, wrong CLI version and failed-start no-retry/credential isolation."
+    },
+    {
+      "id": "file:public/vendor/vis-network.LICENSE.txt",
+      "type": "[File]",
+      "path": "public/vendor/vis-network.LICENSE.txt",
+      "role": "Upstream MIT permission notice for vendored vis-network9.1.6; no project license grant."
+    },
+    {
+      "id": "file:scripts/sentinel-local-accounts.mjs",
+      "type": "[File]",
+      "path": "scripts/sentinel-local-accounts.mjs",
+      "role": "Portable explicit judge-only account setup using governed issuance and local-scope sign-out; private checkpoints."
+    },
+    {
+      "id": "file:scripts/sentinel-local-accounts.node-test.mjs",
+      "type": "[File]",
+      "path": "scripts/sentinel-local-accounts.node-test.mjs",
+      "role": "Prepared identity, protected target and CLI argument guard tests."
+    },
+    {
+      "id": "file:scripts/sentinel-local-sql.py",
+      "type": "[File]",
+      "path": "scripts/sentinel-local-sql.py",
+      "role": "Explicit native judge database stdin SQL helper; owns psql binary and exact loopback destination."
+    },
+    {
+      "id": "file:scripts/sentinel-local-sql_test.py",
+      "type": "[File]",
+      "path": "scripts/sentinel-local-sql_test.py",
+      "role": "Negative database target and native-home tests."
+    },
+    {
+      "id": "file:scripts/sentinel-local-fixtures.mjs",
+      "type": "[File]",
+      "path": "scripts/sentinel-local-fixtures.mjs",
+      "role": "Portable new-batch-only synthetic notice/assets/native-binding seeding using guarded judge workspace; no provider calls."
+    },
+    {
+      "id": "file:scripts/sentinel-local-fixtures.node-test.mjs",
+      "type": "[File]",
+      "path": "scripts/sentinel-local-fixtures.node-test.mjs",
+      "role": "Batch overwrite/traversal refusal tests preserving partial and completed results."
+    },
+    {
+      "id": "function:scripts/sentinel-local-app.mjs#localEnvironment",
+      "type": "[Function]",
+      "exported": true,
+      "signature": "localEnvironment(status, apiUrl, port, inherited = process.env)",
+      "sideEffects": "None; validates and constructs sanitized environment",
+      "file": "scripts/sentinel-local-app.mjs"
+    },
+    {
+      "id": "function:scripts/sentinel-local-app.mjs#parseOptions",
+      "type": "[Function]",
+      "exported": true,
+      "signature": "parseOptions(args)",
+      "sideEffects": "None",
+      "file": "scripts/sentinel-local-app.mjs"
+    },
+    {
+      "id": "function:scripts/sentinel-local-app.mjs#main",
+      "type": "[Function]",
+      "exported": false,
+      "signature": "main()",
+      "sideEffects": "Reads private local status; starts/stops owned development process; creates source snapshot",
+      "file": "scripts/sentinel-local-app.mjs"
+    },
+    {
+      "id": "function:scripts/sentinel-native-workspace.mjs#digest",
+      "type": "[Function]",
+      "exported": false,
+      "signature": "digest(bytes)",
+      "sideEffects": "None",
+      "file": "scripts/sentinel-native-workspace.mjs"
+    },
+    {
+      "id": "function:scripts/sentinel-native-workspace.mjs#prepareWorkspace",
+      "type": "[Function]",
+      "exported": true,
+      "signature": "prepareWorkspace(repo, name)",
+      "sideEffects": "Creates exclusive workspace and copies migration/config files; no database or network",
+      "file": "scripts/sentinel-native-workspace.mjs"
+    },
+    {
+      "id": "function:scripts/sentinel-local-accounts.mjs#validateAccountTarget",
+      "type": "[Function]",
+      "exported": true,
+      "signature": "validateAccountTarget(status, manifest, workspace, home)",
+      "sideEffects": "None",
+      "file": "scripts/sentinel-local-accounts.mjs"
+    },
+    {
+      "id": "function:scripts/sentinel-local-accounts.mjs#parseAccountOptions",
+      "type": "[Function]",
+      "exported": true,
+      "signature": "parseAccountOptions(args)",
+      "sideEffects": "None",
+      "file": "scripts/sentinel-local-accounts.mjs"
+    },
+    {
+      "id": "function:scripts/sentinel-local-accounts.mjs#openLocalWorkspace",
+      "type": "[Function]",
+      "exported": true,
+      "signature": "openLocalWorkspace(options)",
+      "sideEffects": "Reads local files; invokes WSL/path conversion and read-only local SQL checks",
+      "file": "scripts/sentinel-local-accounts.mjs"
+    },
+    {
+      "id": "function:scripts/sentinel-local-accounts.mjs#main",
+      "type": "[Function]",
+      "exported": false,
+      "signature": "main()",
+      "sideEffects": "Creates synthetic Auth accounts and issuer membership in admitted local database; writes private checkpoints; local sign-out",
+      "file": "scripts/sentinel-local-accounts.mjs"
+    },
+    {
+      "id": "function:scripts/sentinel-local-fixtures.mjs#createBatch",
+      "type": "[Function]",
+      "exported": true,
+      "signature": "createBatch(workspace, batch)",
+      "sideEffects": "Creates exclusive synthetic batch directory and preparation marker",
+      "file": "scripts/sentinel-local-fixtures.mjs"
+    },
+    {
+      "id": "function:scripts/sentinel-local-fixtures.mjs#main",
+      "type": "[Function]",
+      "exported": false,
+      "signature": "main()",
+      "sideEffects": "Bundles local helper code; inserts synthetic records and signing authority into admitted local database; writes batch receipts",
+      "file": "scripts/sentinel-local-fixtures.mjs"
+    },
+    {
+      "id": "function:scripts/sentinel-native-start.py#main",
+      "type": "[Function]",
+      "exported": false,
+      "signature": "main()",
+      "sideEffects": "Checks fresh local workspace and ports; creates native home; starts native CLI and writes private logs/status",
+      "file": "scripts/sentinel-native-start.py"
+    },
+    {
+      "id": "function:scripts/sentinel-local-sql.py#target",
+      "type": "[Function]",
+      "exported": false,
+      "signature": "target(status, home)",
+      "sideEffects": "None; rejects non-judge or non-loopback destinations",
+      "file": "scripts/sentinel-local-sql.py"
+    },
+    {
+      "id": "function:scripts/sentinel-local-sql.py#main",
+      "type": "[Function]",
+      "exported": false,
+      "signature": "main()",
+      "sideEffects": "Reads private status; executes supplied SQL using owned local psql process",
+      "file": "scripts/sentinel-local-sql.py"
+    },
+    {
+      "id": "function:scripts/sentinel-native-claims.sql#sentinel_local_runtime.bridge_verified_claim_role",
+      "type": "[Function]",
+      "exported": false,
+      "signature": "bridge_verified_claim_role()",
+      "sideEffects": "Sets transaction-local legacy claim role only after equality with current_user; no privilege elevation",
+      "file": "scripts/sentinel-native-claims.sql"
+    },
+    {
+      "id": "function:scripts/refresh-code-graph.py#connect_inventory",
+      "type": "[Function]",
+      "exported": false,
+      "signature": "connect_inventory(graph, files, external_modules=())",
+      "sideEffects": "Mutates in-memory graph; rejects unknown source paths and classifies lockfile dependencies as external",
+      "file": "scripts/refresh-code-graph.py"
+    },
+    {
+      "id": "function:scripts/refresh-code-graph.py#stamp_report",
+      "type": "[Function]",
+      "exported": false,
+      "signature": "stamp_report(report, package_name, generated_at)",
+      "sideEffects": "None; returns report with verified package identity and receipt date",
+      "file": "scripts/refresh-code-graph.py"
+    },
+    {
+      "id": "file:scripts/sentinel-native-artifacts.json",
+      "type": "[File]",
+      "path": "scripts/sentinel-native-artifacts.json",
+      "role": "Pinned official native runtime archive URLs, byte lengths and SHA256 hashes; no secrets."
+    },
+    {
+      "id": "file:scripts/sentinel-native-artifacts.mjs",
+      "type": "[File]",
+      "path": "scripts/sentinel-native-artifacts.mjs",
+      "role": "Exclusive-output HTTPS downloader and compressed/uncompressed hash verifier using built-in Zstandard."
+    },
+    {
+      "id": "file:scripts/sentinel_native_artifacts.py",
+      "type": "[File]",
+      "path": "scripts/sentinel_native_artifacts.py",
+      "role": "Tar checksum/member preflight and fresh-cache-only extraction for isolated native startup."
+    },
+    {
+      "id": "file:scripts/sentinel_native_artifacts_test.py",
+      "type": "[File]",
+      "path": "scripts/sentinel_native_artifacts_test.py",
+      "role": "Integrity, unsafe paths/links and existing-cache refusal tests."
+    },
+    {
+      "id": "function:scripts/sentinel-native-artifacts.mjs#verifyArtifact",
+      "type": "[Function]",
+      "exported": true,
+      "signature": "verifyArtifact",
+      "sideEffects": "Read/download local artifacts or extract only into isolated fresh cache; no provider calls.",
+      "file": "scripts/sentinel-native-artifacts.mjs"
+    },
+    {
+      "id": "function:scripts/sentinel-native-artifacts.mjs#main",
+      "type": "[Function]",
+      "exported": false,
+      "signature": "main",
+      "sideEffects": "Read/download local artifacts or extract only into isolated fresh cache; no provider calls.",
+      "file": "scripts/sentinel-native-artifacts.mjs"
+    },
+    {
+      "id": "function:scripts/sentinel_native_artifacts.py#verify_archives",
+      "type": "[Function]",
+      "exported": true,
+      "signature": "verify_archives",
+      "sideEffects": "Read/download local artifacts or extract only into isolated fresh cache; no provider calls.",
+      "file": "scripts/sentinel_native_artifacts.py"
+    },
+    {
+      "id": "function:scripts/sentinel_native_artifacts.py#install_archives",
+      "type": "[Function]",
+      "exported": true,
+      "signature": "install_archives",
+      "sideEffects": "Read/download local artifacts or extract only into isolated fresh cache; no provider calls.",
+      "file": "scripts/sentinel_native_artifacts.py"
+    },
+    {
+      "id": "file:LICENSE",
+      "type": "[File]",
+      "path": "LICENSE",
+      "role": "Owner-authorized MIT license for Sentinel; third-party licenses retained."
+    },
+    {
+      "id": "file:src/lib/sentinel/prompt-tokens.ts",
+      "type": "[File]",
+      "path": "src/lib/sentinel/prompt-tokens.ts",
+      "role": "Server-only pinned Nemotron local token reservation; no inference, funding or model escalation authority."
+    },
+    {
+      "id": "file:src/lib/sentinel/prompt-tokens.test.ts",
+      "type": "[File]",
+      "path": "src/lib/sentinel/prompt-tokens.test.ts",
+      "role": "Offline model tokenizer parity, malformed/tampered input and conservative fallback regressions."
+    },
+    {
+      "id": "file:src/lib/sentinel/tokenizer-data/chat_template.jinja",
+      "type": "[File]",
+      "path": "src/lib/sentinel/tokenizer-data/chat_template.jinja",
+      "role": "Pinned NVIDIA tokenizer/reference/license provenance; data only, no executable remote model code."
+    },
+    {
+      "id": "file:src/lib/sentinel/tokenizer-data/MODEL_CARD.md",
+      "type": "[File]",
+      "path": "src/lib/sentinel/tokenizer-data/MODEL_CARD.md",
+      "role": "Pinned NVIDIA tokenizer/reference/license provenance; data only, no executable remote model code."
+    },
+    {
+      "id": "file:src/lib/sentinel/tokenizer-data/NOTICE.md",
+      "type": "[File]",
+      "path": "src/lib/sentinel/tokenizer-data/NOTICE.md",
+      "role": "Pinned NVIDIA tokenizer/reference/license provenance; data only, no executable remote model code."
+    },
+    {
+      "id": "file:src/lib/sentinel/tokenizer-data/provenance.json",
+      "type": "[File]",
+      "path": "src/lib/sentinel/tokenizer-data/provenance.json",
+      "role": "Pinned NVIDIA tokenizer/reference/license provenance; data only, no executable remote model code."
+    },
+    {
+      "id": "file:src/lib/sentinel/tokenizer-data/reference-vectors.json",
+      "type": "[File]",
+      "path": "src/lib/sentinel/tokenizer-data/reference-vectors.json",
+      "role": "Pinned NVIDIA tokenizer/reference/license provenance; data only, no executable remote model code."
+    },
+    {
+      "id": "file:src/lib/sentinel/tokenizer-data/retained-notice.json",
+      "type": "[File]",
+      "path": "src/lib/sentinel/tokenizer-data/retained-notice.json",
+      "role": "Pinned NVIDIA tokenizer/reference/license provenance; data only, no executable remote model code."
+    },
+    {
+      "id": "file:src/lib/sentinel/tokenizer-data/tokenizer.json",
+      "type": "[File]",
+      "path": "src/lib/sentinel/tokenizer-data/tokenizer.json",
+      "role": "Pinned NVIDIA tokenizer/reference/license provenance; data only, no executable remote model code."
+    },
+    {
+      "id": "file:src/lib/sentinel/tokenizer-data/tokenizer_config.json",
+      "type": "[File]",
+      "path": "src/lib/sentinel/tokenizer-data/tokenizer_config.json",
+      "role": "Pinned NVIDIA tokenizer/reference/license provenance; data only, no executable remote model code."
+    },
+    {
+      "id": "function:src/lib/sentinel/prompt-tokens.ts#renderNemotronPrompt",
+      "type": "[Function]",
+      "name": "renderNemotronPrompt",
+      "file": "src/lib/sentinel/prompt-tokens.ts",
+      "exported": true
+    },
+    {
+      "id": "function:src/lib/sentinel/prompt-tokens.ts#reservedPromptInputTokens",
+      "type": "[Function]",
+      "name": "reservedPromptInputTokens",
+      "file": "src/lib/sentinel/prompt-tokens.ts",
+      "exported": true
+    },
+    {
+      "id": "file:src/lib/sentinel/tokenizer-data/LICENSE.pdf",
+      "type": "[File]",
+      "path": "src/lib/sentinel/tokenizer-data/LICENSE.pdf",
+      "role": "Pinned NVIDIA tokenizer/reference/license provenance; data only, no executable remote model code."
+    },
+    {
+      "id": "function:src/lib/sentinel/prompt-tokens.ts#pinnedTokenizer",
+      "type": "[Function]",
+      "name": "pinnedTokenizer",
+      "file": "src/lib/sentinel/prompt-tokens.ts",
+      "exported": false
+    },
+    {
+      "id": "file:src/lib/sentinel/tokenizer-data/reference-vectors-no-thinking.json",
+      "type": "[File]",
+      "path": "src/lib/sentinel/tokenizer-data/reference-vectors-no-thinking.json",
+      "role": "Eleven independent Rust/Jinja vectors for the pinned NVIDIA enable_thinking=false generation branch; original thinking vectors retained."
+    },
+    {
+      "id": "function:src/lib/sentinel/interpretation.ts#citationPassages",
+      "type": "[Function]",
+      "name": "citationPassages",
+      "file": "src/lib/sentinel/interpretation.ts",
+      "exported": true,
+      "signature": "citationPassages(document:string)"
+    },
+    {
+      "id": "file:supabase/migrations/20261028010000_sentinel_worker_clock.sql",
+      "type": "[File]",
+      "path": "supabase/migrations/20261028010000_sentinel_worker_clock.sql",
+      "role": "Additive read-only service-role worker-clock RPC; current scope/lease checked; strict publication clock bounds unchanged."
+    },
+    {
+      "id": "function:supabase/migrations/20261028010000_sentinel_worker_clock.sql#sentinel_read_worker_clock",
+      "type": "[Function]",
+      "name": "sentinel_read_worker_clock",
+      "file": "supabase/migrations/20261028010000_sentinel_worker_clock.sql",
+      "signature": "sentinel_read_worker_clock(uuid,uuid,text,uuid,uuid,bigint) returns text"
+    },
+    {
+      "id": "function:src/lib/sentinel/execution-store.ts#readWorkerClock",
+      "type": "[Function]",
+      "name": "readWorkerClock",
+      "file": "src/lib/sentinel/execution-store.ts",
+      "exported": true,
+      "signature": "readWorkerClock(worker:Worker)"
+    },
+    {
+      "id": "file:src/instrumentation.ts",
+      "type": "[File]",
+      "file": "src/instrumentation.ts",
+      "role": "Explicit local SDK startup recovery and current acceptance verification"
+    },
+    {
+      "id": "file:src/instrumentation.test.ts",
+      "type": "[File]",
+      "file": "src/instrumentation.test.ts",
+      "role": "Explicit local SDK startup recovery and current acceptance verification"
+    },
+    {
+      "id": "function:src/instrumentation.ts#register",
+      "type": "[Function]",
+      "file": "src/instrumentation.ts",
+      "name": "register",
+      "exported": true,
+      "signature": "register()",
+      "role": "Next Node development startup; explicitly enabled local world recovery only; no new run admission or hosted change"
+    },
+    {
+      "id": "function:src/workflows/sentinel.ts#step",
+      "type": "[Function]",
+      "file": "src/workflows/sentinel.ts",
+      "name": "step",
+      "exported": false,
+      "signature": "step(runId:string)",
+      "role": "Opaque native run UUID only; one bounded SDK infrastructure retry; native worker retains provider attempt fences"
+    },
+    {
+      "id": "file:.gitattributes",
+      "type": "[File]",
+      "path": ".gitattributes",
+      "role": "Preserves exact pinned NVIDIA tokenizer/provenance asset bytes on Git checkout; no application, model, provider or budget behavior change."
     }
   ],
   "apiContracts": [
@@ -13125,6 +13667,12 @@
           "exported": true,
           "signature": "SentinelWorkspace",
           "sideEffects": "Scoped browser reads/commands or session recovery as defined in source."
+        },
+        {
+          "id": "component:SentinelGettingStarted",
+          "exported": true,
+          "signature": "SentinelGettingStarted({scope,role})",
+          "sideEffects": "None; scoped Next links only, no fetch, command, storage or provider request."
         }
       ]
     },
@@ -13225,6 +13773,313 @@
           "exported": false,
           "signature": "loginRequestOrigin(request: Request): string",
           "sideEffects": "None; reads request headers and validates origin using existing guard"
+        }
+      ]
+    },
+    {
+      "file": "src/lib/county-scope.ts",
+      "functions": [
+        {
+          "id": "function:src/lib/county-scope.ts#prepareCountyScopeFactory",
+          "type": "[Function]",
+          "exported": true,
+          "signature": "prepareCountyScopeFactory(incident)",
+          "sideEffects": "None; private immutable county compilation with independent original per-window limits"
+        }
+      ]
+    },
+    {
+      "file": "scripts/sentinel-local-app.mjs",
+      "functions": [
+        {
+          "id": "function:scripts/sentinel-local-app.mjs#localEnvironment",
+          "type": "[Function]",
+          "exported": true,
+          "signature": "localEnvironment(status, apiUrl, port, inherited = process.env)",
+          "sideEffects": "None; validates and constructs sanitized environment"
+        },
+        {
+          "id": "function:scripts/sentinel-local-app.mjs#parseOptions",
+          "type": "[Function]",
+          "exported": true,
+          "signature": "parseOptions(args)",
+          "sideEffects": "None"
+        },
+        {
+          "id": "function:scripts/sentinel-local-app.mjs#main",
+          "type": "[Function]",
+          "exported": false,
+          "signature": "main()",
+          "sideEffects": "Reads private local status; starts/stops owned development process; creates source snapshot"
+        }
+      ]
+    },
+    {
+      "file": "scripts/sentinel-native-workspace.mjs",
+      "functions": [
+        {
+          "id": "function:scripts/sentinel-native-workspace.mjs#digest",
+          "type": "[Function]",
+          "exported": false,
+          "signature": "digest(bytes)",
+          "sideEffects": "None"
+        },
+        {
+          "id": "function:scripts/sentinel-native-workspace.mjs#prepareWorkspace",
+          "type": "[Function]",
+          "exported": true,
+          "signature": "prepareWorkspace(repo, name)",
+          "sideEffects": "Creates exclusive workspace and copies migration/config files; no database or network"
+        }
+      ]
+    },
+    {
+      "file": "scripts/sentinel-local-accounts.mjs",
+      "functions": [
+        {
+          "id": "function:scripts/sentinel-local-accounts.mjs#validateAccountTarget",
+          "type": "[Function]",
+          "exported": true,
+          "signature": "validateAccountTarget(status, manifest, workspace, home)",
+          "sideEffects": "None"
+        },
+        {
+          "id": "function:scripts/sentinel-local-accounts.mjs#parseAccountOptions",
+          "type": "[Function]",
+          "exported": true,
+          "signature": "parseAccountOptions(args)",
+          "sideEffects": "None"
+        },
+        {
+          "id": "function:scripts/sentinel-local-accounts.mjs#openLocalWorkspace",
+          "type": "[Function]",
+          "exported": true,
+          "signature": "openLocalWorkspace(options)",
+          "sideEffects": "Reads local files; invokes WSL/path conversion and read-only local SQL checks"
+        },
+        {
+          "id": "function:scripts/sentinel-local-accounts.mjs#main",
+          "type": "[Function]",
+          "exported": false,
+          "signature": "main()",
+          "sideEffects": "Creates synthetic Auth accounts and issuer membership in admitted local database; writes private checkpoints; local sign-out"
+        }
+      ]
+    },
+    {
+      "file": "scripts/sentinel-local-fixtures.mjs",
+      "functions": [
+        {
+          "id": "function:scripts/sentinel-local-fixtures.mjs#createBatch",
+          "type": "[Function]",
+          "exported": true,
+          "signature": "createBatch(workspace, batch)",
+          "sideEffects": "Creates exclusive synthetic batch directory and preparation marker"
+        },
+        {
+          "id": "function:scripts/sentinel-local-fixtures.mjs#main",
+          "type": "[Function]",
+          "exported": false,
+          "signature": "main()",
+          "sideEffects": "Bundles local helper code; inserts synthetic records and signing authority into admitted local database; writes batch receipts"
+        }
+      ]
+    },
+    {
+      "file": "scripts/sentinel-native-start.py",
+      "functions": [
+        {
+          "id": "function:scripts/sentinel-native-start.py#main",
+          "type": "[Function]",
+          "exported": false,
+          "signature": "main()",
+          "sideEffects": "Checks fresh local workspace and ports; creates native home; starts native CLI and writes private logs/status"
+        }
+      ]
+    },
+    {
+      "file": "scripts/sentinel-local-sql.py",
+      "functions": [
+        {
+          "id": "function:scripts/sentinel-local-sql.py#target",
+          "type": "[Function]",
+          "exported": false,
+          "signature": "target(status, home)",
+          "sideEffects": "None; rejects non-judge or non-loopback destinations"
+        },
+        {
+          "id": "function:scripts/sentinel-local-sql.py#main",
+          "type": "[Function]",
+          "exported": false,
+          "signature": "main()",
+          "sideEffects": "Reads private status; executes supplied SQL using owned local psql process"
+        }
+      ]
+    },
+    {
+      "file": "scripts/sentinel-native-claims.sql",
+      "functions": [
+        {
+          "id": "function:scripts/sentinel-native-claims.sql#sentinel_local_runtime.bridge_verified_claim_role",
+          "type": "[Function]",
+          "exported": false,
+          "signature": "bridge_verified_claim_role()",
+          "sideEffects": "Sets transaction-local legacy claim role only after equality with current_user; no privilege elevation"
+        }
+      ]
+    },
+    {
+      "file": "scripts/refresh-code-graph.py",
+      "functions": [
+        {
+          "id": "function:scripts/refresh-code-graph.py#connect_inventory",
+          "type": "[Function]",
+          "exported": false,
+          "signature": "connect_inventory(graph, files, external_modules=())",
+          "sideEffects": "Mutates in-memory graph; rejects unknown source paths and classifies lockfile dependencies as external"
+        },
+        {
+          "id": "function:scripts/refresh-code-graph.py#stamp_report",
+          "type": "[Function]",
+          "exported": false,
+          "signature": "stamp_report(report, package_name, generated_at)",
+          "sideEffects": "None; returns report with verified package identity and receipt date"
+        }
+      ]
+    },
+    {
+      "file": "scripts/sentinel-native-artifacts.mjs",
+      "functions": [
+        {
+          "id": "function:scripts/sentinel-native-artifacts.mjs#verifyArtifact",
+          "type": "[Function]",
+          "exported": true,
+          "signature": "verifyArtifact",
+          "sideEffects": "Read/download local artifacts or extract only into isolated fresh cache; no provider calls."
+        },
+        {
+          "id": "function:scripts/sentinel-native-artifacts.mjs#main",
+          "type": "[Function]",
+          "exported": false,
+          "signature": "main",
+          "sideEffects": "Read/download local artifacts or extract only into isolated fresh cache; no provider calls."
+        }
+      ]
+    },
+    {
+      "file": "scripts/sentinel_native_artifacts.py",
+      "functions": [
+        {
+          "id": "function:scripts/sentinel_native_artifacts.py#verify_archives",
+          "type": "[Function]",
+          "exported": true,
+          "signature": "verify_archives",
+          "sideEffects": "Read/download local artifacts or extract only into isolated fresh cache; no provider calls."
+        },
+        {
+          "id": "function:scripts/sentinel_native_artifacts.py#install_archives",
+          "type": "[Function]",
+          "exported": true,
+          "signature": "install_archives",
+          "sideEffects": "Read/download local artifacts or extract only into isolated fresh cache; no provider calls."
+        }
+      ]
+    },
+    {
+      "file": "src/lib/sentinel/prompt-tokens.ts",
+      "functions": [
+        {
+          "id": "function:src/lib/sentinel/prompt-tokens.ts#pinnedTokenizer",
+          "type": "[Function]",
+          "exported": false,
+          "signature": "pinnedTokenizer()",
+          "sideEffects": "Reads/caches three local hash-pinned NVIDIA tokenizer files; no network"
+        },
+        {
+          "id": "function:src/lib/sentinel/prompt-tokens.ts#renderNemotronPrompt",
+          "type": "[Function]",
+          "exported": true,
+          "signature": "renderNemotronPrompt(messages)",
+          "sideEffects": "None"
+        },
+        {
+          "id": "function:src/lib/sentinel/prompt-tokens.ts#reservedPromptInputTokens",
+          "type": "[Function]",
+          "exported": true,
+          "signature": "reservedPromptInputTokens(messages, model)",
+          "sideEffects": "Reads/caches three local hash-pinned NVIDIA tokenizer files; no network"
+        }
+      ]
+    },
+    {
+      "file": "src/lib/sentinel/interpretation.ts",
+      "functions": [
+        {
+          "id": "function:src/lib/sentinel/interpretation.ts#executionId",
+          "type": "[Function]",
+          "exported": true,
+          "signature": "executionId(runId:string,slot:string)"
+        },
+        {
+          "id": "function:src/lib/sentinel/interpretation.ts#qualifiedPrompt",
+          "type": "[Function]",
+          "exported": true,
+          "signature": "qualifiedPrompt(system:string,data:unknown,model=process.env.SENTINEL_NEMOTRON_EXTRACTION_MODEL)"
+        },
+        {
+          "id": "function:src/lib/sentinel/interpretation.ts#citationPassages",
+          "type": "[Function]",
+          "exported": true,
+          "signature": "citationPassages(document:string)"
+        },
+        {
+          "id": "function:src/lib/sentinel/interpretation.ts#extractionPrompt",
+          "type": "[Function]",
+          "exported": true,
+          "signature": "extractionPrompt(version:DocumentVersion)"
+        },
+        {
+          "id": "function:src/lib/sentinel/interpretation.ts#extractClaims",
+          "type": "[Function]",
+          "exported": true,
+          "signature": "extractClaims(output:unknown,versionInput:DocumentVersion,assets:{id:string;name:string}[],runId:string,modelVersion:string)"
+        },
+        {
+          "id": "function:src/lib/sentinel/interpretation.ts#comparisonPrompt",
+          "type": "[Function]",
+          "exported": true,
+          "signature": "comparisonPrompt(pairs:ComparisonPair[])"
+        },
+        {
+          "id": "function:src/lib/sentinel/interpretation.ts#extractChanges",
+          "type": "[Function]",
+          "exported": true,
+          "signature": "extractChanges(output:unknown,pairs:ComparisonPair[],runId:string,modelVersion:string)"
+        }
+      ]
+    },
+    {
+      "file": "src/lib/sentinel/execution-store.ts",
+      "functions": [
+        {
+          "id": "function:src/lib/sentinel/execution-store.ts#readWorkerClock",
+          "type": "[Function]",
+          "name": "readWorkerClock",
+          "file": "src/lib/sentinel/execution-store.ts",
+          "exported": true,
+          "signature": "readWorkerClock(worker:Worker)"
+        }
+      ]
+    },
+    {
+      "file": "src/instrumentation.ts",
+      "functions": [
+        {
+          "id": "function:src/instrumentation.ts#register",
+          "type": "[Function]",
+          "exported": true,
+          "signature": "register()",
+          "sideEffects": "Starts configured local SDK recovery only under five explicit runtime/profile checks."
         }
       ]
     }
@@ -22187,7 +23042,7 @@
     },
     {
       "from": "file:src/lib/judge-presentation.test.ts",
-      "to": "file:scripts/build-judge-deck.cjs",
+      "to": "file:scripts/submission-storyboard.mjs",
       "type": "[validates]"
     },
     {
@@ -27449,6 +28304,2176 @@
       "from": "function:src/app/api/auth/login/route.ts#loginRequestOrigin",
       "to": "file:src/lib/request-origin.ts",
       "type": "[calls]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:supabase/migrations/20261013014825_sentinel_unreviewed_briefing_null.sql",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:supabase/migrations/20261013014825_sentinel_unreviewed_briefing_null.sql",
+      "to": "function:public.sentinel_create_briefing",
+      "type": "[defines]"
+    },
+    {
+      "from": "file:src/test/sentinel-evidence-sql-fixture.ts",
+      "to": "file:supabase/migrations/20261013014825_sentinel_unreviewed_briefing_null.sql",
+      "type": "[loads]"
+    },
+    {
+      "from": "file:src/lib/sentinel/decisions-sql.test.ts",
+      "to": "file:supabase/migrations/20261013014825_sentinel_unreviewed_briefing_null.sql",
+      "type": "[tests]"
+    },
+    {
+      "from": "file:src/components/sentinel/sentinel-constraints.tsx",
+      "to": "file:src/lib/asset-inventory-client.ts",
+      "type": "[imports]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:.loop/repairs/SEN-QA-20261013-keyless/record.json",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:.loop/repairs/SEN-QA-20261013-keyless/subject.json",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:.loop/repairs/SEN-QA-20261013-keyless/evidence-index.json",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:.loop/repairs/SEN-QA-provider-hosts-20261013/record.json",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:.loop/repairs/SEN-QA-provider-hosts-20261013/subject.json",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:src/components/sentinel/sentinel-workspace.tsx",
+      "to": "component:SentinelGettingStarted",
+      "type": "[defines]"
+    },
+    {
+      "from": "component:SentinelWorkspace",
+      "to": "component:SentinelGettingStarted",
+      "type": "[renders]"
+    },
+    {
+      "from": "file:src/components/sentinel/sentinel-run-controls.test.tsx",
+      "to": "component:SentinelGettingStarted",
+      "type": "[tests]"
+    },
+    {
+      "from": "file:docs/DOMAIN_DISCOVERY.md",
+      "to": "file:docs/UX_SPEC.md",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:docs/UX_SPEC.md",
+      "to": "file:docs/EVALUATION_AND_TEST_PLAN.md",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:docs/PRODUCT_STRATEGY.md",
+      "to": "file:docs/DECISIONS_AND_BUILD_GATE.md",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:docs/OPERATIONS_AND_COST_PLAN.md",
+      "to": "file:docs/UX_SPEC.md",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:tsconfig.json",
+      "to": "file:next.config.ts",
+      "type": "[configures]"
+    },
+    {
+      "from": "file:src/lib/county-scope.ts",
+      "to": "function:src/lib/county-scope.ts#prepareCountyScopeFactory",
+      "type": "[defines]"
+    },
+    {
+      "from": "function:src/lib/county-scope.ts#prepareCountyScope",
+      "to": "function:src/lib/county-scope.ts#prepareCountyScopeFactory",
+      "type": "[calls]"
+    },
+    {
+      "from": "file:src/lib/fireafter-supabase.ts",
+      "to": "function:src/lib/county-scope.ts#prepareCountyScopeFactory",
+      "type": "[calls]"
+    },
+    {
+      "from": "file:src/lib/county-scope.test.ts",
+      "to": "function:src/lib/county-scope.ts#prepareCountyScopeFactory",
+      "type": "[tests]"
+    },
+    {
+      "from": "file:scripts/sentinel-local-app.mjs",
+      "to": "file:scripts/local-release.mjs",
+      "type": "[imports]"
+    },
+    {
+      "from": "file:scripts/sentinel-local-app.mjs",
+      "to": "file:src/lib/sentinel/target-policy.mjs",
+      "type": "[imports]"
+    },
+    {
+      "from": "file:scripts/sentinel-local-app.node-test.mjs",
+      "to": "file:scripts/sentinel-local-app.mjs",
+      "type": "[imports]"
+    },
+    {
+      "from": "file:scripts/sentinel-native-workspace.node-test.mjs",
+      "to": "file:scripts/sentinel-native-workspace.mjs",
+      "type": "[imports]"
+    },
+    {
+      "from": "file:scripts/sentinel-native-workspace.mjs",
+      "to": "file:scripts/sentinel-native-claims.sql",
+      "type": "[reads]"
+    },
+    {
+      "from": "file:scripts/sentinel-native-start_test.py",
+      "to": "file:scripts/sentinel-native-start.py",
+      "type": "[tests]"
+    },
+    {
+      "from": "file:scripts/sentinel-local-accounts.mjs",
+      "to": "file:scripts/operator-account.mjs",
+      "type": "[imports]"
+    },
+    {
+      "from": "file:scripts/sentinel-local-accounts.mjs",
+      "to": "file:scripts/sentinel-local-app.mjs",
+      "type": "[imports]"
+    },
+    {
+      "from": "file:scripts/sentinel-local-accounts.mjs",
+      "to": "file:scripts/sentinel-local-sql.py",
+      "type": "[calls]"
+    },
+    {
+      "from": "file:scripts/sentinel-local-accounts.node-test.mjs",
+      "to": "file:scripts/sentinel-local-accounts.mjs",
+      "type": "[tests]"
+    },
+    {
+      "from": "file:scripts/sentinel-local-sql_test.py",
+      "to": "file:scripts/sentinel-local-sql.py",
+      "type": "[tests]"
+    },
+    {
+      "from": "file:scripts/sentinel-local-fixtures.mjs",
+      "to": "file:scripts/sentinel-local-accounts.mjs",
+      "type": "[imports]"
+    },
+    {
+      "from": "file:scripts/sentinel-local-fixtures.mjs",
+      "to": "file:src/lib/sentinel/evidence.ts",
+      "type": "[imports]"
+    },
+    {
+      "from": "file:scripts/sentinel-local-fixtures.mjs",
+      "to": "file:src/lib/sentinel/native-provenance.ts",
+      "type": "[imports]"
+    },
+    {
+      "from": "file:scripts/sentinel-local-fixtures.node-test.mjs",
+      "to": "file:scripts/sentinel-local-fixtures.mjs",
+      "type": "[tests]"
+    },
+    {
+      "from": "file:scripts/sentinel-local-app.mjs",
+      "to": "function:scripts/sentinel-local-app.mjs#localEnvironment",
+      "type": "[declares]"
+    },
+    {
+      "from": "file:scripts/sentinel-local-app.mjs",
+      "to": "function:scripts/sentinel-local-app.mjs#parseOptions",
+      "type": "[declares]"
+    },
+    {
+      "from": "file:scripts/sentinel-local-app.mjs",
+      "to": "function:scripts/sentinel-local-app.mjs#main",
+      "type": "[declares]"
+    },
+    {
+      "from": "file:scripts/sentinel-native-workspace.mjs",
+      "to": "function:scripts/sentinel-native-workspace.mjs#digest",
+      "type": "[declares]"
+    },
+    {
+      "from": "file:scripts/sentinel-native-workspace.mjs",
+      "to": "function:scripts/sentinel-native-workspace.mjs#prepareWorkspace",
+      "type": "[declares]"
+    },
+    {
+      "from": "file:scripts/sentinel-local-accounts.mjs",
+      "to": "function:scripts/sentinel-local-accounts.mjs#validateAccountTarget",
+      "type": "[declares]"
+    },
+    {
+      "from": "file:scripts/sentinel-local-accounts.mjs",
+      "to": "function:scripts/sentinel-local-accounts.mjs#parseAccountOptions",
+      "type": "[declares]"
+    },
+    {
+      "from": "file:scripts/sentinel-local-accounts.mjs",
+      "to": "function:scripts/sentinel-local-accounts.mjs#openLocalWorkspace",
+      "type": "[declares]"
+    },
+    {
+      "from": "file:scripts/sentinel-local-accounts.mjs",
+      "to": "function:scripts/sentinel-local-accounts.mjs#main",
+      "type": "[declares]"
+    },
+    {
+      "from": "file:scripts/sentinel-local-fixtures.mjs",
+      "to": "function:scripts/sentinel-local-fixtures.mjs#createBatch",
+      "type": "[declares]"
+    },
+    {
+      "from": "file:scripts/sentinel-local-fixtures.mjs",
+      "to": "function:scripts/sentinel-local-fixtures.mjs#main",
+      "type": "[declares]"
+    },
+    {
+      "from": "file:scripts/sentinel-native-start.py",
+      "to": "function:scripts/sentinel-native-start.py#main",
+      "type": "[declares]"
+    },
+    {
+      "from": "file:scripts/sentinel-local-sql.py",
+      "to": "function:scripts/sentinel-local-sql.py#target",
+      "type": "[declares]"
+    },
+    {
+      "from": "file:scripts/sentinel-local-sql.py",
+      "to": "function:scripts/sentinel-local-sql.py#main",
+      "type": "[declares]"
+    },
+    {
+      "from": "file:scripts/sentinel-native-claims.sql",
+      "to": "function:scripts/sentinel-native-claims.sql#sentinel_local_runtime.bridge_verified_claim_role",
+      "type": "[declares]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "api:GET /api/sentinel/briefing-artifacts/:id",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "api:GET /api/sentinel/briefings/:revision",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "api:GET /api/sentinel/decisions/status",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "api:GET /api/sentinel/history",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "api:GET /api/sentinel/plans",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "api:GET /api/sentinel/plans/:revision",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "api:GET /api/sentinel/policy",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "api:GET:/api/sentinel/documents/:id",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "api:GET:/api/sentinel/evidence",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "api:GET:/api/sentinel/runs/:id",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "api:GET:/api/sentinel/source-changes",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "api:POST /api/sentinel/plans",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "api:POST /api/sentinel/plans/:revision/decisions",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "api:POST /api/sentinel/plans/admission",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "api:POST /api/sentinel/plans/preview",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "api:POST /api/sentinel/policy",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "api:POST:/api/sentinel/runs",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "api:POST:/api/sentinel/runs/:id/cancel",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "datamodel:public.sentinel_briefings",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "datamodel:public.sentinel_claim_publications",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "datamodel:public.sentinel_claims",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "datamodel:public.sentinel_command_receipts",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "datamodel:public.sentinel_decision_audit",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "datamodel:public.sentinel_decision_status",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "datamodel:public.sentinel_decisions",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "datamodel:public.sentinel_document_heads",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "datamodel:public.sentinel_document_versions",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "datamodel:public.sentinel_documents",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "datamodel:public.sentinel_evidence_publications",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "datamodel:public.sentinel_feedback_observations",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "datamodel:public.sentinel_history_entries",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "datamodel:public.sentinel_incident_state",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "datamodel:public.sentinel_org_runtime",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "datamodel:public.sentinel_permission_records",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "datamodel:public.sentinel_plan_commands",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "datamodel:public.sentinel_plan_dependencies",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "datamodel:public.sentinel_plan_items",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "datamodel:public.sentinel_plan_revisions",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "datamodel:public.sentinel_plan_status",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "datamodel:public.sentinel_plans",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "datamodel:public.sentinel_policies",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "datamodel:public.sentinel_policy_commands",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "datamodel:public.sentinel_provider_reservations",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "datamodel:public.sentinel_retrieval_events",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "datamodel:public.sentinel_run_checkpoints",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "datamodel:public.sentinel_run_commands",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "datamodel:public.sentinel_runs",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "datamodel:public.sentinel_source_change_markers",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "datamodel:public.sentinel_source_config_commands",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "datamodel:public.sentinel_source_configs",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "datamodel:public.sentinel_source_operators",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:src/app/api/sentinel/decisions/status/route.ts",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:src/app/api/sentinel/plans/[revision]/decisions/route.ts",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:src/app/api/sentinel/plans/[revision]/route.ts",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:src/app/api/sentinel/plans/admission/route.ts",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:src/app/api/sentinel/plans/preview/route.ts",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:src/app/api/sentinel/plans/route.ts",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:src/app/api/sentinel/policy/route.ts",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:src/lib/sentinel/decision-http.ts",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:src/lib/sentinel/decisions-sql.test.ts",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:src/lib/sentinel/decisions.test.ts",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:src/lib/sentinel/decisions.ts",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:src/lib/sentinel/plan-http.ts",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:src/lib/sentinel/plans-sql.test.ts",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:src/lib/sentinel/plans.test.ts",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:src/lib/sentinel/plans.ts",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:src/lib/sentinel/policies-sql.test.ts",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:src/lib/sentinel/policies.test.ts",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:src/lib/sentinel/policies.ts",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:src/lib/sentinel/policy-contracts.ts",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:src/lib/sentinel/policy-http.ts",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:supabase/migrations/20261012001000_sentinel_plan_drafts.sql",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:supabase/migrations/20261012002000_sentinel_policy_admission.sql",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:supabase/migrations/20261012003000_sentinel_decisions.sql",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:public.sentinel_acquire_run_lease",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:public.sentinel_activate_source_config",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:public.sentinel_admit_run",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:public.sentinel_append_feedback",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:public.sentinel_assert_lease",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:public.sentinel_briefing_escape",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:public.sentinel_briefing_result",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:public.sentinel_cancel_run",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:public.sentinel_checkpoint_run",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:public.sentinel_create_briefing",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:public.sentinel_create_html_briefing",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:public.sentinel_create_plan_draft",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:public.sentinel_decision_command_valid",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:public.sentinel_feedback_input_valid",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:public.sentinel_index_history",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:public.sentinel_lock_evidence_reader",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:public.sentinel_lock_execution",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:public.sentinel_lock_worker_run",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:public.sentinel_permission_revoke_only",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:public.sentinel_plan_admission",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:public.sentinel_plan_context",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:public.sentinel_policy_instant",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:public.sentinel_policy_valid",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:public.sentinel_policy_view",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:public.sentinel_preview_plan_admission",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:public.sentinel_publish_claims",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:public.sentinel_publish_evidence",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:public.sentinel_read_briefing",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:public.sentinel_read_claim_review",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:public.sentinel_read_claims",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:public.sentinel_read_decision_command",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:public.sentinel_read_document_version",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:public.sentinel_read_evidence_summary",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:public.sentinel_read_feedback_for_evaluation",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:public.sentinel_read_history",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:public.sentinel_read_plan_draft",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:public.sentinel_read_policy",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:public.sentinel_read_run",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:public.sentinel_read_source_changes",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:public.sentinel_record_decision",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:public.sentinel_record_policy",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:public.sentinel_renew_run_lease",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:public.sentinel_reserve_provider_attempt",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:public.sentinel_run_view",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:public.sentinel_settle_provider_attempt",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:public.sentinel_source_config_hash",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:public.sentinel_version_identity",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:scripts/sentinel-target.mjs#admitAppTarget",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:scripts/sentinel-target.mjs#admitSupabaseTarget",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:scripts/submission-storyboard.mjs#validateStoryboard",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/app/api/sentinel/documents/[id]/route.ts#GET",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/app/api/sentinel/evidence/route.ts#GET",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/app/api/sentinel/runs/[id]/cancel/route.ts#POST",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/app/api/sentinel/runs/[id]/route.ts#GET",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/app/api/sentinel/runs/route.ts#POST",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/app/api/sentinel/source-changes/route.ts#GET",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/lib/auth.ts#getCurrentUser",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/lib/sentinel/briefing-delivery.ts#verifyBriefingDelivery",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/lib/sentinel/briefing-http.ts#briefingFailure",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/lib/sentinel/briefing-http.ts#briefingQuery",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/lib/sentinel/briefing-http.ts#briefingResponse",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/lib/sentinel/briefing-http.ts#historyCursor",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/lib/sentinel/briefings.ts#prepareBriefing",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/lib/sentinel/briefings.ts#readBriefing",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/lib/sentinel/briefings.ts#readHistory",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/lib/sentinel/claims.ts#publishClaims",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/lib/sentinel/claims.ts#readClaimPage",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/lib/sentinel/contracts.ts#utf8Bytes",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/lib/sentinel/decision-http.ts#decisionFailure",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/lib/sentinel/decisions.ts#readDecisionCommand",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/lib/sentinel/decisions.ts#recordDecision",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/lib/sentinel/evidence-http.ts#encodeSourceChangeCursor",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/lib/sentinel/evidence-http.ts#evidenceFailure",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/lib/sentinel/evidence-http.ts#evidenceJson",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/lib/sentinel/evidence-http.ts#evidenceLocatorFromUrl",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/lib/sentinel/evidence-http.ts#evidenceUnavailable",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/lib/sentinel/evidence.ts#assertEvidenceScope",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/lib/sentinel/evidence.ts#assertVersionIntegrity",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/lib/sentinel/evidence.ts#claimReviewAllowsDependency",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/lib/sentinel/evidence.ts#evidenceHash",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/lib/sentinel/evidence.ts#evidenceTemporalStatus",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/lib/sentinel/evidence.ts#normalizeEvidenceText",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/lib/sentinel/evidence.ts#prepareDocumentVersion",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/lib/sentinel/evidence.ts#validateClaimCitation",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/lib/sentinel/feedback-contracts.ts#feedbackMatches",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/lib/sentinel/feedback.ts#readFeedbackForEvaluation",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/lib/sentinel/plan-http.ts#planFailure",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/lib/sentinel/plans.ts#createPlanDraft",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/lib/sentinel/plans.ts#previewPlanDraft",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/lib/sentinel/plans.ts#readPlanDraft",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/lib/sentinel/policies.ts#previewPlanAdmission",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/lib/sentinel/policies.ts#readPolicy",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/lib/sentinel/policies.ts#recordPolicy",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/lib/sentinel/policy-http.ts#policyFailure",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/lib/sentinel/publication.ts#publishEvidence",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/lib/sentinel/run-http.ts#runFailure",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/lib/sentinel/run-http.ts#runLocatorFromUrl",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/lib/sentinel/run-http.ts#runMutationBody",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/lib/sentinel/runs.ts#acquireRunLease",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/lib/sentinel/runs.ts#admitRun",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/lib/sentinel/runs.ts#cancelRun",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/lib/sentinel/runs.ts#checkpointRun",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/lib/sentinel/runs.ts#readRun",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/lib/sentinel/runs.ts#renewRunLease",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/lib/sentinel/runs.ts#reserveProviderAttempt",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/lib/sentinel/runs.ts#settleProviderAttempt",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/lib/sentinel/sources.ts#activateSourceConfiguration",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/lib/sentinel/sources.ts#readEvidenceSummary",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/lib/sentinel/sources.ts#readSourceChangePage",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/lib/sentinel/sources.ts#sourceConfigurationHash",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/lib/sentinel/store.ts#readDocumentVersion",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/lib/sentinel/target-policy.mjs#requireAppTarget",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/lib/sentinel/target-policy.mjs#requireBrowserSupabaseTarget",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/lib/sentinel/target-policy.mjs#requireSupabaseTarget",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/lib/sentinel/target-policy.mjs#targetOrigin",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/lib/supabase.ts#getSupabaseAdminClient",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/test/sentinel-evidence-sql-fixture.ts#sentinelEvidenceSqlFixture",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/test/sentinel-loopback-proxy.ts#registerProductionLoopbackDatabase",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:src/components/sentinel/sentinel-constraints.tsx",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:src/components/sentinel/sentinel-evidence.tsx",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:src/components/sentinel/sentinel-history-briefing.tsx",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:src/components/sentinel/sentinel-plan.tsx",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:src/components/sentinel/sentinel-policy.tsx",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:src/components/sentinel/sentinel-ui-roles.test.tsx",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:src/components/sentinel/sentinel-ui.test.tsx",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:src/components/sentinel/sentinel-workspace.tsx",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:src/components/sentinel/sentinel.css",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:src/components/sentinel/use-sentinel-command.tsx",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:src/app/sentinel/page.tsx",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:src/lib/sentinel/workspace-client.ts",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:src/lib/sentinel/workspace-client.test.ts",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:src/lib/sentinel/workspace-navigation.ts",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:src/lib/sentinel/claim-page-http.test.ts",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:src/test/fixtures/sentinel-review.ts",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:src/app/api/sentinel/documents/[id]/claims/route.ts",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "api:GET:/api/sentinel/documents/:id/claims",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:src/lib/sentinel/workspace-page.test.tsx",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "component:SentinelConstraints",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "component:SentinelEvidence",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "component:SentinelHistory",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "component:SentinelBriefing",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "component:SentinelPlan",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "component:SentinelPolicy",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "component:SentinelWorkspace",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/components/sentinel/use-sentinel-command.tsx#parseIntent",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/components/sentinel/use-sentinel-command.tsx#useSentinelCommand",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "component:CommandRecovery",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "datamodel:public.sentinel_provider_prices",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "datamodel:public.sentinel_provider_funds",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "datamodel:public.sentinel_priced_reservations",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/lib/sentinel/providers.ts#searchRegisteredSources",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/lib/sentinel/providers.ts#extractRegisteredSources",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/lib/sentinel/providers.ts#completeNemotron",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/lib/sentinel/provider-budget.ts#readProviderPrice",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/lib/sentinel/provider-budget.ts#readProviderSources",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/lib/sentinel/provider-budget.ts#reservePricedAttempt",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:src/lib/sentinel/native-provenance.ts",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/lib/sentinel/native-provenance.ts#verifiedNativeAcquisition",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/lib/sentinel/native-provenance.ts#nativeRowFrame",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:src/lib/sentinel/native-provenance.test.ts",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:src/lib/sentinel/native-provenance-sql.test.ts",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:src/lib/sentinel/native-ingestion.test.ts",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:src/test/sentinel-native-fixture.ts",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/test/sentinel-native-fixture.ts#signSyntheticNativeFixture",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:supabase/migrations/20261012011000_sentinel_native_provenance.sql",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "datamodel:public.sentinel_native_signing_keys",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:supabase/migrations/20261012011000_sentinel_native_provenance.sql#sentinel_preserve_native_key",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:supabase/migrations/20261012011000_sentinel_native_provenance.sql#sentinel_hmac_sha256",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:supabase/migrations/20261012011000_sentinel_native_provenance.sql#sentinel_native_binding_valid",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:supabase/migrations/20261012011000_sentinel_native_provenance.sql#sentinel_plan_admission",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "config:env:SENTINEL_NATIVE_SIGNING_KEY_ID",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "config:env:SENTINEL_NATIVE_SIGNING_ORGANIZATION_ID",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "config:env:SENTINEL_NATIVE_SIGNING_KEY_HEX",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:src/lib/sentinel/execution-store.ts",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/lib/sentinel/execution-store.ts#locateWorkerRun",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/lib/sentinel/execution-store.ts#dispatchState",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/lib/sentinel/execution-store.ts#claimDispatch",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/lib/sentinel/execution-store.ts#acknowledgeDispatch",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/lib/sentinel/execution-store.ts#readWorkerContext",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/lib/sentinel/execution-store.ts#saveWorkerOutput",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/lib/sentinel/execution-store.ts#finishWorker",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:src/lib/sentinel/interpretation.ts",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/lib/sentinel/interpretation.ts#executionId",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/lib/sentinel/interpretation.ts#qualifiedPrompt",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/lib/sentinel/interpretation.ts#extractionPrompt",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/lib/sentinel/interpretation.ts#extractClaims",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/lib/sentinel/interpretation.ts#comparisonPrompt",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/lib/sentinel/interpretation.ts#extractChanges",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:src/lib/sentinel/interpretation.test.ts",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:src/lib/sentinel/worker.ts",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/lib/sentinel/worker.ts#runSentinelStep",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:src/lib/sentinel/worker.test.ts",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:src/lib/sentinel/execution-sql.test.ts",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:src/lib/sentinel/dispatch.ts",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/lib/sentinel/dispatch.ts#dispatchSentinel",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:src/lib/sentinel/dispatch.test.ts",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:src/workflows/sentinel.ts",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/workflows/sentinel.ts#executeSentinel",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:src/components/sentinel/sentinel-run-controls.test.tsx",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:supabase/migrations/20261012012000_sentinel_worker_execution.sql",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "datamodel:public.sentinel_dispatch_attempts",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "datamodel:public.sentinel_dispatch_receipts",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "datamodel:public.sentinel_worker_outputs",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:supabase/migrations/20261012012000_sentinel_worker_execution.sql#sentinel_worker_locator",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:supabase/migrations/20261012012000_sentinel_worker_execution.sql#sentinel_dispatch_state",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:supabase/migrations/20261012012000_sentinel_worker_execution.sql#sentinel_claim_dispatch",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:supabase/migrations/20261012012000_sentinel_worker_execution.sql#sentinel_ack_dispatch",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:supabase/migrations/20261012012000_sentinel_worker_execution.sql#sentinel_read_worker",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:supabase/migrations/20261012012000_sentinel_worker_execution.sql#sentinel_save_worker_output",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:supabase/migrations/20261012012000_sentinel_worker_execution.sql#sentinel_finish_worker",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/lib/sentinel/run-failure.ts#workerVerificationFailureCode",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/lib/sentinel/run-failure.ts#runFailureMessage",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "component:SentinelGettingStarted",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:tsconfig.json",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:src/lib/county-scope.ts#prepareCountyScopeFactory",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:scripts/sentinel-local-app.mjs",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:scripts/sentinel-local-app.node-test.mjs",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:scripts/sentinel-native-workspace.mjs",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:scripts/sentinel-native-workspace.node-test.mjs",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:scripts/sentinel-native-claims.sql",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:scripts/sentinel-native-start.py",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:scripts/sentinel-native-start_test.py",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:public/vendor/vis-network.LICENSE.txt",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:scripts/sentinel-local-accounts.mjs",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:scripts/sentinel-local-accounts.node-test.mjs",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:scripts/sentinel-local-sql.py",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:scripts/sentinel-local-sql_test.py",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:scripts/sentinel-local-fixtures.mjs",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:scripts/sentinel-local-fixtures.node-test.mjs",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:scripts/sentinel-local-app.mjs#localEnvironment",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:scripts/sentinel-local-app.mjs#parseOptions",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:scripts/sentinel-local-app.mjs#main",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:scripts/sentinel-native-workspace.mjs#digest",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:scripts/sentinel-native-workspace.mjs#prepareWorkspace",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:scripts/sentinel-local-accounts.mjs#validateAccountTarget",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:scripts/sentinel-local-accounts.mjs#parseAccountOptions",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:scripts/sentinel-local-accounts.mjs#openLocalWorkspace",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:scripts/sentinel-local-accounts.mjs#main",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:scripts/sentinel-local-fixtures.mjs#createBatch",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:scripts/sentinel-local-fixtures.mjs#main",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:scripts/sentinel-native-start.py#main",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:scripts/sentinel-local-sql.py#target",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:scripts/sentinel-local-sql.py#main",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:scripts/sentinel-native-claims.sql#sentinel_local_runtime.bridge_verified_claim_role",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:scripts/refresh-code-graph.py",
+      "to": "function:scripts/refresh-code-graph.py#connect_inventory",
+      "type": "[declares]"
+    },
+    {
+      "from": "file:scripts/refresh-code-graph.py",
+      "to": "function:scripts/refresh-code-graph.py#stamp_report",
+      "type": "[declares]"
+    },
+    {
+      "type": "[declares]",
+      "from": "file:scripts/sentinel-native-artifacts.mjs",
+      "to": "function:scripts/sentinel-native-artifacts.mjs#verifyArtifact"
+    },
+    {
+      "type": "[declares]",
+      "from": "file:scripts/sentinel-native-artifacts.mjs",
+      "to": "function:scripts/sentinel-native-artifacts.mjs#main"
+    },
+    {
+      "type": "[declares]",
+      "from": "file:scripts/sentinel_native_artifacts.py",
+      "to": "function:scripts/sentinel_native_artifacts.py#verify_archives"
+    },
+    {
+      "type": "[declares]",
+      "from": "file:scripts/sentinel_native_artifacts.py",
+      "to": "function:scripts/sentinel_native_artifacts.py#install_archives"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:scripts/refresh-code-graph.py#connect_inventory",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:scripts/refresh-code-graph.py#stamp_report",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:scripts/sentinel-native-artifacts.json",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:scripts/sentinel-native-artifacts.mjs",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:scripts/sentinel_native_artifacts.py",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:scripts/sentinel_native_artifacts_test.py",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:scripts/sentinel-native-artifacts.mjs#verifyArtifact",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:scripts/sentinel-native-artifacts.mjs#main",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:scripts/sentinel_native_artifacts.py#verify_archives",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "function:scripts/sentinel_native_artifacts.py#install_archives",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:LICENSE",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:src/lib/judge-presentation.test.ts",
+      "to": "file:docs/SUBMISSION_PLAN.md",
+      "type": "[validates]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:src/lib/sentinel/prompt-tokens.ts",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:src/lib/sentinel/prompt-tokens.test.ts",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:src/lib/sentinel/tokenizer-data/chat_template.jinja",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:src/lib/sentinel/tokenizer-data/MODEL_CARD.md",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:src/lib/sentinel/tokenizer-data/NOTICE.md",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:src/lib/sentinel/tokenizer-data/provenance.json",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:src/lib/sentinel/tokenizer-data/reference-vectors.json",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:src/lib/sentinel/tokenizer-data/retained-notice.json",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:src/lib/sentinel/tokenizer-data/tokenizer.json",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:src/lib/sentinel/tokenizer-data/tokenizer_config.json",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:src/lib/sentinel/prompt-tokens.ts",
+      "to": "function:src/lib/sentinel/prompt-tokens.ts#renderNemotronPrompt",
+      "type": "[defines]"
+    },
+    {
+      "from": "file:src/lib/sentinel/prompt-tokens.ts",
+      "to": "function:src/lib/sentinel/prompt-tokens.ts#reservedPromptInputTokens",
+      "type": "[defines]"
+    },
+    {
+      "from": "file:src/lib/sentinel/interpretation.ts",
+      "to": "file:src/lib/sentinel/prompt-tokens.ts",
+      "type": "[imports]"
+    },
+    {
+      "from": "file:src/lib/sentinel/providers.ts",
+      "to": "file:src/lib/sentinel/prompt-tokens.ts",
+      "type": "[imports]"
+    },
+    {
+      "from": "file:src/lib/sentinel/prompt-tokens.test.ts",
+      "to": "file:src/lib/sentinel/prompt-tokens.ts",
+      "type": "[imports]"
+    },
+    {
+      "from": "file:src/lib/sentinel/providers.test.ts",
+      "to": "file:src/lib/sentinel/prompt-tokens.ts",
+      "type": "[imports]"
+    },
+    {
+      "from": "file:src/lib/sentinel/interpretation.test.ts",
+      "to": "file:src/lib/sentinel/prompt-tokens.ts",
+      "type": "[imports]"
+    },
+    {
+      "from": "file:src/lib/sentinel/prompt-tokens.ts",
+      "to": "file:src/lib/sentinel/tokenizer-data/chat_template.jinja",
+      "type": "[reads]"
+    },
+    {
+      "from": "file:src/lib/sentinel/prompt-tokens.ts",
+      "to": "file:src/lib/sentinel/tokenizer-data/tokenizer.json",
+      "type": "[reads]"
+    },
+    {
+      "from": "file:src/lib/sentinel/prompt-tokens.ts",
+      "to": "file:src/lib/sentinel/tokenizer-data/tokenizer_config.json",
+      "type": "[reads]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:src/lib/sentinel/tokenizer-data/LICENSE.pdf",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:src/lib/sentinel/prompt-tokens.ts",
+      "to": "function:src/lib/sentinel/prompt-tokens.ts#pinnedTokenizer",
+      "type": "[defines]"
+    },
+    {
+      "from": "function:src/lib/sentinel/interpretation.ts#qualifiedPrompt",
+      "to": "function:src/lib/sentinel/prompt-tokens.ts#reservedPromptInputTokens",
+      "type": "[calls]"
+    },
+    {
+      "from": "function:src/lib/sentinel/providers.ts#completeNemotron",
+      "to": "function:src/lib/sentinel/prompt-tokens.ts#reservedPromptInputTokens",
+      "type": "[calls]"
+    },
+    {
+      "from": "function:src/lib/sentinel/prompt-tokens.ts#reservedPromptInputTokens",
+      "to": "function:src/lib/sentinel/prompt-tokens.ts#pinnedTokenizer",
+      "type": "[calls]"
+    },
+    {
+      "from": "function:src/lib/sentinel/prompt-tokens.ts#reservedPromptInputTokens",
+      "to": "function:src/lib/sentinel/prompt-tokens.ts#renderNemotronPrompt",
+      "type": "[calls]"
+    },
+    {
+      "from": "file:src/lib/sentinel/prompt-tokens.test.ts",
+      "to": "file:src/lib/sentinel/tokenizer-data/reference-vectors-no-thinking.json",
+      "type": "[imports]"
+    },
+    {
+      "from": "file:src/lib/sentinel/interpretation.ts",
+      "to": "function:src/lib/sentinel/interpretation.ts#citationPassages",
+      "type": "[defines]"
+    },
+    {
+      "from": "file:supabase/migrations/20261028010000_sentinel_worker_clock.sql",
+      "to": "function:supabase/migrations/20261028010000_sentinel_worker_clock.sql#sentinel_read_worker_clock",
+      "type": "[defines]"
+    },
+    {
+      "from": "file:src/lib/sentinel/execution-store.ts",
+      "to": "function:src/lib/sentinel/execution-store.ts#readWorkerClock",
+      "type": "[defines]"
+    },
+    {
+      "from": "function:src/lib/sentinel/execution-store.ts#readWorkerClock",
+      "to": "function:supabase/migrations/20261028010000_sentinel_worker_clock.sql#sentinel_read_worker_clock",
+      "type": "[calls]"
+    },
+    {
+      "from": "function:src/lib/sentinel/worker.ts#runSentinelStep",
+      "to": "function:src/lib/sentinel/execution-store.ts#readWorkerClock",
+      "type": "[calls]"
+    },
+    {
+      "from": "file:src/instrumentation.ts",
+      "to": "function:src/instrumentation.ts#register",
+      "type": "[declares]"
+    },
+    {
+      "from": "function:src/workflows/sentinel.ts#executeSentinel",
+      "to": "function:src/workflows/sentinel.ts#step",
+      "type": "[calls]"
+    },
+    {
+      "from": "function:src/workflows/sentinel.ts#step",
+      "to": "function:src/lib/sentinel/worker.ts#runSentinelStep",
+      "type": "[calls]"
+    },
+    {
+      "from": "file:pkg.json",
+      "to": "file:.gitattributes",
+      "type": "[catalogs]"
+    },
+    {
+      "from": "file:.gitattributes",
+      "to": "file:src/lib/sentinel/tokenizer-data/chat_template.jinja",
+      "type": "[configures]"
+    },
+    {
+      "from": "file:.gitattributes",
+      "to": "file:src/lib/sentinel/tokenizer-data/MODEL_CARD.md",
+      "type": "[configures]"
+    },
+    {
+      "from": "file:.gitattributes",
+      "to": "file:src/lib/sentinel/tokenizer-data/NOTICE.md",
+      "type": "[configures]"
+    },
+    {
+      "from": "file:.gitattributes",
+      "to": "file:src/lib/sentinel/tokenizer-data/provenance.json",
+      "type": "[configures]"
+    },
+    {
+      "from": "file:.gitattributes",
+      "to": "file:src/lib/sentinel/tokenizer-data/reference-vectors.json",
+      "type": "[configures]"
+    },
+    {
+      "from": "file:.gitattributes",
+      "to": "file:src/lib/sentinel/tokenizer-data/retained-notice.json",
+      "type": "[configures]"
+    },
+    {
+      "from": "file:.gitattributes",
+      "to": "file:src/lib/sentinel/tokenizer-data/tokenizer.json",
+      "type": "[configures]"
+    },
+    {
+      "from": "file:.gitattributes",
+      "to": "file:src/lib/sentinel/tokenizer-data/tokenizer_config.json",
+      "type": "[configures]"
+    },
+    {
+      "from": "file:.gitattributes",
+      "to": "file:src/lib/sentinel/tokenizer-data/LICENSE.pdf",
+      "type": "[configures]"
+    },
+    {
+      "from": "file:.gitattributes",
+      "to": "file:src/lib/sentinel/tokenizer-data/reference-vectors-no-thinking.json",
+      "type": "[configures]"
     }
   ],
   "dataFlow": [
@@ -28068,7 +31093,8 @@
       "react-dom",
       "server-only",
       "sharp",
-      "zod"
+      "zod",
+      "@huggingface/tokenizers"
     ],
     "development": [
       "libpg-query",
@@ -28608,7 +31634,9 @@
       "History/briefings: scoped append sequence, complete retained lineage, role-derived redaction, separate observed validity, immutable UTF-8 receipts and bounded complete-client verification. Original hash references do not reconstruct withheld raw source/asset/native rows. Browser artifact fixture does not prove full hosted reviewer journey.",
       "2026-10-12 Sentinel: Node22 local full suite3714+148 passes; fresh-checkout fixture directory repaired, synthetic export diagnostics only. Own Vercel Hobby project created, no deployment. Separate local Postgres17/PostGIS applied46 migrations and forward operator-lock volatility repair; unchanged recovery SQL passes. Historical operator scripts do not all match the current chain and native capability tests may require superuser privileges unavailable to postgres. Original FireAfter untouched; hosted database blocked by two-active-free-project account limit, spend ceiling0.",
       "2026-10-12 CI repair: fixed-size FIFO ring removes Map iterator eviction scans without changing geometry/query/time caps. Full GeoJSON parity oracle now runs after consuming the response at the same declared instant; full91511 rows,715 REC reads and feature hashes remain. Local101 focused checks pass; new full Linux CI qualification pending. Hosted DB provisioning on hold only; local build/testing continues, spend ceiling0.",
-      "2026-10-12 real local Auth journey exposed Next internal localhost versus browser127.0.0.1 redirects blocked by unchanged form-action self CSP. Login redirects now preserve only validated browser Origin; rejected/cross-site Origin retains request origin. Original legacy assertions unchanged, two new cases and73 focused auth/input regressions pass; actual three-role/six-view mobile empty-workspace journey passes. Hosted/compiled positive/provider/full evidence-to-approved-briefing remains pending."
+      "2026-10-12 real local Auth journey exposed Next internal localhost versus browser127.0.0.1 redirects blocked by unchanged form-action self CSP. Login redirects now preserve only validated browser Origin; rejected/cross-site Origin retains request origin. Original legacy assertions unchanged, two new cases and73 focused auth/input regressions pass; actual three-role/six-view mobile empty-workspace journey passes. Hosted/compiled positive/provider/full evidence-to-approved-briefing remains pending.",
+      "Isolated proposal: Windows build uses explicit Webpack; Linux remains Turbopack. No provider, hosted or production readiness evidence is implied.",
+      "2026-10-27 Sentinel comparison-capacity repair: model-specific token counting for nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B uses pinned NVIDIA tokenizer revision bf77c3174f68ad409e1c2aa60daeb46e32d1c606 and Hugging Face tokenizers0.2.0, independently checked with Rust/Jinja vectors. Full system/user source text preserved. Both prompt construction and provider admission use this count plus existing512 envelope;24000 cap, owner funding/hash, actual usage, SQL reservation, retries, citation and human authority remain. Unknown models keep conservative byte bound. Generated Graphify/viewer artifacts remain inaccessible/stale; no permission bypass or full graph freshness claim. Local proof does not establish live backend revision, funding or persistent provider journey."
     ],
     "sentinelPlanning": {
       "updated_at": "2026-10-12T13:25:20.045360+00:00",
@@ -28661,18 +31689,888 @@
       "scope": "Inherited runtime/semantic edges remain provisional. Dated historical drift notes refer to the original FireAfter checkout, not Sentinel verification. Absent inherited repair/submission documents and their historical assurance status summaries were removed from the current catalog; external backup retains them."
     },
     "documentCleanup": {
-      "reviewedAt": "2026-10-12T13:25:20.045360+00:00",
-      "scope": "Document reconciliation, validator consistency checks and catalog only; no runtime changes",
+      "reviewedAt": "2026-10-13T04:35:02.579905+00:00",
+      "scope": "Local keyless defect repairs, source graph refresh and current final-document reconciliation; no hosted/deployment actions",
       "runtimeGraphStatus": "CURRENT_STRUCTURAL_CODE_ONLY; SQL/DOC SEMANTICS EXPLICITLY CATALOGED",
-      "nextAction": "Local/CI quality repair continues; hosted Supabase provisioning explicitly on hold, existing projects untouched, spend0; sponsor credits/configuration and full authenticated/domain journey pending.",
-      "graphSourceDigest": "cd8d0d3c45be574c8d7408568650ea8d0b8020561915e91a06bb77d1db7e1c78",
+      "nextAction": "Resume actual authenticated-browser retesting after existing local Docker recovers; deployment and hosted DB on hold, sponsor integration not yet tested.",
+      "graphSourceDigest": "54f068578870044e6d845048e7d5c7b2fa72147cfa12286222a305260b6812bf",
       "graphSourceFiles": 515,
       "documentEvidence": ".codex/evidence/document-reconciliation.json",
       "driftRisk": "Provider retries/escalation, future endpoints and hypothetical env knobs must not be described as current behavior. Document PASS does not qualify a release."
+    },
+    "sentinelPersistentProviderQualification20261027": {
+      "at": "2026-10-28T04:05:18.823523Z",
+      "status": "PROVIDER_EXECUTION_RECOVERY_AND_REJECTED_EXPORT_TECHNICALLY_VERIFIED_APPROVED_JOURNEY_OPEN",
+      "primaryOwner": "codex-product-build-loop",
+      "boundedSupport": "agentic-product-assurance",
+      "scope": "SEN-SUB-02 bounded zero-cash real-provider qualification and necessary compatibility repairs",
+      "sourceSubject": "da6b1a4705a05eee79fb3efd7a3c8ce64adc1331b60a67d923068080c9e28138",
+      "earlierEvidence": "output/verification/sentinel-comparison-capacity-20261027/receipt.json",
+      "evidenceDirectory": "output/verification/sentinel-persistent-provider-20261027-r2",
+      "localWorkspace": "output/sentinel-judge-provider-20261027",
+      "runtimeName": "sentinel-judge-provider-20261027",
+      "databasePorts": [
+        55461,
+        55462
+      ],
+      "checks": {
+        "nativeMigrations": 49,
+        "currentTargetedTests": 317,
+        "sdkThreeRoleReadbackAndReauthentication": "PASS",
+        "sdkTerminalRestartSameReceiptWorldAndNoNewProviderTrace": "PASS",
+        "workerRealResponseLoss": "PASS_scoped_prior_runtime",
+        "conservativeReviewRejectionAndViewerExport": "PASS_automated_fictional_incident"
+      },
+      "providerOperations": {
+        "scope": "This campaign includes real Search/Extract and inference; exact charged attempts/usage remain in native/provider receipts.",
+        "noAutomaticRetries": true,
+        "noReservationResetOrRefund": true
+      },
+      "cashSpendUsd": 0,
+      "providerPriceRows": 0,
+      "providerFundRows": 0,
+      "pending": [
+        "Practitioner semantic/source applicability review; not a universal contest-entry human-study rule",
+        "Qualified incident policy/native evidence and approved provider-backed plan/briefing branch",
+        "Workflow SDK in-flight crash/recovery qualification; terminal restart and direct-worker uncertainty recovery are distinct",
+        "No current production build/full-suite rerun after this repair"
+      ],
+      "environmentVariableNames": [
+        "SENTINEL_TAVILY_API_KEY",
+        "SENTINEL_NEBIUS_API_KEY",
+        "SENTINEL_NEMOTRON_EXTRACTION_MODEL",
+        "SENTINEL_NEMOTRON_RECONCILIATION_MODEL",
+        "SENTINEL_TOKENIZER_EVIDENCE_HASH"
+      ],
+      "protected": {
+        "originalFireAfter": "NO_WRITES",
+        "deployment": "ON_HOLD",
+        "hostedDatabase": "ON_HOLD",
+        "videoUploadOwner": "user"
+      },
+      "graphCoverage": "Current authoritative PKG nodes/edges inspected. Incremental qualification metadata only; no app-source graph change or claim of generated Graphify refresh. Generated viewer coverage remains stale/unavailable.",
+      "runtimeFinal": "Owned app and native qualification stack stopped; data retained; hosted DB/deployment ON_HOLD"
+    },
+    "sentinelProviderCompatibilityRepair20261027": {
+      "at": "2026-10-28T04:05:18.823523Z",
+      "parent": "SEN-SUB-02",
+      "status": "LOCAL_COMPATIBILITY_317_PASS_SDK_PROVIDER_RUN_AND_TERMINAL_RESTART_PASS",
+      "evidenceDirectory": "output/verification/sentinel-persistent-provider-20261027-r2",
+      "artifacts": [
+        {
+          "path": "src/lib/sentinel/providers.ts",
+          "sha256": "82f79e4ddfbbf99e32d4398906ba1424ef6977f193fcd60b90298037982aedc8"
+        },
+        {
+          "path": "src/lib/sentinel/providers.test.ts",
+          "sha256": "dee37ad38ea08f26cc3d257c98f1d85ab74623338edee2c6cd6352db2e2dda02"
+        },
+        {
+          "path": "src/lib/sentinel/prompt-tokens.ts",
+          "sha256": "353fa423adb96ff9c4327f2c6d959b68cd8431ca3012a86df69969724b3f1f3e"
+        },
+        {
+          "path": "src/lib/sentinel/prompt-tokens.test.ts",
+          "sha256": "b82f63c8d8f35e417b51faa4c8823138a7526ae606f5ebe72d09483449442435"
+        },
+        {
+          "path": "src/lib/sentinel/interpretation.ts",
+          "sha256": "b96e786efa78824c6f8cd18210cf3b1ceca61dbf0e592d403400093884ae5dfd"
+        },
+        {
+          "path": "src/lib/sentinel/tokenizer-data/reference-vectors-no-thinking.json",
+          "sha256": "89ded14ad5e4556b1c2f173036c04672666cd2709a97be3937c0abf1d44e3c9d"
+        },
+        {
+          "path": "src/lib/sentinel/interpretation.test.ts",
+          "sha256": "8fb8f400bbd3d6b3f699d636fc02fd95047b34a19d3539e76cbd4a8cd62d2d71"
+        },
+        {
+          "path": "src/lib/sentinel/execution-store.ts",
+          "sha256": "460b8388f001b11c556d3f6fb8162fd4fee76948b796126bbe76bd3291fced45"
+        },
+        {
+          "path": "src/lib/sentinel/worker.ts",
+          "sha256": "05a1998252f7a64ee3df57c5db4c130a53bc66dfa583f922cd58332a7178fec7"
+        },
+        {
+          "path": "src/lib/sentinel/worker.test.ts",
+          "sha256": "771c60ecc1b159484ef9720e5d94ed9d61c13f4023c778e30cd7eb9b936691a2"
+        },
+        {
+          "path": "src/test/sentinel-evidence-sql-fixture.ts",
+          "sha256": "3c71bc8069a8675bd8b388ec98793a374f15c563de6bdbac430924bee303718d"
+        },
+        {
+          "path": "supabase/migrations/20261028010000_sentinel_worker_clock.sql",
+          "sha256": "03adbb12c3b0e0f981d0a304ce7cb715f4dbdca51358b0963130e3e54d3ab818"
+        }
+      ],
+      "diagnosis": [
+        "Reasoning consumed the entire1000-token output cap with no final JSON.",
+        "Search returned HTTP/sibling-host discovery candidates.",
+        "A regenerated quote changed case and failed exact citations.",
+        "Independent Windows/PostgreSQL clocks rejected future-looking retrieval bounds.",
+        "Plain model content was malformed JSON despite HTTP200/stop/valid usage."
+      ],
+      "changes": [
+        "Explicit chat_template_kwargs.enable_thinking=false and identical pinned local template branch",
+        "Extraction prompt v2 and comparison prompt v3 prevent silent reuse of previous generation policy",
+        "Discovery URL strings are bounded then admitted only through RegisteredUrlSchema plus exact host; all excluded hits remain withheld, extraction uses unchanged canonical registration",
+        "Extraction prompt v3 returns numbered passage IDs; deterministic full-source segmentation resolves exact original UTF-8 spans. Legacy exact quote validation remains strict.",
+        "Lease/scope-checked read-only database clock RPC supplies request and retrieved timestamps; strict future-time validation remains unchanged."
+      ],
+      "unchanged": [
+        "24000 input/1000 output per-request caps",
+        "Owner pricing/tokenizer evidence binding and cumulative SQL holds",
+        "No automatic transport retry, candidate fetch, registry expansion or semantic approval"
+      ],
+      "impact": [
+        "Provider request serialization and local token reservation",
+        "Claims/change prompt provenance and worker reuse",
+        "Discovery-only checkpoint followed by registered extraction",
+        "New pure citationPassages source-span function; internal extraction output supports bounded passageId references",
+        "Additive local migration49 and worker extraction timestamp authority; no hosted migration, clock tolerance or lease extension"
+      ],
+      "graphCoverage": "Incremental authoritative PKG updated; generated Graphify/viewer files remain stale/inaccessible. No refresh is claimed.",
+      "sourceSubject": "da6b1a4705a05eee79fb3efd7a3c8ce64adc1331b60a67d923068080c9e28138",
+      "verification": {
+        "targetedTests": 317,
+        "typecheck": "PASS",
+        "focusedLint": "PASS",
+        "migrationContract": "PASS",
+        "nativeWriteBoundary": "PASS",
+        "controlledNegativeFailures": 19,
+        "controlledRepairedTests": 317,
+        "sdkRunId": "717018a9-99e8-4fb7-b28d-af1879d207a6",
+        "terminalRestart": "PASS",
+        "realResponseLossWorkerRecovery": "PASS_BEFORE_FINAL_CLOCK_JSON_CHANGES; current recovery regressions pass",
+        "approvedProviderBriefing": "NOT_QUALIFIED"
+      }
+    },
+    "sentinelSdkStartupRecovery20261028": {
+      "at": "2026-10-28T13:08:21.687381+00:00",
+      "status": "LOCAL_CONTEXT_CRASH_AND_FULL_POSTFIX_LOCAL_CHECKS_VERIFIED_GRAPH_ACCESS_BLOCKED",
+      "parent": "SEN-R016 / SEN-SUB-02",
+      "rootCause": "Configured world.getWorld only constructs the local world; the explicit recovery start hook was never called. Actual in-flight SDK context-crash experiment remained running after restart.",
+      "change": "Next instrumentation register calls the existing SDK local startup hook only for nodejs/development/ALLOW_LOCAL_DB/local world/explicit recovery=true. Errors fail startup; no new admission, monitor, provider key, budget, hosted behavior or production local-DB exception.",
+      "artifacts": [
+        {
+          "path": "src/instrumentation.ts",
+          "sha256": "27e0e1bfd32cf20b0e7332f269943cd8d86ae556270e873c5d27f38629fbbb61"
+        },
+        {
+          "path": "src/instrumentation.test.ts",
+          "sha256": "c0b86cff67309d4be55eb582ff447411ce5c918f397438058fbb15db34d3ac68"
+        },
+        {
+          "path": "src/workflows/sentinel.ts",
+          "sha256": "a15f942035b274e8d45e21ec0690ed8dfec946121d880b936def0010ef532c18"
+        },
+        {
+          "path": "scripts/sentinel-local-app.mjs",
+          "sha256": "517770e54daa744591c521b37b20f23dca4e1639d163d28abb30482bb13e4f5e"
+        },
+        {
+          "path": "scripts/sentinel-local-app.node-test.mjs",
+          "sha256": "33194257cdb86f10240276ac60ab81b69008b80024326b54b4f81eecf44b3c9f"
+        },
+        {
+          "path": "scripts/verify-browser-smoke.mjs",
+          "sha256": "8b61f32bcc01d7c0318ef9c9e87e2b66fbcc15a13613efe718d046df2401e104"
+        }
+      ],
+      "imports": [
+        "workflow/runtime.getWorld (existing workflow5.1.0 public export)"
+      ],
+      "environmentNames": [
+        "NEXT_RUNTIME",
+        "NODE_ENV",
+        "SENTINEL_ALLOW_LOCAL_DB",
+        "WORKFLOW_TARGET_WORLD",
+        "WORKFLOW_LOCAL_RECOVER_ACTIVE_RUNS",
+        "WORKFLOW_INLINE_OWNERSHIP_LEASE_SECONDS",
+        "WORKFLOW_LOCAL_BASE_URL",
+        "WORKFLOW_LOCAL_DATA_DIR"
+      ],
+      "checks": "startup unit guards, dispatch/worker regressions, identical actual crash oracle, typecheck/lint/build/browser",
+      "graphCoverage": "Authoritative PKG updated incrementally. Generated Graphify file remains unreadable; no generated refresh claimed.",
+      "workflowStepMaxRetries": 1,
+      "paidProviderRetries": 0,
+      "localSdkLeaseSeconds": 30,
+      "originalNativeDeadlineSeconds": 120,
+      "localDataRetention": "output/<owned-stack>/workflow-data; no reset; ignored/private",
+      "diagnosis": "Actual default SDK ownership lease is860seconds, longer than the native120second deadline. Local30second ownership lease and one infrastructure replay are qualified with the unchanged zero-provider crash oracle; deterministic provider attempt IDs/funding holds unchanged.",
+      "evidence": "output/verification/sentinel-sdk-recovery-20261028-r5/sdk-inflight-qualification.json",
+      "runId": "ab314c01-76ec-4f15-a380-37d6d9dd6f96",
+      "runtimeRunId": "wrun_01M6167TBJW5R5YA7EH65ZM5QQ",
+      "limits": [
+        "Actual in-flight development SDK process crash after committed context, before any provider attempt.",
+        "Distinct from prior real-provider happy run and direct-worker paid-response-loss experiment; no combined paid SDK response-loss claim.",
+        "No semantic/domain review or approved provider briefing proof.",
+        "Earlier harness rejected blocked Next npm version checks; corrected oracle permits only blocked registry.npmjs.org metadata attempts while every non-loopback fetch remains blocked."
+      ],
+      "postfixEvidence": "output/verification/sentinel-postfix-20261028/completion-summary.json",
+      "postfixChecks": {
+        "vitestPassed": 3774,
+        "vitestConditionalSkipped": 10,
+        "nodePassed": 162,
+        "lintErrors": 0,
+        "lintWarnings": 125,
+        "typecheck": "PASS",
+        "migrationContract": "PASS",
+        "graphHealth": "BLOCKED_EPERM",
+        "compiledArtifactValid": true,
+        "runtimeInputsMatch": true
+      },
+      "syntheticRoleRehearsal": "output/verification/sentinel-demo-rehearsal-20261028-r5/rehearsal-results.json"
+    },
+    "sentinelDocumentCompanions20261028": {
+      "at": "2026-10-28T13:11:59.303811+00:00",
+      "scope": "Explicit companion document inventory and correct historical receipt label; not runtime/build or baseline repair",
+      "impact": "file:docs/evidence/validate_documents.py consumes canonical docs and emits PLANNING_MANIFEST/document-validation; existing code routes, SQL, provider and app runtime unchanged. Generated Graphify unreadable; direct PKG/source fallback.",
+      "companions": [
+        "devpost-submission.md",
+        "docs/hackathon/RUNBOOK.md",
+        "docs/hackathon/STATE.md"
+      ],
+      "checks": "Bounded inventory positive/unknown-file/missing-canonical oracles; full document validator retaining original preservation failures",
+      "validatorSHA256": "fa7e7d2672a4c73190de662c93f71fcb3f67b66fed8ba7822feff2686bc12843",
+      "result": "3 inventory oracles PASS;25of26 document checks PASS; historical original-tree fingerprint/count/dirty-state FAIL preserved",
+      "evidence": "output/verification/sentinel-document-followup-20261028/inventory-oracles.json"
+    },
+    "sentinelCleanConsumer20261028": {
+      "at": "2026-10-28T13:28:25.216158+00:00",
+      "scope": "Existing build-release -> release-artifact -> local-release verification only; no app/schema/config/interface changes",
+      "receipt": "output/verification/sentinel-consumer-build-20261028-r2/qualification.json",
+      "launch": "output/verification/sentinel-consumer-build-20261028-r2/launch-check.json",
+      "recordChanges": [
+        "docs/hackathon/STATE.md",
+        ".hackops/entries/04a02554-aef4-48ff-a69c-461603a3940c.json"
+      ],
+      "generatedGraph": "ACCESS_DENIED",
+      "driftRisk": "Generated graph remains inaccessible; no regeneration claimed. Earlier source ZIP contains earlier documents."
+    },
+    "sentinelAcceptanceReconciliation20261028": {
+      "at": "2026-10-28T13:32:40.409781+00:00",
+      "changedDocs": [
+        "docs/PRODUCT_REQUIREMENTS.md",
+        "docs/OPERATIONS_AND_COST_PLAN.md",
+        "docs/hackathon/STATE.md"
+      ],
+      "impact": "Current status wording -> source/operations understanding; app/schema/config/interfaces and accepted requirements unchanged.",
+      "verification": "25of26 document checks PASS; historical original mismatch retained; no validator changes.",
+      "evidence": "output/verification/sentinel-workflow-reconciliation-20261028/acceptance-ledger.json",
+      "generatedGraph": "READ_ACCESS_DENIED; direct PKG/source fallback; no refresh claimed."
+    },
+    "sentinelAuthorityCampaign20261028": {
+      "at": "2026-10-28T13:43:09.235542+00:00",
+      "scope": "Existing plans/decisions HTTP routes and scoped native store; no source/schema/config/interface changes",
+      "evidence": "output/verification/sentinel-authority-campaign-20261028-r2/campaign-result.json",
+      "docs": [
+        "docs/RED_TEAM_PLAN.md",
+        "docs/hackathon/STATE.md"
+      ],
+      "validation": "15 bounded attempts; two valid adaptive application-control sequences;73 public tables unchanged; full campaign incomplete",
+      "graph": "Generated graph remains inaccessible; direct PKG/source used; no refresh claimed"
+    },
+    "sentinelSourceCandidateDiscovery20261028": {
+      "at": "2026-10-28T13:49:04.639854+00:00",
+      "scope": "Read-only official source discovery and local reviewer materials; no app/schema/source-registry changes",
+      "record": "output/verification/sentinel-source-candidate-20261028/receipt.json",
+      "integrationRisk": "Different canonical report URLs and unknown timezone/effective instants; reviewed source-series mapping required before ingestion",
+      "graph": "Generated graph inaccessible; no refresh claimed"
+    },
+    "sentinelPinnedAssetCheckout20261028": {
+      "at": "2026-10-28T17:09:56.352543+00:00",
+      "status": "PINNED_ASSET_CHECKOUT_REPAIR_VERIFIED_LOCALLY",
+      "finding": "Windows autocrlf checkout changed all three runtime-pinned assets and fails existing integrity guards.",
+      "change": "Directory-scoped -text attribute; pinned hashes/data and runtime code unchanged.",
+      "impact": "Git checkout -> pinnedTokenizer integrity -> prompt reservation -> provider admission.",
+      "evidence": [
+        "output/verification/sentinel-publication-preflight-20261028/windows-checkout-before.json",
+        "output/verification/sentinel-publication-preflight-20261028/attributes-checkout-test.json"
+      ],
+      "checks": "Three pre-fix checkout integrity failures; eight Git checkout hash cases PASS; 14/14 focused tokenizer tests PASS.",
+      "driftRisk": "Generated graph remains unreadable; PKG updated directly. Full public clone/judge qualification remains open."
     }
   },
   "documentationReview": {
-    "reviewedAt": "2026-10-12T14:18:37.168131+00:00",
-    "boundary": "Final source-delivery disclosure corrected after private push; application source/config/schema unchanged from qualified recovery candidate."
+    "reviewedAt": "2026-10-13T00:56:32.437714+00:00",
+    "boundary": "Persona/manual testing guide added to existing EVALUATION_AND_TEST_PLAN owner with embedded canonical records; README navigation and document catalog updated. No runtime, schema, config, provider or role-policy change. Structural Graphify excludes document semantics; direct source review and document/suite validators used.",
+    "manualUserTesting": {
+      "owner": "docs/EVALUATION_AND_TEST_PLAN.md#persona-guide-and-manual-end-to-end-testing",
+      "inScopeParticipantGroups": 15,
+      "excludedDirectUserGroups": 2,
+      "permissionRoles": [
+        "incident_commander",
+        "analyst",
+        "viewer"
+      ],
+      "journeys": 20,
+      "designedScenarios": 34,
+      "execution": "ALL_34_SCENARIO_PLANS_NOT_RUN; AUTHENTICATED_BRANCHES_BLOCKED_BY_LOCAL_DOCKER",
+      "driftRisks": [
+        "Documentary coverage is not scenario execution or exhaustive population coverage.",
+        "Current runtime unchanged; structural AST graph fresh for current code, excludes documentary semantics.",
+        "New fixture specs F7\u00c3\u0192\u00c2\u00a2\u00c3\u00a2\u00e2\u20ac\u0161\u00c2\u00ac\u00c3\u00a2\u00e2\u201a\u00ac\u00c5\u201cF14 are not created fixtures; real participants/authority/labels remain missing.",
+        "Named branches and caps cannot be skipped/reset to manufacture case PASS.",
+        "Deployment/hosted DB hold, original target isolation and $0 cash ceiling remain."
+      ],
+      "evidence": ".codex/evidence/keyless-workflow-assessment.json",
+      "humanParticipantGroups": 14,
+      "excludedDirectUserExplanation": "Residents and source publishers are external impact/dependency participants, with no citizen/publisher portal.",
+      "appManualScenarios": 22,
+      "externalLifecycleTabletops": 4,
+      "currentEvidence": "output/verification/sentinel-adoption-audit-20261013/",
+      "needs": 20,
+      "additionalStrictReviewScenarios": 8,
+      "historicalRuntimeReferenceCommit": "faef444c44bd346d02d7701a4f15945ae1f6d63b",
+      "currentRuntimeReleaseId": "3acb78fc7d3dd899d7774296a4a093552adbca875f4ee7ac0e0bf78ca8687af8"
+    },
+    "keylessRepairs": {
+      "status": "LOCAL_PROVIDER_KEYLESS_REPAIRS_VERIFIED_AUTHENTICATED_BROWSER_RETEST_BLOCKED",
+      "migration": "supabase/migrations/20261013014825_sentinel_unreviewed_briefing_null.sql",
+      "originalFailuresPreserved": true,
+      "deployment": "HOLD",
+      "hostedDatabase": "HOLD",
+      "graph": "REFRESHED_STRUCTURAL_SOURCE_ONLY",
+      "evidenceDirectory": "output/verification/sentinel-keyless-repair-20261013",
+      "browser": "BLOCKED_BY_LOCAL_DOCKER",
+      "focusedTestsPassed": 69,
+      "providerSecretFile": ".env.local",
+      "providerTests": "NOT_RUN_KEYS_DISABLED_FOR_KEYLESS_CHECKS",
+      "vitestPassed": 3720,
+      "nodePassed": 148,
+      "conditionalDefaultSkips": 10,
+      "capturedCapacityPassed": 2,
+      "publicSourcePassedAcrossLatestAttempts": 3,
+      "compiledUnconfiguredChecks": 171,
+      "offlineArtifactRendererAssertions": 6,
+      "repairLedger": ".loop/repairs/SEN-QA-20261013-keyless/record.json",
+      "ledgerStatus": "REPAIR_OR_HELP_REQUIRED; legacy oracle identity retained; no automatic waiver",
+      "sourceDrift": []
+    },
+    "providerIntegrationTesting": {
+      "at": "2026-10-13",
+      "status": "TAVILY_SEARCH_REPAIRED_LIVE_RETEST_PASS; NEBIUS_AUTH_PASS_INFERENCE_FUNDING_PENDING",
+      "sourceChanges": [
+        "src/lib/sentinel/providers.ts",
+        "src/lib/sentinel/worker.ts"
+      ],
+      "tests": [
+        "src/lib/sentinel/providers.test.ts",
+        "src/lib/sentinel/worker.test.ts"
+      ],
+      "architecture": "Exact registered hostnames only; mixed sibling-host candidates are withheld and counted, all-outside and duplicate responses still rejected; full provider credit charge retained. Search remains discovery only.",
+      "fundingBoundary": "Tavily Researcher included credits verified; no paygo usage. Nebius balance/auto-top-up unknown; no inference sent.",
+      "graph": "REFRESHED_STRUCTURAL_SOURCE_ONLY",
+      "deployment": "HOLD",
+      "hostedDatabase": "HOLD",
+      "originalFireAfter": "NO_WRITES",
+      "privateConfiguredModel": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B",
+      "vitestPassed": 3722,
+      "nodePassed": 148,
+      "conditionalSkips": 10,
+      "focusedPassed": 82,
+      "compiledGuards": 171,
+      "tokenizerQualification": "NOT_CONFIGURED_NOT_FABRICATED",
+      "repairRecord": ".loop/repairs/SEN-QA-provider-hosts-20261013/record.json",
+      "nebiusInferenceRequests": 0
+    },
+    "personaAdoption": {
+      "reviewedAt": "2026-10-14T03:02:33.369029+00:00",
+      "mode": "user-first-product-adoption: Improve/Test strict documentary audit",
+      "definitions": "docs/DOMAIN_DISCOVERY.md",
+      "operations": "docs/UX_SPEC.md",
+      "assessment": "docs/PRODUCT_STRATEGY.md",
+      "tests": "docs/EVALUATION_AND_TEST_PLAN.md",
+      "statusOwner": "docs/DECISIONS_AND_BUILD_GATE.md",
+      "participantIds": [
+        "UP-01",
+        "UP-02",
+        "UP-03",
+        "UP-04",
+        "UP-05",
+        "UP-06",
+        "UP-07",
+        "UP-08",
+        "UP-09",
+        "UP-10",
+        "UP-11",
+        "UP-12",
+        "UP-13",
+        "UP-14",
+        "UP-15"
+      ],
+      "nonhumanActor": "UP-09",
+      "humanResearch": "NOT_RUN",
+      "manualAppTests": 22,
+      "adoptionProtocols": [
+        "AD-T01",
+        "AD-T02",
+        "AD-T03",
+        "AD-T04",
+        "AD-T05",
+        "AD-T06",
+        "AD-T07"
+      ],
+      "implemented": [
+        "Role-specific read-only Overview checklist",
+        "Accurate repaired-defect and provider boundaries",
+        "Distinct buyer/governance/support/integration responsibilities",
+        "Lifecycle/recovery/exit and baseline/claim contracts"
+      ],
+      "localValidation": "COVERAGE_AUDIT_PASS_5_NEGATIVE_CONTROLS_PASS_ORIGINAL_ORACLES_PRESERVED_SUITE_STRUCTURAL_PASS_DOCUMENT_CONTRACTS_10_PASS_PKG_HEALTH_PASS; DOCUMENT_VALIDATOR_25_PASS_1_PROTECTED_ORIGINAL_DRIFT_FAIL",
+      "evidenceDirectory": "output/verification/sentinel-adoption-audit-20261013/",
+      "held": [
+        "Hosted DB provisioning",
+        "Deployment",
+        "Nebius inference funding/tokenizer qualification",
+        "Authenticated browser retest while Docker unavailable"
+      ],
+      "driftRisks": [
+        "Role/navigation changes invalidate checklist and AD-T01",
+        "No human needs/value/adoption validation from automation",
+        "Briefing export is not full migration or universal deletion",
+        "Independent claim reviewer remains absent"
+      ],
+      "externalLifecycleTabletops": 4,
+      "graphSourceDigest": "d62c63f6e57235b424451ef00a3c848b9e4fdf135749c8724e23adabcba49760",
+      "releaseId": "3acb78fc7d3dd899d7774296a4a093552adbca875f4ee7ac0e0bf78ca8687af8",
+      "documentValidation": "25_PASS_1_PROTECTED_ORIGINAL_DRIFT_FAIL; unchanged baseline retained",
+      "gates": {
+        "userUnderstanding": "UNKNOWN",
+        "productValue": "UNKNOWN",
+        "experience": "CONDITIONAL",
+        "technicalAssurance": "CONDITIONAL",
+        "demonstration": "BLOCKED",
+        "adoption": "BLOCKED",
+        "publication": "BLOCKED"
+      },
+      "previousIterationEvidenceDirectory": "output/verification/sentinel-adoption-20261013/",
+      "manualScenarioPlans": 34,
+      "needs": 20,
+      "journeys": 20,
+      "contextProfiles": 6,
+      "runtimeChangedThisIteration": false,
+      "strictAudit": {
+        "findings": [
+          "AD-A01",
+          "AD-A02",
+          "AD-A03",
+          "AD-A04",
+          "AD-A05",
+          "AD-A06",
+          "AD-A07",
+          "AD-A08"
+        ],
+        "newCases": [
+          "UT-27",
+          "UT-28",
+          "UT-29",
+          "UT-30",
+          "UT-31",
+          "UT-32",
+          "UT-33",
+          "UT-34"
+        ],
+        "requirements": 25,
+        "technicalEvaluationDefinitions": 39,
+        "redTeamDefinitions": 24,
+        "inheritedCapabilities": 25,
+        "humanTrials": "NOT_RUN",
+        "schemaAndReferenceAudit": "PASS; all34 plans NOT_RUN, original26 oracles/execution records preserved",
+        "oraclePolicy": "Original assertions and historical receipts preserved; named branches require complete independent outcome evidence.",
+        "actualRuntimeScenarioExecution": "None this documentation-only iteration"
+      }
+    },
+    "personaLocalExecution": {
+      "date": "2026-10-14",
+      "evidenceDirectory": "output/verification/sentinel-persona-execution-20261014",
+      "scope": "Keyless local test/fix/retest; $0 cash, no deployment/hosted DB/protected original writes.",
+      "repair": "SEN-QA-20261014-TYPE-OUTPUT-SCOPE",
+      "currentStatus": "LOCAL_CONTROLS_PASS_FULL_ACCEPTANCE_BLOCKED",
+      "changedFiles": [
+        "tsconfig.json",
+        "src/components/feature-graph.test.tsx",
+        "src/lib/county-scope.ts",
+        "src/lib/fireafter-supabase.ts",
+        "src/lib/county-scope.test.ts"
+      ],
+      "blocked": [
+        "Native Auth/DB/two-session/lock-wait",
+        "Human/independent semantic/value/accessibility qualification",
+        "Deployment and hosted DB on user hold"
+      ],
+      "driftRisks": [
+        "Generated output must stay outside tsc; real app/tests and generated Next types must remain checked.",
+        "Compiler input change invalidates prior build receipt; rebuild/requalify.",
+        "Structural graph excludes JSON; PKG manual config node and compiler scope probe qualify this change."
+      ],
+      "graphSourceDigest": "54f068578870044e6d845048e7d5c7b2fa72147cfa12286222a305260b6812bf",
+      "caseCrosswalk": "output/verification/sentinel-persona-execution-20261014/persona-execution-crosswalk.json",
+      "defaultVitestPasses": 3729,
+      "enabledConditionalCases": 10,
+      "nodePasses": 148,
+      "fullHumanScenarioPasses": 0,
+      "repairIds": [
+        "SEN-QA-20261014-TYPE-OUTPUT-SCOPE",
+        "SEN-QA-20261014-EXPORT-COUNTY-PREP"
+      ],
+      "paidSpendUsd": 0,
+      "providerCalls": 0,
+      "releaseId": "6cab94b9153d91cf1ac95508628e96797c495735e34f0f38c736ca1bb6710ea7",
+      "nativeCompiledApiChecks": 171,
+      "nativeCompiledBrowserChecks": 13,
+      "componentFixtureBrowserChecks": 61,
+      "graphRefresh": "Full current-corpus AST fallback; preliminary incremental call graph incomplete"
+    },
+    "localManualHandoff": {
+      "date": "2026-10-14",
+      "scope": "Owned loopback runtime and documentation only; application/schema unchanged",
+      "appUrl": "http://127.0.0.1:3020",
+      "previewUrl": "http://127.0.0.1:3021",
+      "releaseId": "6cab94b9153d91cf1ac95508628e96797c495735e34f0f38c736ca1bb6710ea7",
+      "launcher": "output/verification/sentinel-manual-local-20261014/launch.mjs",
+      "evidenceDirectory": "output/verification/sentinel-manual-local-20261014",
+      "guide": "docs/EVALUATION_AND_TEST_PLAN.md#manual-self-testing-guide--october-14-2026",
+      "personas": 15,
+      "smokePasses": 29,
+      "humanCases": "NOT_RUN",
+      "blocked": [
+        "Native local Auth/DB unavailable",
+        "Persisted role/decision/history and worker/concurrency workflows",
+        "Live sponsor and human/adoption qualification"
+      ],
+      "paidSpendUsd": 0,
+      "providerCalls": 0,
+      "architecturalFit": "No production authorization bypass; actual source component fixture is a separate denied-write loopback preview",
+      "downstream": [
+        "Persona handoff documentation",
+        "Operations local start/stop",
+        "Status evidence owner"
+      ],
+      "driftRisks": [
+        "Output launcher is machine-local and excluded from code graph/compiler; not a deployable production entrypoint",
+        "Preview is presentation-only; role selection and archived receipts do not prove real authorization/current field suitability",
+        "Runtime availability ends when owned processes stop",
+        "Source edits require a new verified sealed release and preview regeneration"
+      ],
+      "graphCoverage": "No application source change; existing AST source graph remains applicable. Manual artifact metadata tracked here."
+    },
+    "nativeWslLocalAuth": {
+      "date": "2026-10-14",
+      "status": "LOCAL_NATIVE_AUTH_THREE_ROLE_PERSISTENCE_PASS",
+      "primaryOwner": "supabase",
+      "appUrl": "http://127.0.0.1:3022",
+      "apiUrl": "http://127.0.0.1:55341",
+      "databasePort": 55342,
+      "distro": "Ubuntu-24.04",
+      "stackName": "sentinel-personas",
+      "supabaseHome": "/home/vijay/.local/share/sentinel-native-auth-20261014",
+      "cliVersion": "2.121.0",
+      "existingMigrationsApplied": 48,
+      "applicationSourceChanged": false,
+      "localCompatibility": "Invoker-rights private-schema pre-request hook, verified JWT role equals current_user before setting legacy claim GUC",
+      "changedFiles": [
+        "docs/EVALUATION_AND_TEST_PLAN.md",
+        "docs/OPERATIONS_AND_COST_PLAN.md",
+        "docs/DECISIONS_AND_BUILD_GATE.md",
+        "README.md",
+        "pkg.json"
+      ],
+      "evidenceDirectory": "output/verification/sentinel-native-auth-20261014",
+      "mainBrowserPasses": 17,
+      "focusedBoundaryPasses": 7,
+      "distinctBrowserCasesClosed": 22,
+      "restartTableFingerprints": 9,
+      "rolesReauthenticatedAfterRestart": 3,
+      "humanCases": "NOT_RUN",
+      "providerCalls": 0,
+      "paidSpendUsd": 0,
+      "downstream": [
+        "Existing src/lib/supabase.ts target guards/transport",
+        "src/lib/auth.ts real GoTrue/session/membership checks",
+        "Existing Sentinel API->service-role SQL/RPCs",
+        "Three-role workflows and persistent history/export"
+      ],
+      "graphCoverage": "No indexed application source changed. Local launcher/config/bootstrap artifacts are ignored and excluded from AST graph; metadata/target/data flow tracked here.",
+      "driftRisks": [
+        "Experimental Linux native runtime and local compatibility hook are not hosted-production equivalence",
+        "No root environment files/provider keys copied; preserve private account/status/log file exclusion",
+        "Never retarget SUPABASE_HOME, reset/destroy data or start other-project Docker/WSL services",
+        "Fixture authority/clock expiry requires new synthetic branches, never relaxed guards",
+        "Changing code/config requires a newly bound app snapshot and relevant retest"
+      ],
+      "blocked": [
+        "Real email/social Auth",
+        "Provider/worker/scheduler qualification",
+        "Independent native lock-wait/race and release/backup evidence",
+        "Representative human/domain/adoption acceptance",
+        "Deployment/hosted DB held by user"
+      ],
+      "actualNativeAssetPickerAndUiSave": "PASS after complete Point geometry and exact route headers; initial failure retained",
+      "rootAndRuntimeInputDrift": false,
+      "sourceInputDigest": "dd1ba2aa25482ac51884b83615b5d6654579a0ef5f57a652680749752c8aa51d",
+      "postWindowsHelperRestartRoleChecks": 3,
+      "localFunctions": [
+        {
+          "name": "sentinel_local_runtime.bridge_verified_claim_role",
+          "source": "output/verification/sentinel-native-auth-20261014/local-legacy-claims.sql",
+          "security": "invoker, empty search_path, no parameters, validated JWT role equals SQL current_user"
+        }
+      ],
+      "manualScenarioCount": 3,
+      "manualGeometryRepair": "Fill-only missing Point geometry; guard rejects any existing proposal; no populated owner value overwritten",
+      "summary": "output/verification/sentinel-native-auth-20261014/summary.json"
+    },
+    "remainingNativePersonaWorkflows20261015": {
+      "status": "LOCAL_NATIVE_REMAINING_TECHNICAL_SLICES_PASS",
+      "primaryOwner": "codex-product-build-loop",
+      "support": [
+        "user-first-experience-testing coverage",
+        "agentic-product-assurance Change/Verify"
+      ],
+      "appUrl": "http://127.0.0.1:3023",
+      "preservedOwnerApp": "http://127.0.0.1:3022",
+      "apiUrl": "http://127.0.0.1:55341",
+      "changedFiles": [
+        "src/components/sentinel/sentinel-plan.tsx",
+        "src/components/sentinel/sentinel-workspace.tsx",
+        "src/components/sentinel/sentinel-ui-roles.test.tsx"
+      ],
+      "architecturalFit": "Verified decision confirmation is lifted to the incident/mode/identity-keyed workspace, outside revision-keyed editor remounts. APIs, SQL, authority and timeouts unchanged.",
+      "downstream": [
+        "Complete allocation modification and separate approval",
+        "Original command reconciliation",
+        "Accessible confirmed receipt feedback"
+      ],
+      "testEvidence": "output/verification/sentinel-remaining-local-20261015/summary.json",
+      "fullVitestPasses": 3730,
+      "defaultConditionalSkips": 10,
+      "nodePasses": 148,
+      "sentinelPasses": 1118,
+      "humanCases": "NOT_RUN",
+      "providerCalls": 0,
+      "paidSpendUsd": 0,
+      "deployed": false,
+      "hostedProvisioning": "ON_HOLD",
+      "graphCoverage": "Structural source extraction and published graph refreshed after coherent UI change. SQL/doc semantics are manually traced, not inferred.",
+      "driftRisks": [
+        "3022 retains old snapshot; use3023 for repaired confirmation",
+        "Machine-local ignored QA artifacts contain synthetic data; private account/config files stay ignored",
+        "Five-second transport timeout preserves uncertainty and requires original-command reconciliation",
+        "Native clock harness fixtures are synthetic, not live-provider or field truth",
+        "No representative human or production adoption approval"
+      ],
+      "enabledConditionalLocalSuitePasses": 167,
+      "additionalLocalConditionalCases": 7,
+      "nativeEvidenceGroups": 30,
+      "nativeResponsiveCombinations": 27,
+      "productionBuildReleaseId": "b88df875ed0bac583fb60acce954bf9b44c9c44b231489e372778845ba374610",
+      "documentationValidation": "25 PASS; pre-existing protected full-baseline drift FAIL preserved; selected22 fingerprints match"
+    },
+    "manualRefresh20261016": {
+      "status": "READY_FOR_MANUAL_TESTING",
+      "primaryOwner": "supabase:supabase via codex-request-router",
+      "runtime": "http://127.0.0.1:3023",
+      "nativeStack": "sentinel-personas",
+      "databaseApi": "http://127.0.0.1:55341",
+      "newIncidentIds": [
+        "a59b3f5e-ff7d-44f9-bff5-dd86a39bf0b3",
+        "3618be1a-2731-47f8-967b-491848971e6d",
+        "7fe1d4c6-3bed-4cc0-a1e5-4c2e7e6fd92a"
+      ],
+      "originalRowsPreserved": 1924,
+      "originalNonemptyTablesPreserved": 50,
+      "roleScenarioChecks": 9,
+      "evidence": "output/verification/sentinel-manual-refresh-20261016-6e302497/summary.json",
+      "providerCalls": 0,
+      "paidSpendUsd": 0,
+      "deployment": "ON_HOLD",
+      "hostedDatabase": "ON_HOLD",
+      "architecturalFit": "Reuse existing native stack, supported account sessions and existing fixture/RPC patterns. Add only new synthetic incident-scoped rows; no app/schema changes, original-row edits or global logout.",
+      "downstream": [
+        "Owner manual approve/reject/modify workflows",
+        "Current manual guide and local runtime ownership"
+      ],
+      "graphCoverage": "Application/source AST inputs unchanged. Ignored local fixture/launcher functions are operational artifacts; new target and data-flow metadata recorded here.",
+      "localFunctions": [
+        "start-app.mjs: isolated source snapshot and loopback3023 launch with provider keys blank",
+        "seed.mjs: new UUID-only synthetic source/assets/native records",
+        "prepare.mjs: real analyst constraint and commander policy writes on fresh incidents only",
+        "sentinel-manual-readonly-check.mjs: three real roles read three unconsumed scenarios",
+        "sentinel-manual-fingerprint.mjs: compare old public row hashes/counts without exposing row values"
+      ],
+      "driftRisks": [
+        "WSL/native and owned web processes must remain running",
+        "Synthetic scenario clock is pinned; expired authority requires fresh fixtures",
+        "Private account/config files remain excluded; root .env never copied",
+        "No provider, production, hosted or representative human qualification"
+      ]
+    },
+    "submissionReadiness20261019": {
+      "status": "OPEN",
+      "owner": "docs/DECISIONS_AND_BUILD_GATE.md",
+      "scriptOwner": "docs/SUBMISSION_PLAN.md",
+      "changes": [
+        "Reconciled historical Auth/concurrency and Tavily evidence",
+        "Consolidated media draft/script outside final planning boundary",
+        "Identified ignored local-helper dependency blocking clean judge reproduction"
+      ],
+      "runtimeChanged": false,
+      "validator": {
+        "path": "docs/evidence/validate_documents.py",
+        "change": "Require current native-pass identity and explicit submission/production non-acceptance while preserving historical failure oracle checks",
+        "result": "25 PASS / 1 pre-existing protected FireAfter baseline drift FAIL",
+        "runtimeImpact": "none; planning reports only"
+      },
+      "portableLauncher": {
+        "path": "scripts/sentinel-local-app.mjs",
+        "tests": "scripts/sentinel-local-app.node-test.mjs",
+        "limits": "App launcher only; portable database bootstrap/accounts/fixtures and clean-install proof still pending. Graphify structural index stale for these added scripts; direct source/PKG inspected."
+      },
+      "portableWorkspace": {
+        "status": "FILES_PREPARED_NOT_STARTED",
+        "migrationCount": 48,
+        "tests": "7 setup/launcher tests PASS",
+        "limits": "Fresh native start/migration application/account issuance/fixture seeding and clean-install proof remain pending. Graphify index stale for added setup files."
+      },
+      "nativeStartup": {
+        "status": "BLOCKED_ARTIFACT_TRANSPORT",
+        "tests": 4,
+        "stack": "sentinel-judge-preflight-20261019",
+        "cleanup": "CLI exact-workspace stop reports not_running; startup process exited 1",
+        "limits": "No migration/auth/persistence proof; Graphify index stale for added startup files."
+      },
+      "nativeFreshAuth": {
+        "receipt": "output/verification/submission-readiness-20261019/native-fresh-auth.json",
+        "status": "NATIVE_FRESH_DATABASE_AUTH_PASS_APP_PREPARATION_INCOMPLETE",
+        "limits": "No complete fresh app workflow or clean-machine qualification. New stack stopped and data preserved. Structural index remains stale for earlier added setup files."
+      },
+      "publicationReview": {
+        "receipt": "output/verification/submission-readiness-20261019/publication-review.json",
+        "candidateFiles": 636,
+        "historyBlobs": 726,
+        "credentialFindings": 0,
+        "limits": "Heuristic scan; six binary/nonUTF8 objects skipped. Final snapshot scan, dependency obligations, inherited rights and project license remain open.",
+        "changes": "Judge-facing README, dated provenance and vendored upstream notice; no runtime logic change. Graph index stale for new notice."
+      },
+      "freshPersonaApi": {
+        "receipt": "output/verification/submission-readiness-20261019/fresh-persona-api.json",
+        "status": "FRESH_LOCAL_PERSONA_API_PASS",
+        "limits": "API route proof only; browser/video, portable account/fixture delivery and clean-machine reproduction remain incomplete."
+      },
+      "portableAccounts": {
+        "status": "LOCAL_ACCOUNT_SETUP_AND_REUSE_PASS",
+        "tests": "10 Node setup tests; 3 Python SQL-target tests; real three-role issuance and rerun",
+        "limits": "Fixture packaging, fresh internet artifact installation, browser/video and provider qualification remain incomplete; structural index stale for added scripts."
+      },
+      "portableFixtures": {
+        "receipt": "output/verification/submission-readiness-20261019/portable-fixtures.json",
+        "status": "PORTABLE_FIXTURES_PASS",
+        "tests": 12,
+        "limits": "Seed inputs only; complete clean-checkout/browser/provider/video qualification remains open. Structural graph index stale for setup additions."
+      },
+      "graphRepair": {
+        "initialFailure": "Locked npm dependency misclassified as repository source",
+        "change": "Classify only lockfile dependency names/subpaths as external; unknown sources still rejected",
+        "tests": "6 Python graph contracts PASS",
+        "runtimeImpact": "Graph tooling only"
+      },
+      "graphFinal": {
+        "status": "PASS_STRUCTURAL_ONLY",
+        "sourceDigest": "4a6f9e7bfe8fdcb9a8a9d6c597f26537b1058241e477fbec3e01ec465da56e34",
+        "files": 585,
+        "nodes": 4439,
+        "edges": 12598,
+        "sourceHashesVerified": true,
+        "graphContracts": 7,
+        "viewerContracts": 7,
+        "documentAndGraphTests": 14,
+        "setupNodeTests": 12,
+        "setupPythonTests": 7,
+        "limits": "Documentation semantics and runtime/provider/human qualification excluded; supersedes prior structural-staleness notes for the inspected source snapshot."
+      },
+      "freshDownloadedRuntime": {
+        "status": "NATIVE_AUTH_FIXTURE_SETUP_PASS",
+        "stack": "sentinel-judge-download-20261020",
+        "migrations": 48,
+        "verifiedRoles": 3,
+        "syntheticInputs": 3,
+        "archiveTests": 4,
+        "startupTests": 4,
+        "receipt": "output/verification/submission-readiness-20261019/fresh-download-setup.json",
+        "limits": "Not clean-checkout dependency installation, complete browser journeys, provider qualification or public judge access.",
+        "graph": {
+          "generatedAt": "2026-10-20T00:27:02.425033+00:00",
+          "sourceDigest": "2ca9ab46e11bb5981dc01c0d0af6630e223dbc99a96ab639ed808fbe2c7f06ed",
+          "scope": "Structural source index refreshed; local viewer regenerated; no deployment."
+        },
+        "documentValidation": {
+          "PASS": 25,
+          "FAIL": 1
+        }
+      },
+      "cleanSourceQualification": {
+        "status": "CLEAN_SOURCE_INSTALL_AND_SYNTHETIC_API_PASS",
+        "receipt": "output/verification/submission-readiness-20261019/clean-source-qualification.json",
+        "sourceFiles": 647,
+        "scope": "Fresh Windows dependencies and synthetic authenticated API journeys; no public access, browser or provider qualification"
+      },
+      "ownerAttestations": {
+        "receipt": "output/verification/submission-readiness-20261019/owner-attestations.json",
+        "license": "MIT",
+        "licenseFile": "LICENSE",
+        "eligibility": "Entrant self-attestation received; final terms not accepted",
+        "validatorChange": "LICENSE admitted as supporting file; actual existence and project-boundary guards retained; positive and missing-file checks PASS"
+      },
+      "comparisonPromptRepair": {
+        "id": "SEN-NEBIUS-COMPARISON-ENUM-20261020",
+        "promptVersion": "sentinel-comparison-v2",
+        "failure": "Real model copied pipe-separated category example and incompatible benign materiality; strict parser rejected it",
+        "change": "Valid example, explicit single-value enums and category/materiality rules; schema unchanged",
+        "before": "output/verification/nebius-app-prompts-20261019/receipt.json",
+        "after": "output/verification/nebius-app-prompts-v2-20261020/receipt.json",
+        "sourceHashes": {
+          "src/lib/sentinel/interpretation.ts": "acc70a976066465a2f39d3e6c466c01af45c8a0f1f18161c6858521b543ae8e1",
+          "src/lib/sentinel/interpretation.test.ts": "a91dae2e6c8e0d384d492431afbe74f32dcbf577c97f3ae37932bd778f5c390f"
+        },
+        "limits": "Two standalone calls per trial; no persistent worker or universal tokenizer qualification",
+        "assurance": "Bounded Change/Verify: source-output validation and reliability affected; human approval, permissions and retry guards unchanged; field correctness unproven",
+        "verification": {
+          "focusedTestsPassed": 58,
+          "lint": "PASS",
+          "graph": "AST extraction and integrity PASS; final replacement blocked twice by Windows PermissionError; published graph stale for prompt change"
+        }
+      }
+    },
+    "storyboardRepair20261020": {
+      "reason": "Stale no-implementation assertion and conflicting 2:50/2:55 timelines",
+      "scope": [
+        "docs/SUBMISSION_PLAN.md",
+        "scripts/submission-storyboard.mjs",
+        "src/lib/judge-presentation.test.ts"
+      ],
+      "graphStatus": "Published graph stale; three generated files unreadable. Direct source and PKG edge inspection used.",
+      "status": "Full local tests, isolated production build and signed-out HTTP checks PASS; submission gates remain open",
+      "verification": {
+        "focusedTests": 6,
+        "nodeTests": 161,
+        "storyboardSeconds": 175,
+        "lintExit": 0,
+        "fullVitestPassed": 3732,
+        "fullVitestSkipped": 10,
+        "productionBuild": "PASS",
+        "signedOutHttpRoutes": 3,
+        "migrationContractExit": 0
+      },
+      "sha256": {
+        "docs/SUBMISSION_PLAN.md": "baa23e03f92924176b4758cd0e6b2bc66b87794dfd9a268bdea1a70a84a18ab5",
+        "scripts/submission-storyboard.mjs": "eeeb0e2811eb51826fcc331e3a6179150f19175a22667f4e91f9e63d8aa6e2df",
+        "src/lib/judge-presentation.test.ts": "d32dfdb2084783e6651ff623ed5cb9c9516af1f118fde08715f7c9bc0dadcb74"
+      }
+    }
   }
 }

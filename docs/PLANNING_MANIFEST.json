@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "edition": "FINAL_PLANNING",
-  "created_at_utc": "2026-10-12T16:39:37.340333+00:00",
+  "created_at_utc": "2026-10-28T17:12:05.708960+00:00",
   "status": "FINAL_SPECIFICATIONS_LOCAL_BASELINE_ACCEPTANCE_PENDING",
   "counts": {
     "requirements": 25,
@@ -27,18 +27,18 @@
     },
     {
       "path": "PROVENANCE.md",
-      "sha256": "34dd500a498e1c7967953f9568f19762a4159e56b1307f08c45b43be82aa83c1",
-      "bytes": 15472
+      "sha256": "05468b687db1ea4053a36801505180afc78faa6133758fdf07d04a34b29d097c",
+      "bytes": 19532
     },
     {
       "path": "README.md",
-      "sha256": "903eeca6e8dde880511b0004f103ce8527defebeff92eb80e4c44b7368a84f0b",
-      "bytes": 7460
+      "sha256": "bc173e2efc48b8e198546736c3fdc9a0edea46768a717a8890c7076b57b7e5ae",
+      "bytes": 12439
     },
     {
       "path": "docs/ARCHITECTURE.md",
-      "sha256": "255d47d089d3490f52223272e07b1af2239b6779b91ea0ef5256333ed59d947c",
-      "bytes": 35920
+      "sha256": "f6eacb58f5d6adc157d4b17f1d1ee33ccf75e0ce3c1ccbc016b0582a02cde0fb",
+      "bytes": 39762
     },
     {
       "path": "docs/DATA_AND_API_CONTRACTS.md",
@@ -47,18 +47,18 @@
     },
     {
       "path": "docs/DECISIONS_AND_BUILD_GATE.md",
-      "sha256": "9693debd46b17aac4e542a65b9ca97bae8e08d43941f579a82875b7fde017f78",
-      "bytes": 31309
+      "sha256": "ac97cdc5a91ff5295b710b646745f1e4d5c87aeab1db3bdd89402ec0e8c5d527",
+      "bytes": 87864
     },
     {
       "path": "docs/DOMAIN_DISCOVERY.md",
-      "sha256": "e4208491327fe3a28e8b3795ee5588a1603722141efb8d9b90cd0fff8347abad",
-      "bytes": 3832
+      "sha256": "b84a8e94f28a2104b2b3f358789e57a400efd609bef96e06cc91e7269ef1a04f",
+      "bytes": 20988
     },
     {
       "path": "docs/EVALUATION_AND_TEST_PLAN.md",
-      "sha256": "542f2e4bad1439662e5ac26fb1dc4ce5ad551850f71ae2fb4c4d411d1f32573c",
-      "bytes": 10989
+      "sha256": "bc9650bbdd1d1c68ab87dda6a30fe65b8b499de926030dba02e2ca6ade2572e5",
+      "bytes": 372064
     },
     {
       "path": "docs/FIREAFTER_BASELINE.md",
@@ -67,18 +67,18 @@
     },
     {
       "path": "docs/OPERATIONS_AND_COST_PLAN.md",
-      "sha256": "55a1d58404581470935469e0c2a2326e13c04ff4cc9cf39dc8a93decedbc88d5",
-      "bytes": 11085
+      "sha256": "9bfd80b368460ad63131e1b560cf84af77f5dacaf16992f8d437a1bb210ff792",
+      "bytes": 46387
     },
     {
       "path": "docs/PRODUCT_REQUIREMENTS.md",
-      "sha256": "0bf1175dd44e9aa88412975fd8b4fcc4e294219b7ca10dc4ec07ffdc628b24a0",
-      "bytes": 8777
+      "sha256": "44e2f59ed30bd87c94230cf3d02686343e49c5a9adb69933c136610289c08c94",
+      "bytes": 17079
     },
     {
       "path": "docs/PRODUCT_STRATEGY.md",
-      "sha256": "b9ccf90fb3b1b815aa3640964ef5214ca292e1f90f02bca81a56e9685a1c86c5",
-      "bytes": 8675
+      "sha256": "8ffccfd369619428187e54f3624cd28b2a682b9c3980cc29509d618428ddd6c6",
+      "bytes": 30540
     },
     {
       "path": "docs/PROJECT_ISOLATION.md",
@@ -87,8 +87,8 @@
     },
     {
       "path": "docs/RED_TEAM_PLAN.md",
-      "sha256": "37a8b4dbb2c911c48c2b4a1ca5cf7ca45fe932fcdb1f8eb95bf66f4a19ef5fb4",
-      "bytes": 6815
+      "sha256": "1c2813bcb6b27c23df572bb87a1c7250d454adff37559ef633f7914755d60d07",
+      "bytes": 9748
     },
     {
       "path": "docs/SECURITY_AND_HUMAN_REVIEW.md",
@@ -97,18 +97,18 @@
     },
     {
       "path": "docs/SOURCE_AND_TOOL_CONTRACTS.md",
-      "sha256": "c8492aa4a5b0532b7834e9dd451c9a90b2c7d21ba40c2633ef8ee16c90f8dedf",
-      "bytes": 10538
+      "sha256": "a9117c8f09c784ab085ef335128b7de2f5c6d207b1f663296baf73ff284a896e",
+      "bytes": 15841
     },
     {
       "path": "docs/SUBMISSION_PLAN.md",
-      "sha256": "405f981b8f4aeb39fe0ea980839af90865f2ca81ba8fcfba23e48b99c2c7db57",
-      "bytes": 9529
+      "sha256": "2a3bbc582025336ce8b978af58933b7cf1275b854b8a93ba03b7175faed0cc17",
+      "bytes": 21700
     },
     {
       "path": "docs/UX_SPEC.md",
-      "sha256": "9d82c05cb16ee311248738d04b1d83146a6c3e3d0f108ea234e29a7dec0baa39",
-      "bytes": 7347
+      "sha256": "7240525964b8af4431c34a953ed87ac332c21a19555213d846c0372165c6fe03",
+      "bytes": 35826
     },
     {
       "path": "docs/backlog.csv",
@@ -132,13 +132,13 @@
     },
     {
       "path": "docs/evidence/validate_documents.py",
-      "sha256": "4cf5db44d763ea1124e3f7e2617a0e2f31ae58227bc6ca07b79ee33a1dc94391",
-      "bytes": 38994
+      "sha256": "fa7e7d2672a4c73190de662c93f71fcb3f67b66fed8ba7822feff2686bc12843",
+      "bytes": 39526
     },
     {
       "path": "docs/hackathon_compliance.csv",
-      "sha256": "b2153855a0b4ce27050edd2212b8ca8d4be17a214d81b324235d1930b2e9e9a3",
-      "bytes": 5825
+      "sha256": "96fa9e26775aaf8c4124a1480ac75f13926be06da3f18444d7cd3fc9b6709711",
+      "bytes": 5866
     },
     {
       "path": "docs/red_team_probes.csv",
@@ -152,8 +152,8 @@
     },
     {
       "path": "docs/traceability.csv",
-      "sha256": "45dc0c66d64b5981bac66011b5053345586f2468f07b4d7282adea8278f57561",
-      "bytes": 2299
+      "sha256": "255731f11227e280b61899dc9d39d96a929b34bd0b8d2d0bbba816547b33466e",
+      "bytes": 2273
     }
   ]
 }

@@ -8,7 +8,8 @@ afterEach(cleanup);
 
 function chooseStage(id: string) {
   const stage = FEATURE_STAGES.find((item) => item.id === id)!;
-  fireEvent.click(screen.getByRole("button", { name: `Step ${stage.number}: ${stage.title}` }));
+  const navigation = screen.getByRole("navigation", { name: "Feature walkthrough stages" });
+  fireEvent.click(within(navigation).getByRole("button", { name: `Step ${stage.number}: ${stage.title}` }));
 }
 
 describe("FeatureGraph", () => {
@@ -99,19 +100,26 @@ describe("FeatureGraph", () => {
       const from = FEATURE_GRAPH_NODES.find((node) => node.id === edge.from)!;
       const to = FEATURE_GRAPH_NODES.find((node) => node.id === edge.to)!;
       chooseStage(from.stage);
-      fireEvent.click(screen.getByRole("button", { name: `${from.title}. ${from.summary}` }));
-      fireEvent.click(screen.getByRole("button", { name: `Open ${to.title}` }));
-      expect(screen.getByRole("article", { name: to.title })).toBeTruthy();
-      fireEvent.click(screen.getByRole("button", { name: `Open ${from.title}` }));
+      const stage = FEATURE_STAGES.find((item) => item.id === from.stage)!;
+      const list = screen.getByRole("list", { name: `Features in ${stage.title}` });
+      fireEvent.click(within(list).getByRole("button", { name: `${from.title}. ${from.summary}` }));
+      const fromDetail = screen.getByRole("article", { name: from.title });
+      fireEvent.click(within(fromDetail).getByRole("button", { name: `Open ${to.title}` }));
+      const toDetail = screen.getByRole("article", { name: to.title });
+      expect(toDetail).toBeTruthy();
+      fireEvent.click(within(toDetail).getByRole("button", { name: `Open ${from.title}` }));
       expect(screen.getByRole("article", { name: from.title })).toBeTruthy();
     }
   });
 
   it("exposes every feature in the full index and opens its detail", () => {
     render(<FeatureGraph />);
-    fireEvent.click(screen.getByText("Full feature index (25)"));
+    const summary = screen.getByText("Full feature index (25)");
+    fireEvent.click(summary);
+    const index = summary.closest("details")!;
+    expect(index.open).toBe(true);
     for (const node of FEATURE_GRAPH_NODES) {
-      fireEvent.click(screen.getByRole("link", { name: node.title }));
+      fireEvent.click(within(index).getByRole("link", { name: node.title }));
       expect(screen.getByRole("article", { name: node.title })).toBeTruthy();
     }
   });

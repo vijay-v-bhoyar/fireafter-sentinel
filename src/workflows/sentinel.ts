@@ -15,4 +15,6 @@ async function step(runId:string){
  'use step';
  return runSentinelStep(runId);
 }
-step.maxRetries=0;
+// One infrastructure replay can resume a crashed step. Deterministic provider
+// attempt IDs and native reservations still forbid retrying an uncertain paid call.
+step.maxRetries=1;

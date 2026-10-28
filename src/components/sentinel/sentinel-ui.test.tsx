@@ -8,6 +8,8 @@ import { useSentinelCommand, CommandRecovery, parseIntent } from './use-sentinel
 import { SentinelPlan } from './sentinel-plan';
 import { SentinelEvidence } from './sentinel-evidence';
 import { SentinelPolicy } from './sentinel-policy';
+import { SentinelConstraints } from './sentinel-constraints';
+import { inventoryPage } from '../../test/asset-page-fixture';
 const id=(n:number)=>`10000000-0000-4000-8000-${String(n).padStart(12,'0')}`;
 const scope={organizationId:id(1),incidentId:id(2),mode:'synthetic' as const},actor=id(3);
 const body={incidentId:scope.incidentId,mode:scope.mode,commandId:id(4),expectedConstraintRevision:null,configuration:{}};
@@ -25,4 +27,17 @@ describe('reviewer role and missingness UI',()=>{
  it.each(['viewer','analyst'] as const)('never exposes terminal decision controls to %s',role=>{render(<SentinelPlan scope={scope} identity={{id:actor,organizationId:scope.organizationId,role}} plan={null} constraints={null} claims={[]} onRefresh={()=>{}} onOpenRevision={()=>{}}/>);expect(screen.queryByRole('button',{name:'Accept reviewed proposal'})).toBeNull();expect(screen.queryByRole('button',{name:'Reject proposal'})).toBeNull();expect(screen.getByText('Author the bounded crew and task inputs before creating a proposal.')).toBeDefined();});
  it('labels missing sources and avoids inventing a successful zero-change check',()=>{render(<SentinelEvidence scope={scope} actorId={actor} canWrite={false} summary={null} changes={null} onRefresh={()=>{}} onClaims={()=>{}}/>);expect(screen.getByText(/Source registry not configured/)).toBeDefined();expect(screen.queryByText(/No changes found/)).toBeNull();});
  it('disables policy mutation for an analyst while retaining its readable fields',()=>{render(<SentinelPolicy scope={scope} identity={{id:actor,organizationId:scope.organizationId,role:'analyst'}} policy={null} summary={null} onRefresh={()=>{}}/>);expect(screen.getByRole('button',{name:'Save coordinator policy'})).toHaveProperty('disabled',true);expect(screen.getByText(/Only a coordinator can change policy/)).toBeDefined();});
+});
+
+ describe('Sentinel stored asset authoring',()=>{
+ it('sends authenticated inventory authority and adds a validated stored task',async()=>{
+  const page=inventoryPage(0,10,1);page.incidentId=scope.incidentId;page.canonicalIncidentId=scope.incidentId;
+  if(page.items[0].status==='available')page.items[0].asset.id=id(20);
+  const fetch=vi.fn().mockResolvedValue(Response.json(page));vi.stubGlobal('fetch',fetch);
+  render(<SentinelConstraints scope={scope} actorId={actor} canWrite={true} current={null} onRefresh={()=>{}}/>);
+  fireEvent.click(screen.getByRole('button',{name:'Browse stored assets'}));
+  fireEvent.click(await screen.findByRole('button',{name:'Add Bridge 1'}));
+  expect(screen.getByRole('group',{name:'Inspection 1: Bridge 1'})).toBeDefined();
+  expect(fetch.mock.calls[0][1]).toMatchObject({cache:'no-store',headers:{'x-fireafter-actor':actor,'x-fireafter-organization':scope.organizationId}});
+ });
 });

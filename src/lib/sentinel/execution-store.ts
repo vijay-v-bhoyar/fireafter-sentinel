@@ -3,7 +3,7 @@ import {createHash} from 'node:crypto';
 import {z} from 'zod';
 import type {SupabaseClient} from '@supabase/supabase-js';
 import {getSupabaseAdminClient} from '../supabase';
-import {IdSchema,HashSchema,RunProjectionSchema,DocumentVersionSchema,WorkerMutationSchema,type SentinelRun} from './contracts';
+import {IdSchema,HashSchema,InstantSchema,RunProjectionSchema,DocumentVersionSchema,WorkerMutationSchema,type SentinelRun} from './contracts';
 import {SourceConfigurationSchema} from './publication';
 import {SentinelRunError} from './runs';
 import {ClaimDraftSchema} from './claims';
@@ -25,6 +25,8 @@ async function rpc<T>(name:string,args:Record<string,unknown>,schema:z.ZodType<T
  const result=schema.safeParse(data);if(!result.success)throw new SentinelRunError('STORAGE_UNAVAILABLE');return result.data;
 }
 function parameters(worker:Worker){WorkerMutationSchema.parse(worker);return {p_org:worker.scope.organizationId,p_incident:worker.scope.incidentId,p_mode:worker.scope.mode,p_run:worker.runId,p_owner:worker.owner,p_fence:worker.fence};}
+/** Same scope/lease-checked database clock used to validate publication bounds. */
+export async function readWorkerClock(worker:Worker){return rpc('sentinel_read_worker_clock',parameters(worker),InstantSchema);}
 export async function locateWorkerRun(runId:string){IdSchema.parse(runId);const run=await rpc('sentinel_worker_locator',{p_run_id:runId},RunProjectionSchema);if(run.id!==runId)throw new SentinelRunError('STORAGE_UNAVAILABLE');return run;}
 export async function dispatchState(runId:string){IdSchema.parse(runId);const state=await rpc('sentinel_dispatch_state',{p_run_id:runId},DispatchStateSchema);if(state.run.id!==runId)throw new SentinelRunError('STORAGE_UNAVAILABLE');return state;}
 export async function claimDispatch(runId:string,attemptId:string,previous:string|null,runtimeTerminal:boolean){

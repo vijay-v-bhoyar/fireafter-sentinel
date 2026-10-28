@@ -1,0 +1,32 @@
+{
+  "source": "Official Supabase slim-service archives downloaded over HTTPS and hashed October19,2026",
+  "artifacts": [
+    {
+      "service": "postgres",
+      "version": "17.11.0.004-r1",
+      "source": "https://supabase-cli-artifacts.s3.us-east-1.amazonaws.com/postgres/17.11.0.004-r1/postgres-17.11.0.004-r1-linux-amd64.tar.zst",
+      "archiveSha256": "a9d374c950ec50cb59ead868662f0dd44d358b3917a10346b4bf131f567207f7",
+      "tarSha256": "e7342edf46a4bcbffbfd1a200910071e017f668e1200becc48de4c5d6975cb44",
+      "archiveBytes": 89497642,
+      "tarBytes": 392253440
+    },
+    {
+      "service": "auth",
+      "version": "v2.197.0-r0",
+      "source": "https://supabase-cli-artifacts.s3.us-east-1.amazonaws.com/auth/v2.197.0-r0/auth-v2.197.0-r0-linux-amd64.tar.zst",
+      "archiveSha256": "bd8f59ed1a817014afe71288c2275ad0396630f016f8cb5ab5129388860ec49b",
+      "tarSha256": "337e7984365c84db48b9a55e7bb8aaa4618ac737d94106d051973ce7d22299bb",
+      "archiveBytes": 10800817,
+      "tarBytes": 37263360
+    },
+    {
+      "service": "postgrest",
+      "version": "v16.4-r0",
+      "source": "https://supabase-cli-artifacts.s3.us-east-1.amazonaws.com/postgrest/v16.4-r0/postgrest-v16.4-r0-linux-amd64.tar.zst",
+      "archiveSha256": "d9170378062dba1188c25fb05cd08a3397bb62afd63151812f831eed4fab1051",
+      "tarSha256": "96191258f50713d97d4809c00353f7bd14f51900aa0c15968ae36f748f33060f",
+      "archiveBytes": 4855713,
+      "tarBytes": 20520960
+    }
+  ]
+}

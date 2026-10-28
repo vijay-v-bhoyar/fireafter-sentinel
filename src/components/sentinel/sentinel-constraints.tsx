@@ -3,8 +3,9 @@ import { useRef, useState } from "react";
 import { z } from "zod";
 import { ConstraintConfigurationSchema, type ConstraintConfiguration } from "@/lib/sentinel/planning";
 import { IdSchema, ScopeSchema } from "@/lib/sentinel/contracts";
-import { AssetInventoryPageSchema, type AssetInventoryPage } from "@/lib/asset-inventory-contract";
-import { workspaceRequest, type ConstraintsPage } from "@/lib/sentinel/workspace-client";
+import { type AssetInventoryPage } from "@/lib/asset-inventory-contract";
+import { fetchAssetInventoryPage } from "@/lib/asset-inventory-client";
+import { type ConstraintsPage } from "@/lib/sentinel/workspace-client";
 import { CommandRecovery, useSentinelCommand } from "./use-sentinel-command";
 const blank=(mode:string):ConstraintConfiguration=>({schemaVersion:1,inputBasis:mode==="live"?"user_authored":"demo",shift:{startsAt:"",endsAt:""},crews:[],tasks:[]});
 const displayTime=(v:string|null)=>v?.slice(0,16)??"";
@@ -15,7 +16,8 @@ export function SentinelConstraints({scope,actorId,canWrite,current,onRefresh}:{
  const [cfg,setCfg]=useState<ConstraintConfiguration>(current?.revision?.configuration??blank(scope.mode)),[assets,setAssets]=useState<AssetInventoryPage|null>(null),[busy,setBusy]=useState(false),[error,setError]=useState<string|null>(null),[status,setStatus]=useState("");
  function crew(index:number,key:string,value:unknown){setCfg(v=>({...v,crews:v.crews.map((x,i)=>i===index?{...x,[key]:value}:x)}));}
  function task(index:number,key:string,value:unknown){setCfg(v=>({...v,tasks:v.tasks.map((x,i)=>i===index?{...x,[key]:value}:x)}));}
- async function loadAssets(start=0){setBusy(true);setError(null);try{const result=AssetInventoryPageSchema.parse(await workspaceRequest<unknown>(`/api/assets/page?incidentId=${scope.incidentId}&limit=10&start=${start}${start&&assets?`&revision=${assets.revision}`:""}`,scope,{scoped:false,maxBytes:4194304}));
+ async function loadAssets(start=0){setBusy(true);setError(null);try{const result=await fetchAssetInventoryPage({incidentId:scope.incidentId,limit:"10",start:String(start),...(start&&assets?{revision:assets.revision}:{})},
+   {actorId,organizationId:scope.organizationId},new AbortController().signal);
   if(result.canonicalIncidentId!==scope.incidentId&&result.incidentId!==scope.incidentId)throw Error("Asset inventory belongs to another incident.");setAssets(result);
  }catch(e){setError(e instanceof Error?e.message:"Asset inventory unavailable.");}finally{setBusy(false);}}
  async function save(){if(lock.current)return;lock.current=true;setBusy(true);setError(null);setStatus("");try{const configuration=ConstraintConfigurationSchema.parse(cfg),commandId=crypto.randomUUID();

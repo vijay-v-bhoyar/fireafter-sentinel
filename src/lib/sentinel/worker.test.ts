@@ -37,7 +37,7 @@ beforeEach(async()=>{
  for(const provider of ['tavily','nebius'])await fixture.db.query(`insert into public.sentinel_provider_funds(organization_id,provider,ceiling_micro_usd,ceiling_units,authority_evidence_hash) values($1,$2,1000000,100000000,$3)`,[scope.organizationId,provider,evidence]);
  vi.stubGlobal('fetch',vi.fn(async(url:string,init:RequestInit)=>{
   const body=JSON.parse(String(init.body)) as Record<string,unknown>;calls.push({url,body});
-  if(url==='https://api.tavily.com/search')return Response.json({request_id:'fixture-search',results:[{url:'https://example.gov/notice',title:'Synthetic notice',content:text}],usage:{credits:1}});
+  if(url==='https://api.tavily.com/search')return Response.json({request_id:'fixture-search',results:[{url:'https://example.gov/notice',title:'Synthetic notice',content:text},...(defect==='siblings'?[{url:'https://forecast.example.gov/notice',title:'Unregistered sibling',content:'Withhold'}]:[])],usage:{credits:1}});
   if(url==='https://api.tavily.com/extract')return Response.json({request_id:'fixture-extract',results:defect==='partial'?[]:[{url:'https://example.gov/notice',raw_content:defect==='context'?'x'.repeat(10000):text}],failed_results:defect==='partial'?[{url:'https://example.gov/notice',error:'Fixture unavailable'}]:defect==='mixed'?[{url:'https://example.gov/notice-two',error:'Fixture unavailable'}]:[],usage:{credits:1}});
   if(url!=='https://api.tokenfactory.nebius.com/v1/chat/completions')throw new Error('Unexpected outbound endpoint');
   const messages=body.messages as {content:string}[],extract=messages[0].content.startsWith('Extract');
@@ -57,6 +57,11 @@ describe('actual worker/helper/provider transport against synthetic HTTP and exa
   const savedEvidence=(await fixture.db.query<{payload:{versions:{versionId:string}[]}}>("select payload from public.sentinel_worker_outputs where run_id=$1 and kind='evidence'",[run.id])).rows[0];
   expect((await fixture.db.query<{normalized_text:string}>('select normalized_text from public.sentinel_document_versions where id=$1',[savedEvidence.payload.versions[0].versionId])).rows[0].normalized_text).toHaveLength(10000);
   expect(calls.filter(c=>c.url.includes('tokenfactory'))).toHaveLength(0);
+ });
+ it('retains the discovery withholding count without publishing sibling hosts or skipping source extraction',async()=>{
+  defect='siblings';const run=await start();await execute(run.id);expect(await status(run.id)).toMatchObject({status:'completed',tavily_requests:2,model_requests:2});
+  const saved=(await fixture.db.query<{payload:{withheldResultCount:number;results:{url:string}[]}}>("select payload from public.sentinel_worker_outputs where run_id=$1 and kind='search'",[run.id])).rows[0].payload;
+  expect(saved.withheldResultCount).toBe(1);expect(saved.results.map(x=>x.url)).toEqual(['https://example.gov/notice']);expect((await fixture.db.query('select * from public.sentinel_decisions')).rows).toHaveLength(0);
  });
  it('publishes real persisted source/claim/change records and finishes computation without human approval',async()=>{
   const run=await start();await execute(run.id);expect(await status(run.id)).toMatchObject({status:'completed',tavily_requests:2,model_requests:2});
@@ -83,6 +88,23 @@ describe('actual worker/helper/provider transport against synthetic HTTP and exa
  });
  it('withholds fabricated citations and keeps the charged original attempt instead of approving a result',async()=>{
   defect='quote';const run=await start();await execute(run.id);expect(await status(run.id)).toMatchObject({status:'failed',model_requests:1});expect((await fixture.db.query('select * from public.sentinel_claims')).rows).toHaveLength(0);expect((await fixture.db.query('select * from public.sentinel_priced_reservations')).rows).toHaveLength(3);
+ });
+ it('publishes retrieval bounds from the lease-checked database clock instead of the application wall clock',async()=>{
+  const original=boundary.rpc.getMockImplementation()!,clocks:string[]=[],publications:Record<string,unknown>[]=[];
+  boundary.rpc.mockImplementation(async(name:string,args:Record<string,unknown>)=>{
+   const result=await original(name,args);if(name==='sentinel_read_worker_clock'&&!result.error)clocks.push(result.data);
+   if(name==='sentinel_publish_evidence')publications.push(args);return result;
+  });
+  const run=await start();await execute(run.id);expect(await status(run.id)).toMatchObject({status:'completed'});
+  expect(clocks).toHaveLength(2);const observations=publications[0].p_observations as {requestedAt:string;version:{retrievedAt:string}}[];
+  expect(observations[0].requestedAt).toBe(clocks[0]);expect(observations[0].version.retrievedAt).toBe(clocks[1]);
+ });
+ it('keeps worker clock scope and lease authority private',async()=>{
+  const run=await start(),owner=id(190),leased=await acquireRunLease({scope,runId:run.id,owner});
+  const args=[scope.organizationId,scope.incidentId,scope.mode,run.id,owner,leased.run.fence];
+  const stamp=await fixture.rpc<string>('sentinel_read_worker_clock',args);expect(Number.isFinite(Date.parse(stamp))).toBe(true);
+  await expect(fixture.rpc('sentinel_read_worker_clock',[...args.slice(0,5),leased.run.fence+1])).rejects.toMatchObject({code:'40001'});
+  const grants=(await fixture.db.query<{allowed:boolean}>("select has_function_privilege('authenticated','public.sentinel_read_worker_clock(uuid,uuid,text,uuid,uuid,bigint)','execute') as allowed")).rows[0];expect(grants.allowed).toBe(false);
  });
  it('resumes saved stages with fresh owner fences and does not fetch or charge again',async()=>{
   const run=await start();for(let i=0;i<3;i++)expect(await runSentinelStep(run.id)).toBe('continue');expect(calls).toHaveLength(2);

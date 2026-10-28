@@ -30,7 +30,11 @@ CSV_FILES = {'docs/' + name + '.csv' for name in [
 GENERATED = {'docs/PLANNING_MANIFEST.json', 'docs/evidence/document-validation.json'}
 EXPECTED = MARKDOWN | CSV_FILES | GENERATED | {
     'docs/evidence/source-baseline.json', 'docs/evidence/validate_documents.py'}
-SUPPORTING = {'design/sentinel-workflow.html', '.env.example'}
+SUPPORTING = {'design/sentinel-workflow.html', '.env.example', 'LICENSE'}
+# These requested workflow indexes and submission copy accompany the planning set;
+# they do not replace its canonical owners. Unknown Markdown remains a failure.
+WORKFLOW_RECORDS = {'devpost-submission.md', 'docs/hackathon/RUNBOOK.md',
+                    'docs/hackathon/STATE.md'}
 CHECKS = []
 
 
@@ -70,11 +74,12 @@ def ids(value):
 files = {p.relative_to(ROOT).as_posix() for p in (ROOT / 'docs').rglob('*')
          if p.is_file()}
 files |= {p.name for p in ROOT.glob('*.md') if p.name != 'AGENTS.md'}
-errors = ['Unexpected planning artifact: ' + n for n in sorted(files - EXPECTED)]
+errors = ['Unexpected planning artifact: ' + n for n in sorted(files - EXPECTED - WORKFLOW_RECORDS)]
 errors += ['Missing planning artifact: ' + n for n in sorted(EXPECTED - files)]
 check('Exactly one final planning set; runtime and instructions excluded', errors,
       dict(expected=29, markdown=18, csv=7, json=3, validator=1,
-           boundary='docs/ and root planning Markdown; AGENTS.md and runtime excluded'))
+           boundary='docs/ and root planning Markdown; AGENTS.md and runtime excluded',
+           companion_records=sorted(WORKFLOW_RECORDS)))
 
 requirements = read_csv('requirements')
 tasks = read_csv('backlog')
@@ -452,7 +457,9 @@ proposal_paths = ['src/lib/sentinel/plans.ts', 'src/lib/sentinel/plan-http.ts',
 for path in proposal_paths:
     if not (ROOT / path).is_file():
         errors.append('Documented proposal source missing: ' + path)
-for phrase in ['Current checkout: LOCAL_PROVIDER_', '14 failed / 40 passed',
+for phrase in ['LOCAL_REMAINING_TECHNICAL_SLICES_PASS',
+               'SUBMISSION_NOT_READY', 'Production/adoption acceptance remains NO_GO',
+               'sentinel-remaining-local-20261015/summary.json', '14 failed / 40 passed',
                'historical passes', 'SEN-plan-allocation-order', 'unchanged original oracle']:
     if phrase not in progress:
         errors.append('Current proposal evidence boundary omits: ' + phrase)

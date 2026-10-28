@@ -16,7 +16,7 @@
     "build": "node scripts/build-release.mjs",
     "start": "next start -p 3020",
     "lint": "eslint",
-    "test": "vitest run && node --test scripts/operator-account.test.mjs scripts/operator-account-recovery.node-test.mjs scripts/issuer-entrypoints.node-test.mjs scripts/auth-smoke-config.test.mjs scripts/verify-server-owned-writes.test.mjs scripts/migration-contract-verifier.node-test.mjs scripts/authenticated-refresh-contract.node-test.mjs scripts/product-promise-report.test.mjs scripts/verify-product-promise.node-test.mjs scripts/release-artifact.node-test.mjs scripts/release-lifecycle.node-test.mjs scripts/ci-workflow-contract.node-test.mjs scripts/publish-code-graph.node-test.mjs",
+    "test": "vitest run && node --test scripts/sentinel-local-fixtures.node-test.mjs scripts/sentinel-local-accounts.node-test.mjs scripts/sentinel-native-workspace.node-test.mjs scripts/sentinel-local-app.node-test.mjs scripts/operator-account.test.mjs scripts/operator-account-recovery.node-test.mjs scripts/issuer-entrypoints.node-test.mjs scripts/auth-smoke-config.test.mjs scripts/verify-server-owned-writes.test.mjs scripts/migration-contract-verifier.node-test.mjs scripts/authenticated-refresh-contract.node-test.mjs scripts/product-promise-report.test.mjs scripts/verify-product-promise.node-test.mjs scripts/release-artifact.node-test.mjs scripts/release-lifecycle.node-test.mjs scripts/ci-workflow-contract.node-test.mjs scripts/publish-code-graph.node-test.mjs",
     "test:operator-account": "node --test scripts/operator-account.test.mjs scripts/operator-account-recovery.node-test.mjs scripts/issuer-entrypoints.node-test.mjs",
     "test:auth-smoke-config": "node --test scripts/auth-smoke-config.test.mjs",
     "test:authenticated-refresh": "node --test scripts/authenticated-refresh-contract.node-test.mjs",
@@ -36,6 +36,7 @@
     "verify:submission-storyboard": "node scripts/submission-storyboard.mjs"
   },
   "dependencies": {
+    "@huggingface/tokenizers": "0.2.0",
     "@supabase/ssr": "^0.12.0",
     "@supabase/supabase-js": "^2.108.2",
     "lucide-react": "^1.21.0",

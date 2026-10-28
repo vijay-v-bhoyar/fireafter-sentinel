@@ -12,7 +12,7 @@ import { InventoryCapacityError } from "./inventory-error";
 import { createInventoryManifest, parseInventoryManifest, selectInventoryRows, type InventoryManifest } from "./inventory-manifest";
 import { redactFirmsProvenance } from "./source-link";
 import { hasCurrentCrossingGeometry, projectSourceLineGeometry } from "./source-line-geometry";
-import { normalizeCountyBoundary, prepareCountyScope } from "./county-scope";
+import { normalizeCountyBoundary, prepareCountyScope, prepareCountyScopeFactory } from "./county-scope";
 import type { CurrentUser } from "./auth";
 import { canWriteOperationalRecords } from "./role-capabilities";
 import { ASSET_PAGE_BYTES, AssetInventoryError, AssetInventoryPageSchema, AssetInventoryQuerySchema, type AssetInventoryPage, type AssetInventoryQuery } from "./asset-inventory-contract";
@@ -1024,6 +1024,7 @@ export async function getSupabaseGeoJsonExportSource(incidentId: string, user: C
   };
   const assetIdentities = new Map<string, string>();
   let prior: Recommendation | undefined;
+  let countyScopes: ReturnType<typeof prepareCountyScopeFactory> | undefined;
   return { metadata, revision: inventory.revision, state, totalStored: orderedIds.length, fileName: geoJsonFileName(domainIncident),
     pages: async function* (streamSignal) {
       if (consumed) throw new InventoryCapacityError("read_invalid"); consumed = true;
@@ -1052,7 +1053,8 @@ export async function getSupabaseGeoJsonExportSource(incidentId: string, user: C
         if (assetIds.some(id => !assetMembership.has(id))) throw new InventoryCapacityError("read_invalid");
         const assetRows = await read<SupabaseAssetRow>("assets", assetIds), uploadBudget = { vertices: 0, comparisons: 0 };
         // Geometry's five-second processing window must not include database or consumer waits.
-        const scope = prepareCountyScope(domainIncident);
+        countyScopes ??= prepareCountyScopeFactory(domainIncident);
+        const scope = countyScopes();
         const items = ids.map((id, offset): GeoJsonExportPage["items"][number] => {
           const row = recRows.get(id)!, assetRow = assetRows.get(row.asset_id)!, position = start + offset + 1;
           if (isNonOperationalRecommendationRecord(row) || isNonOperationalAssetRecord(assetRow)) return { position, status: "withheld", reason: "non-operational" };

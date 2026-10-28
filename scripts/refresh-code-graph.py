@@ -29,12 +29,12 @@ def source_files(root):
                        and not name.startswith(("supabase/.temp/", "src/app/.well-known/"))))})
 
 
-def connect_inventory(graph, files):
+def connect_inventory(graph, files, external_modules=()):
     """File membership is structural evidence, never an invented call dependency."""
     file_set = set(files)
     for _, node in graph.nodes(data=True):
         source = node.get("source_file") or ""
-        if source.startswith("node:"):
+        if source.startswith("node:") or any(source == name or source.startswith(name + "/") for name in external_modules):
             node["external_module"] = source
             node["source_file"] = ""
             source = ""
@@ -86,8 +86,17 @@ def connect_inventory(graph, files):
     return graph, removed
 
 
+def stamp_report(report, package_name, generated_at):
+    labels = {"fireafter-sentinel": "FireAfter Sentinel", "fireafter": "FireAfter"}
+    if package_name not in labels or not report.startswith("# Graph Report - "):
+        raise ValueError("Unknown project/report identity")
+    date = datetime.fromisoformat(generated_at).date().isoformat()
+    return f"# Graph Report - {labels[package_name]} ({date})\n" + report.split("\n", 1)[1]
+
+
 def main():
     root = Path(__file__).resolve().parent.parent
+    package_name = json.loads((root / "package.json").read_text(encoding="utf-8"))["name"]
     files = source_files(root)
     if not files:
         raise ValueError("No source files found; refusing to replace the graph")
@@ -95,7 +104,12 @@ def main():
     data = extract([root / name for name in files], cache_root=root, root=root, max_workers=4)
     if data.get("failed_sources"):
         raise ValueError(f"Extraction failed: {data['failed_sources']}")
-    graph, removed = connect_inventory(build([data], root=root, directed=True, dedup=False), files)
+    lock = json.loads((root / "package-lock.json").read_text(encoding="utf-8"))
+    external_modules = {name.rsplit("node_modules/", 1)[-1] for name in lock["packages"] if "node_modules/" in name}
+    graph, removed = connect_inventory(build([data], root=root, directed=True, dedup=False), files, external_modules)
+    if package_name == "fireafter-sentinel":
+        graph.nodes["project:fireafter"]["label"] = "FireAfter Sentinel"
+        graph.graph["project"] = "FireAfter Sentinel"
     communities = cluster(graph)
     labels = label_communities_by_hub(graph, communities)
     commit = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=root).decode().strip()
@@ -124,6 +138,7 @@ def main():
             raise ValueError("Graph HTML export refused")
         report = generate(graph, communities, score_all(graph, communities), labels, [], [],
                           {"warning": receipt["scope"]}, {"input": 0, "output": 0}, str(root), built_at_commit=commit)
+        report = stamp_report(report, package_name, receipt["generatedAt"])
         report += "\n## Integrity And Scope\n- Zero isolated nodes and dangling endpoints; one connected component.\n"
         report += "- contains_file and declares edges represent inventory ownership, not runtime calls.\n"
         report += f"- Working-tree source digest: `{receipt['sourceDigest']}`. The commit alone does not identify dirty source.\n"

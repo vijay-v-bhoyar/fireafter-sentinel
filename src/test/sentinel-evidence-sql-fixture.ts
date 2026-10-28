@@ -30,6 +30,8 @@ export async function sentinelEvidenceSqlFixture() {
   await db.exec(await readFile(new URL("../../supabase/migrations/20261012010000_sentinel_provider_funding.sql", import.meta.url), "utf8"));
   await db.exec(await readFile(new URL("../../supabase/migrations/20261012011000_sentinel_native_provenance.sql", import.meta.url), "utf8"));
   await db.exec(await readFile(new URL("../../supabase/migrations/20261012012000_sentinel_worker_execution.sql", import.meta.url), "utf8"));
+  await db.exec(await readFile(new URL("../../supabase/migrations/20261013014825_sentinel_unreviewed_briefing_null.sql", import.meta.url), "utf8"));
+  await db.exec(await readFile(new URL("../../supabase/migrations/20261028010000_sentinel_worker_clock.sql", import.meta.url), "utf8"));
   async function seed(version: DocumentVersion, actorId: string, role: "incident_commander" | "analyst" | "viewer" = "viewer") {
     const s = version.scope;
     await db.query("insert into public.organizations(id,name) values($1,'Synthetic isolated fixture') on conflict do nothing", [s.organizationId]);

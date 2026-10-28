@@ -37,44 +37,51 @@ export function countyQueryGeometry(value: unknown, bbox: [number, number, numbe
 }
 
 export function prepareCountyScope(incident: Pick<Incident, "locationContext">) {
+  return prepareCountyScopeFactory(incident)();
+}
+
+/** Validate one private county snapshot, then give each page its own bounded work window. */
+export function prepareCountyScopeFactory(incident: Pick<Incident, "locationContext">) {
   const location = incident.locationContext;
   const bbox = location?.bbox ? [...location.bbox] as [number, number, number, number] : undefined;
   if (!location?.boundary) {
     if (location?.sourceKey === "tigerweb-counties") throw new CountyScopeError();
     // Non-provider fixtures/legacy study areas have only an explicitly stored extent.
-    return { boundary: undefined, contains: (point: Position) => Boolean(bbox && coordinateInBbox(point, bbox)) };
+    return () => ({ boundary: undefined, contains: (point: Position) => Boolean(bbox && coordinateInBbox(point, bbox)) });
   }
   const boundary = normalizeCountyBoundary(location.boundary);
   const polygons = boundary.type === "Polygon" ? [boundary.coordinates] : boundary.coordinates;
   const preparationBudget = geometryBudget();
   const classifiers = polygons.map(polygon => polygon.map(ring => prepareRingClassifier(ring, preparationBudget)));
-  const cache = new Map<string, boolean>();
-  const cacheKeys = new Array<string>(20_000);
-  let nextCacheSlot = 0;
-  let queries = 0;
-  const deadline = performance.now() + 5_000;
-  const contains = (point: Position) => {
-    if (point.length !== 2 || !point.every(Number.isFinite) || !bbox || !coordinateInBbox(point, bbox, 0)) return false;
-    const key = `${point[0]},${point[1]}`;
-    const cached = cache.get(key);
-    if (cached !== undefined) return cached;
-    if (++queries > 100_000 || performance.now() > deadline) throw new CountyScopeError();
-    // Bound each query separately. Sharing a basin-linkage work budget across
-    // thousands of county assets rejects otherwise valid complete inventories.
-    const budget = geometryBudget();
-    const result = classifiers.some((polygon) => {
-      const shell = polygon[0](point, budget);
-      return shell === 0 || (shell === 1 && polygon.slice(1).every(hole => hole(point, budget) !== 1));
-    });
-    // Cache capacity is a memory bound, not an inventory truncation rule.
-    // Evicted points are recomputed under the same deadline and query budget.
-    // A fresh Map iterator scans deleted slots after sustained eviction. Keep
-    // insertion order in a bounded ring so FIFO eviction remains constant-time.
-    if (cache.size >= cacheKeys.length) cache.delete(cacheKeys[nextCacheSlot]);
-    cacheKeys[nextCacheSlot] = key;
-    nextCacheSlot = (nextCacheSlot + 1) % cacheKeys.length;
-    cache.set(key, result);
-    return result;
+  return () => {
+    const cache = new Map<string, boolean>();
+    const cacheKeys = new Array<string>(20_000);
+    let nextCacheSlot = 0;
+    let queries = 0;
+    const deadline = performance.now() + 5_000;
+    const contains = (point: Position) => {
+      if (point.length !== 2 || !point.every(Number.isFinite) || !bbox || !coordinateInBbox(point, bbox, 0)) return false;
+      const key = `${point[0]},${point[1]}`;
+      const cached = cache.get(key);
+      if (cached !== undefined) return cached;
+      if (++queries > 100_000 || performance.now() > deadline) throw new CountyScopeError();
+      // Bound each query separately. Sharing a basin-linkage work budget across
+      // thousands of county assets rejects otherwise valid complete inventories.
+      const budget = geometryBudget();
+      const result = classifiers.some((polygon) => {
+        const shell = polygon[0](point, budget);
+        return shell === 0 || (shell === 1 && polygon.slice(1).every(hole => hole(point, budget) !== 1));
+      });
+      // Cache capacity is a memory bound, not an inventory truncation rule.
+      // Evicted points are recomputed under the same deadline and query budget.
+      // A fresh Map iterator scans deleted slots after sustained eviction. Keep
+      // insertion order in a bounded ring so FIFO eviction remains constant-time.
+      if (cache.size >= cacheKeys.length) cache.delete(cacheKeys[nextCacheSlot]);
+      cacheKeys[nextCacheSlot] = key;
+      nextCacheSlot = (nextCacheSlot + 1) % cacheKeys.length;
+      cache.set(key, result);
+      return result;
+    };
+    return { boundary: structuredClone(boundary), contains };
   };
-  return { boundary: structuredClone(boundary), contains };
 }

@@ -89,7 +89,7 @@ function policyConfiguration() { return { schemaVersion: 1, inputBasis: "demo", 
  nativeRules: [{ sourceKey: "nws-forecast", maxAgeMinutes: 30, requireProviderTime: true, requireValidUntil: true }] }; }
 async function policyCommand(commandId=id(70),expectedPolicyRevision:string|null=null){return {incidentId:scope.incidentId,mode:scope.mode,commandId,expectedPolicyRevision,
  expectedSourceConfiguration:id(44),expectedEvidenceGeneration:(await state()).evidence_generation,configuration:policyConfiguration()};}
-async function qualifiedEvidence(documentOverrides:Record<string,unknown>={}){
+async function qualifiedEvidence(documentOverrides:Record<string,unknown>={},reviewClaim=true){
  const s=[scope.organizationId,scope.incidentId,scope.mode] as const,owner=id(50);
  const admitted=await fixture.rpc<{run:{id:string;fence:number;createdAt:string}}>("sentinel_admit_run",[actor,...s,id(44),id(51)]);
  const run=(await fixture.rpc<typeof admitted>("sentinel_acquire_run_lease",[...s,admitted.run.id,owner])).run;
@@ -99,6 +99,7 @@ async function qualifiedEvidence(documentOverrides:Record<string,unknown>={}){
  await publishClaims({scope,runId:run.id,owner,fence:run.fence,commandId:id(53),expectedEvidenceGeneration:pub.receipt.evidenceGeneration,versionIds:[v.id],claims:[{
   id:id(1001),documentVersionId:v.id,excerptStart:0,excerptEnd:17,excerpt:"Synthetic source.",excerptHash:evidenceHash("Synthetic source."),kind:"general_notice",claimText:"Synthetic notice.",
   entityIds:[id(101),id(102),id(103)],modelVersion:"synthetic",promptVersion:"synthetic"}]});
+ if(!reviewClaim)return {run,owner,v};
  const review=await recordClaimReview({incidentId:scope.incidentId,mode:scope.mode,claimId:id(1001),commandId:id(54),expectedEvidenceGeneration:pub.receipt.evidenceGeneration,expectedReviewId:null,
   support:"supported",applicability:"applicable",provenance:"verified",conflict:"clear",note:"Synthetic source context."});
  const markerId=pub.receipt.observations[0].markerId!;
@@ -274,6 +275,21 @@ describe("Optional plan feedback shares the atomic decision command",()=>{
 
 function deliveryScope(revisionId:string,format:"json"|"html"="json"){return {incidentId:scope.incidentId,mode:scope.mode,revisionId,format};}
 describe("Scoped history and immutable portable briefing through exact SQL and HTTP",()=>{
+ it.each(['incident_commander','analyst','viewer'] as const)('exports an unreviewed cited draft as JSON and HTML for %s with null review and intact receipts',async role=>{
+  await qualifiedEvidence({},false);const input=previewInput();input.taskDependencies.forEach(t=>{t.claimIds=[id(1001)];});
+  const preview=await previewPlanDraft(input);const saved=await createPlanDraft({...input,commandId:id(60),expectedCurrentPlanRevision:preview.currentPlanRevision,expectedConstraintRevision:preview.constraintRevision.id,expectedEvidenceGeneration:preview.evidenceGeneration,expectedEvidenceVectorHash:preview.evidenceVectorHash});
+  await fixture.db.query('update public.organization_members set role=$1 where user_id=$2',[role,actor]);identity.user={id:actor,organizationId:scope.organizationId,role};
+  const dom=new JSDOM();vi.stubGlobal("DOMParser",dom.window.DOMParser);
+  try{  for(const format of ['json','html'] as const){
+   const artifact=await prepareBriefing(scope.incidentId,scope.mode,saved.revision.id,format);expect(artifact).not.toBeNull();
+   const delivered=await verifyBriefingDelivery(briefingResponse(artifact!),deliveryScope(saved.revision.id,format));
+   expect(delivered.payload.evidence.claims).toHaveLength(1);expect(delivered.payload.evidence.claims[0].review).toBeNull();expect(delivered.payload.evidence.claims[0].reviewReceipt).toBeNull();
+   expect(delivered.payload.currentValidity.reviewState).toBe('draft');expect(delivered.payload.redactionProfile).toBe(role==='viewer'?'viewer_reference_only':'member_full');
+   if(role==='viewer')expect(delivered.payload.evidence.claims[0].claim.excerpt).toBeNull();
+   expect((await readBriefing(scope.incidentId,scope.mode,artifact!.receipt.artifactId))?.content).toBe(artifact!.content);
+  }}finally{vi.unstubAllGlobals();dom.window.close();}
+ });
+
  it("captures complete original lineage and a separately observed validity, with exact persisted UTF-8 hash and receipt",async()=>{
   const {saved}=await preparedProposal();await recordDecision(decisionCommand(saved.revision));const a=await prepareBriefing(scope.incidentId,scope.mode,saved.revision.id,"json");expect(a).not.toBeNull();
   const delivered=await verifyBriefingDelivery(briefingResponse(a!),deliveryScope(saved.revision.id));

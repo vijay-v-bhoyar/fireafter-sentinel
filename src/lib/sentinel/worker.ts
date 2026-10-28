@@ -10,7 +10,7 @@ import {searchRegisteredSources,extractRegisteredSources,completeNemotron} from 
 import {acquireRunLease,renewRunLease,SentinelRunError} from './runs';
 import {SentinelProviderError} from './provider-budget';
 import {workerVerificationFailureCode} from './run-failure';
-import {locateWorkerRun,readWorkerContext,saveWorkerOutput,finishWorker,type Worker} from './execution-store';
+import {locateWorkerRun,readWorkerContext,readWorkerClock,saveWorkerOutput,finishWorker,type Worker} from './execution-store';
 import {executionId,extractionPrompt,extractClaims,comparisonPrompt,extractChanges,EXTRACTION_PROMPT,type ComparisonPair} from './interpretation';
 
 const EvidenceStageSchema=z.strictObject({versions:z.array(z.strictObject({documentId:z.uuid(),versionId:z.uuid(),changed:z.boolean()})).min(1).max(5)});
@@ -32,21 +32,21 @@ export async function runSentinelStep(runId:string):Promise<'continue'|'wait'|'s
   if(sequence===1){
    if(run.scope.mode!=='live')return await saved('search',{mode:run.scope.mode,source:'retained_corpus',providerCalled:false},'retrieving');
    await renewRunLease(worker);const response=await searchRegisteredSources(operation('search'),ctx.configuration);
-   return await saved('search',{requestId:response.result.request_id,results:response.result.results.map(c=>({url:c.url,title:c.title})),source:'discovery_only'},'retrieving');
+   return await saved('search',{requestId:response.result.request_id,results:response.result.results.map(c=>({url:c.url,title:c.title})),withheldResultCount:response.result.withheldResultCount,source:'discovery_only'},'retrieving');
   }
   if(sequence===2){
-   const requestedAt=new Date().toISOString();
+   const requestedAt=run.scope.mode==='live'?await readWorkerClock(worker):new Date().toISOString();
    if(run.scope.mode!=='live'){
     if(ctx.versions.length!==ctx.configuration.sources.length||ctx.versions.some(v=>v.current.normalizedText===null||v.current.availability!=='available'))throw new Error('CORPUS_INCOMPLETE');
     return await saved('extract',{requestedAt,providerRequestId:null,observations:ctx.versions.map(v=>({documentId:v.documentId,rawText:v.current.normalizedText!,publishedAt:v.current.publishedAt,effectiveFrom:v.current.effectiveFrom,effectiveUntil:v.current.effectiveUntil,retrievedAt:v.current.retrievedAt}))},'retrieving');
    }
-   await renewRunLease(worker);const response=await extractRegisteredSources(operation('extract'),ctx.configuration);
+   await renewRunLease(worker);const response=await extractRegisteredSources(operation('extract'),ctx.configuration),retrievedAt=await readWorkerClock(worker);
    if(!response.result.complete){
     const observations=ctx.configuration.sources.map(s=>{
      const item=response.result.observations.find(o=>o.url===s.canonicalUrl);
      if(item?.outcome==='observed'&&item.rawText!==undefined){
       const previous=ctx.versions.find(v=>v.documentId===s.documentId)?.current,unchanged=previous?.normalizedHash===evidenceHash(normalizeEvidenceText(item.rawText));
-      const version=prepareDocumentVersion({scope:run.scope,documentId:s.documentId,sourceConfigRevision:run.sourceConfigRevision,issuer:s.issuer,jurisdiction:s.jurisdiction,canonicalUrl:s.canonicalUrl,rawText:item.rawText,publishedAt:unchanged?previous!.publishedAt:null,effectiveFrom:unchanged?previous!.effectiveFrom:null,effectiveUntil:unchanged?previous!.effectiveUntil:null,availability:'available',contentPermission:'full_text'},{id:executionId(runId,`version-${s.documentId}`),retrievedAt:new Date().toISOString()}).version;
+      const version=prepareDocumentVersion({scope:run.scope,documentId:s.documentId,sourceConfigRevision:run.sourceConfigRevision,issuer:s.issuer,jurisdiction:s.jurisdiction,canonicalUrl:s.canonicalUrl,rawText:item.rawText,publishedAt:unchanged?previous!.publishedAt:null,effectiveFrom:unchanged?previous!.effectiveFrom:null,effectiveUntil:unchanged?previous!.effectiveUntil:null,availability:'available',contentPermission:'full_text'},{id:executionId(runId,`version-${s.documentId}`),retrievedAt}).version;
       return {documentId:s.documentId,requestedAt,observedBytes:Buffer.byteLength(item.rawText),providerRequestId:response.result.requestId,outcome:'observed' as const,version};
      }
      return {documentId:s.documentId,requestedAt,observedBytes:0,providerRequestId:response.result.requestId,outcome:item?.outcome==='failed'?'failed' as const:'incomplete' as const,safeErrorCode:item?.outcome==='failed'?'SOURCE_UNAVAILABLE' as const:'PROVIDER_PARTIAL' as const};
@@ -58,7 +58,7 @@ export async function runSentinelStep(runId:string):Promise<'continue'|'wait'|'s
     const item=response.result.observations.find(o=>o.url===s.canonicalUrl);if(!item||item.outcome!=='observed'||item.rawText===undefined)throw new Error('RETRIEVAL_INCOMPLETE');
     const previous=ctx.versions.find(v=>v.documentId===s.documentId)?.current;
     const unchanged=previous?.normalizedHash===evidenceHash(normalizeEvidenceText(item.rawText));
-    return {documentId:s.documentId,rawText:item.rawText,publishedAt:unchanged?previous!.publishedAt:null,effectiveFrom:unchanged?previous!.effectiveFrom:null,effectiveUntil:unchanged?previous!.effectiveUntil:null,retrievedAt:new Date().toISOString()};
+    return {documentId:s.documentId,rawText:item.rawText,publishedAt:unchanged?previous!.publishedAt:null,effectiveFrom:unchanged?previous!.effectiveFrom:null,effectiveUntil:unchanged?previous!.effectiveUntil:null,retrievedAt};
    });
    return await saved('extract',{requestedAt,providerRequestId:response.result.requestId,observations},'retrieving');
   }

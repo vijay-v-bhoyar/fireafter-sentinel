@@ -42,11 +42,12 @@ export async function buildRelease(root, env = process.env, args = [], signal) {
   signal?.throwIfAborted();
   if (args.some(arg => arg !== "--webpack")) throw new Error("Only the explicit --webpack compiler option is supported.");
   return withReleasePublisher(root, async publish => {
-    const release = { ...createRelease(await captureInputs(root)), compilerArgs: args.length ? args : ["--turbopack"] };
+    const compilerArgs = args.length ? args : process.platform === "win32" ? ["--webpack"] : ["--turbopack"];
+    const release = { ...createRelease(await captureInputs(root)), compilerArgs };
     // Remove only the old receipt: failed builds must never retain a success claim.
     await rm(path.join(root, ".next/fireafter-release.json"), { force: true });
-    await runProcess(process.execPath, [path.join(root, "node_modules/next/dist/bin/next"), "build", ...args], {
-      cwd: root, env: { ...env, NODE_ENV: "production", FIREAFTER_BUILD_RELEASE_ID: release.releaseId }, signal,
+    await runProcess(process.execPath, [path.join(root, "node_modules/next/dist/bin/next"), "build", ...compilerArgs], {
+      cwd: root, env: { ...env, ...(process.platform === "win32" ? { UV_THREADPOOL_SIZE: "1" } : {}), NODE_ENV: "production", FIREAFTER_BUILD_RELEASE_ID: release.releaseId }, signal,
     });
     signal?.throwIfAborted();
     const receipt = await publish(release);

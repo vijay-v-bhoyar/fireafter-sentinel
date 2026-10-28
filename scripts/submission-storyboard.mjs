@@ -9,8 +9,8 @@ export function validateStoryboard(source) {
   }
   const table = source.split(start)[1].split(end)[0];
   const lines = table.trim().split(/\r?\n/);
-  if (lines.length !== 8 || lines[0] !== "| Start | End | On screen | Narration / evidence |" ||
-      lines[1] !== "| --- | --- | --- | --- |") throw new Error("Storyboard requires six complete segments.");
+  if (lines.length !== 9 || lines[0] !== "| Start | End | On screen | Narration / evidence |" ||
+      lines[1] !== "| --- | --- | --- | --- |") throw new Error("Storyboard requires seven complete segments.");
   let elapsed = 0;
   const segments = lines.slice(2).map(line => {
     const match = line.match(/^\| (\d+):([0-5]\d) \| (\d+):([0-5]\d) \| ([^|]+) \| ([^|]+) \|$/);
@@ -23,6 +23,12 @@ export function validateStoryboard(source) {
   });
   if (elapsed >= 180) throw new Error("The public demo must be under three minutes.");
   if (segments.some(segment => !segment.screen || !segment.narration)) throw new Error("Missing presenter content.");
+  const headings = [...source.matchAll(/^### (\d+):([0-5]\d)–(\d+):([0-5]\d) — /gm)];
+  if (headings.length !== segments.length || headings.some((heading, index) =>
+    Number(heading[1]) * 60 + Number(heading[2]) !== segments[index].startSeconds ||
+    Number(heading[3]) * 60 + Number(heading[4]) !== segments[index].endSeconds)) {
+    throw new Error("Recording narration headings must match the canonical storyboard.");
+  }
   return segments;
 }
 

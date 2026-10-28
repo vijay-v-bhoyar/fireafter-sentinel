@@ -1,6 +1,12 @@
 # Hackathon submission preparation
 
-Official rules reverified October 12, 2026; FAQ/resources observations remain dated October 11: [official rules](https://nebiusglobalaihackathon.devpost.com/rules), [FAQ](https://nebiusglobalaihackathon.devpost.com/details/faqs), [resources](https://nebiusglobalaihackathon.devpost.com/resources). Recheck material changes before submission. This document records requirements; it does not register, accept terms or submit an entry.
+**Current SEN-SUB-02 follow-up:** October27–28 qualification: real Tavily Search/Extract and pinned Nemotron claims/comparison completed through the authenticated Next/Workflow SDK on the isolated49-migration native stack. Run `717018a9-99e8-4fb7-b28d-af1879d207a6` settled4 attempts and published source/claims/changes. App restart plus3 role reauthentications preserved the original run/deadline, single SDK dispatch, world-record hash, reservations/funds and provider trace; replay made no new dispatch. A separate actual worker response-loss experiment retained the original deadline and paid attempt and failed closed without redispatch after process/lease recovery. That experiment predates the final clock/JSON changes; current worker recovery regressions pass. Automated role QA recorded4 unresolved claim reviews, held the source marker, denied approval, committed a rejection and exported a hash-verified viewer-redacted briefing labelled rejected/unapproved. This is fictional-incident technical QA, not practitioner acceptance, an approved plan, field authority or hosted proof. The SDK restart is terminal-state persistence, not an in-flight SDK crash proof. Current317 targeted tests, TypeScript, focused lint, migration contract and explicitly bound native write-boundary checks PASS. Evidence: `output/verification/sentinel-persistent-provider-20261027-r2/receipt.json`. Submission remains not ready: approved provider-backed incident evidence/decision, SDK in-flight recovery, public exact licensed source/judge access, user video upload and remaining form/terms gates remain open. No Devpost edits or upload occurred.
+
+**October27 follow-up:** confirmed target is FireAfter Sentinel / Nebius x NVIDIA Global AI Hackathon, project1492826/event30790. Fresh official deadline is October30 at1:00p.m. Eastern; submissions remain open. The first confirmed two-version prompt-capacity defect is locally repaired with the pinned Nemotron tokenizer, preserving complete source/citation text and the existing24000-token cap. Current blocker ownership and exact evidence are in [the current register](DECISIONS_AND_BUILD_GATE.md#current-submission-blockers--october-27-2026). Integrated sponsor proof, private-source publication/judge access, actual working-product media/public YouTube and remaining required feedback/answers stay open. The user uploads the video. No Devpost write, upload, final terms, submission, provider spend, hosting or original FireAfter modification is authorized by this first-blocker task.
+
+Official rules retrieved directly October 19, 2026 after connector failure; FAQ/resources observations remain dated October 11: [official rules](https://nebiusglobalaihackathon.devpost.com/rules), [FAQ](https://nebiusglobalaihackathon.devpost.com/details/faqs), [resources](https://nebiusglobalaihackathon.devpost.com/resources). Recheck material changes before submission. This document records requirements; it does not register, accept terms or submit an entry.
+
+October 19 reconciliation: target the recording at 2:55 on public YouTube, using [the timed script](#recording-script-and-shot-list). A working test-build URL is a possible delivery route while hosting is held, but reproducible installation and judge access must be proven. Standalone sponsor inference is verified and the owner has authorized MIT and confirmed entrant eligibility facts. Integrated provider execution and public judge access remain open. Implementation, design, impact and idea have equal judging weight after the viability gate. [Current gate status](DECISIONS_AND_BUILD_GATE.md#submission-readiness--october-19-reconciliation) distinguishes those entry requirements from broader production and human-adoption qualification.
 
 **Entry strategy:** Best Apps and Agents is the proposed primary track. Target eligibility for overall awards, that track, Best Use of Tavily, and Most Valuable Feedback. Prize collection is capped at an overall OR track award plus one bonus. City eligibility requires documented participating-event attendance; official rules section 11.4 resolves the contrary resource-page copy. Exclude this target without attendance.
 
@@ -13,17 +19,18 @@ Official rules reverified October 12, 2026; FAQ/resources observations remain da
 | Impact | Defined coordinator audience; observed walkthrough and measurable task/change outcomes |
 | Idea quality | Specific evidence-to-plan dependency behavior beyond inherited narration; honest domain limits |
 
-**Video storyboard, target 2:50:** use the contiguous segments below; actual captured footage and results remain pending. Every replay/synthetic sequence stays labeled on screen and export. Do not borrow FireAfter rehearsal counts as Sentinel evidence.
+**Video storyboard, target 2:55:** use the contiguous segments below; actual captured footage and results remain pending. Every replay/synthetic sequence stays labeled on screen and export. Do not borrow FireAfter rehearsal counts as Sentinel evidence.
 
 <!-- sentinel-video-storyboard -->
 | Start | End | On screen | Narration / evidence |
 | --- | --- | --- | --- |
 | 0:00 | 0:20 | Chosen incident and mode | Explain the coordinator problem and supported scope |
-| 0:20 | 0:50 | Initial plan and retrieval | Show real provider execution separately from labeled replay |
-| 0:50 | 1:30 | Cited old/new notice and affected task | Explain exact dependency and unresolved limits |
-| 1:30 | 2:05 | Revised proposal and human decision | Show constraints and confirmed server receipt |
-| 2:05 | 2:30 | History and briefing | Preserve original evidence; demonstrate one uncertainty state |
-| 2:30 | 2:50 | Runtime traces and measured results | Show actual sponsor usage and raw measured denominators |
+| 0:20 | 0:50 | Analyst source comparison and claim review | Inspect citations and labeled synthetic evidence |
+| 0:50 | 1:20 | Two crews, three tasks and persisted draft | Explain reviewed dependencies and deterministic constraints |
+| 1:20 | 1:55 | Commander eligibility and approval | Show the confirmed server receipt and retained decision |
+| 1:55 | 2:25 | Viewer history and printable briefing | Preserve original evidence and export limitations |
+| 2:25 | 2:40 | Architecture and verified standalone provider receipts | Separate standalone provider receipts from integrated workflow proof |
+| 2:40 | 2:55 | Provenance and closing title | Credit the inherited foundation and describe the new Sentinel work |
 <!-- /sentinel-video-storyboard -->
 
 **Package:** tested README and env example; architecture; provenance/update record; chosen license/notices; evidence-mode/source terms disclosure; reproducible evaluation report with raw counts; safe sponsor traces; screenshots; dedicated judge instructions; short public description. No personal passwords, private facility exports or unsupported field claims.
@@ -46,7 +53,7 @@ Submit by October 30, 2026 at 10:00 a.m. Pacific / 1:00 p.m. Eastern; target Oct
 
 New repo/app/database separation is mandatory under [isolation](PROJECT_ISOLATION.md). FireAfter provenance still applies. [PROVENANCE](../PROVENANCE.md) must record inherited versus significant new work and actual development dates after August 26. Do not claim a new repo proves originality or substantial improvement.
 
-Publish all source/assets/instructions necessary to reproduce the product in a new public GitHub/GitLab/Bitbucket repository. Choose a compatible open-source LICENSE and verify detection in repository About. Include tested setup, configuration names, migrations, permitted/synthetic fixture inputs, data permissions and Nemotron/Nebius usage locations. Private operational corrections are optional and excluded from the public demo/package. The reproduction path must work without a private learning corpus. Do not create a LICENSE until ownership and compatibility are resolved.
+Publish all source/assets/instructions necessary to reproduce the product in a new public GitHub/GitLab/Bitbucket repository. The owner authorized the root MIT LICENSE; verify its detection in repository About after publication. Include tested setup, configuration names, migrations, permitted/synthetic fixture inputs, data permissions and Nemotron/Nebius usage locations. Private operational corrections are optional and excluded from the public demo/package. The reproduction path must work without a private learning corpus. Inherited FireAfter ownership is confirmed; preserve third-party notices and review distribution-specific obligations.
 
 Use English submission materials, or complete English translations. Record real device/browser behavior on the exact submitted build in a public YouTube video under three minutes. Clear every third-party mark, music, image, source and personal-data permission; sponsor branding is not automatically licensed. Physical AI hardware requirements are inapplicable to the selected web-app track. If other entries are submitted, the entrant records how each is substantially different.
 
@@ -60,4 +67,84 @@ The entrant reviews the complete linked terms covering participation, IP/publici
 
 After the deadline, do not alter the submitted materials/build as if resubmitting. Archive and keep the submitted revision accessible. Any permitted rights/PII/inappropriateness correction needs Sponsor/Devpost authorization, its exact scope and a change receipt; portfolio updates do not update the hackathon entry. Reproduce safety fixes on a separate candidate if needed, preserve the submission and seek the applicable organizer direction before replacing it.
 
-Current status: baseline source imported locally, with partial Sentinel code; no implemented Sentinel workflow end to end or accepted hosted journey exists. Full workflow/hosted/provider acceptance remains pending; current local verification is owned by the decision register. No deployed Sentinel demo, real sponsor proof, public LICENSE, eligibility attestation, final video or received entry exists. [Decisions](DECISIONS_AND_BUILD_GATE.md) own unresolved inputs; [operations](OPERATIONS_AND_COST_PLAN.md) owns continuity of judge access. Documentation validation does not establish runtime or compliance acceptance.
+Current status: local native three-role workflows have passing technical evidence, and real Tavily adapter tests passed. Standalone Nemotron inference and application-prompt retests passed; the integrated persistent provider worker remains unqualified. Ownership, MIT authorization and entrant eligibility attestations are recorded. Public licensed source, judge access, personal feedback, a final video and final entry remain pending. [Decisions](DECISIONS_AND_BUILD_GATE.md) own unresolved inputs; [operations](OPERATIONS_AND_COST_PLAN.md) owns continuity of judge access. Documentation validation does not establish runtime or compliance acceptance.
+
+
+## Recording script and shot list
+
+
+Prepared October 19, 2026. This is a recording script, not a completed video. Target 2:55 including titles (inside the three-minute limit); rehearse narration at approximately 125–135 words per minute and use the remaining time for visible actions. Do not speed through the approval receipt.
+
+## Recording setup
+
+- Record the Sentinel app on port 3023, never the original FireAfter app. Use separate analyst, commander, and viewer browser sessions. Hide passwords, email addresses, browser profiles, tokens and terminal environment output.
+- Keep a visible “Local prototype • Synthetic data” label throughout. Retain the app's own Synthetic label. Do not represent fixture notices as live agency updates.
+- Use a fresh disposable recording scenario with valid local source authority; do not consume or reset the owner's approve/reject/modify scenarios. Older scenario signing authority may have expired. Prepare a new scenario before recording if necessary; this script does not authorize weakening freshness checks.
+- Before recording, rehearse comparison → claim review → material-change resolution → constrained draft → current eligibility → confirmed approval → viewer history/briefing. If any step fails, fix/retest separately; never edit a failure into a fabricated success.
+- Do not run providers, provision hosting, or change the held deployment/database scope for this recording. Use retained standalone provider receipts without claiming integrated sponsor-workflow qualification.
+- Capture 1920×1080 if available. Use your own narration; no stock music, agency seals or sponsor marks. Burn in captions, and verify they do not cover receipts or Synthetic labels.
+
+## Timed narration and shots
+
+### 0:00–0:20 — Problem and scope
+
+**Show:** thumbnail for 3 seconds, then local incident Overview with Synthetic label visible.
+
+**Say:** “After a wildfire, an inspection plan can become outdated when an official notice changes. FireAfter Sentinel connects changing evidence to the tasks that depend on it, then brings the decision back to a person. This demonstration uses synthetic data in a locally tested prototype.”
+
+### 0:20–0:50 — Analyst understands the change
+
+**Show:** analyst → Changes → Compare evidence on the substantive comparison. Show earlier and later notice excerpts and the affected claim. Do not use a single-version source view as if it were a comparison.
+
+**Say:** “As an analyst, I compare the earlier and later evidence. Instead of accepting a generated summary as fact, I inspect the citation and review what the change means for this incident. I record whether the claim is supported and applicable, check its provenance and conflicts, and explain why the source change is material. That review stays attached to the evidence.”
+
+### 0:50–1:20 — Prepare a constrained proposal
+
+**Show:** complete the review and material-change acknowledgments; Plan → two crews and three tasks → associate reviewed evidence with every task → Create reviewed-input draft. Hold on persisted draft ID.
+
+**Say:** “Next, I prepare a proposal for two crews and three inspection tasks. The plan uses explicit capabilities, task durations, travel allowances, and time windows. Each task points back to reviewed evidence. Deterministic checks assess the allocation; the model does not silently drop tasks or approve a plan. Saving creates a specific revision that another person can review.”
+
+### 1:20–1:55 — Commander makes the decision
+
+**Show:** separate commander session → same proposal → Check current mechanical eligibility → reason → Accept reviewed proposal. Wait for confirmed receipt, then refresh and show retained decision.
+
+**Say:** “Now I switch to the incident commander. I inspect the proposal and check its current mechanical eligibility. Approval is tied to this revision and its evidence and constraint basis. I enter a reason and accept the reviewed proposal. The confirmed server receipt is the result—not just a button click. If the response is uncertain, Sentinel checks the original command's status rather than silently creating another decision.”
+
+### 1:55–2:25 — Viewer verifies and takes a briefing
+
+**Show:** viewer session → History → Briefing → Prepare printable HTML → Download prepared → open artifact. Show actual approved revision only if the artifact says approved; do not substitute the archived draft screenshots.
+
+**Say:** “A viewer can inspect the history without changing the plan. The portable briefing retains the revision, evidence references, decision history, and export limitations. Role restrictions still apply: a viewer's briefing withholds source text and operational details where required. The artifact records what was observed when prepared; it does not continuously monitor conditions or dispatch crews.”
+
+### 2:25–2:40 — Architecture and honest AI boundary
+
+**Show:** simple architecture caption: Tavily adapter → Nebius/Nemotron interpretation path → validated claims → human review → deterministic planning. Label “Standalone provider tests passed; integrated workflow pending.”
+
+**Say:** “Separate real tests verified Tavily search and extraction and NVIDIA Nemotron inference through Nebius. A comparison prompt failure was repaired and retested. This synthetic demonstration does not prove integrated sponsor execution; human review remains separate.”
+
+### 2:40–2:55 — Provenance and close
+
+**Show:** original thumbnail; overlay “FireAfter foundation + new Sentinel evidence-to-decision workflow.” End by 2:55.
+
+**Say:** “Sentinel builds on my existing FireAfter foundation. The new work connects evidence review, constrained proposals, human decisions, and briefings. Hosted judge access and field validation remain pending. FireAfter Sentinel: evidence changes; people decide.”
+
+## Before uploading a recording
+
+- Verify every displayed result against its actual receipt; preserve pauses needed to read the important states.
+- Export a video of 2:55, strictly under three minutes, and publish it on YouTube in accordance with the official rules re-read October 19. No completed recording exists yet, and the Devpost video URL must stay blank until a real playable URL is available.
+- The 2:25 segment may show retained standalone receipts for nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B. Replace the integrated-workflow pending label only after that exact workflow has passed; keys or standalone calls do not clear it.
+- Recheck the current official video rules before final entry. This script is not a rules attestation or submission authorization.
+
+## Screenshot gallery provenance
+
+The prepared gallery copies existing local captures without altering their pixels. These captures are historical synthetic examples from the October 14–15 local verification, not screenshots of a new October 19 run or an approved field plan.
+
+1. `01-viewer-briefing.png`: viewer export preparation, verified bytes and explicit export limits. The displayed revision is a draft requiring review.
+2. `02-offline-briefing.png`: printable synthetic briefing with allocation, retained evidence references, redaction and limitations. It is a draft, not a completed approval.
+3. `03-analyst-mobile.png`: narrow-screen analyst briefing layout, Synthetic label and export controls. This proves a captured layout, not human accessibility acceptance.
+
+Files: `output/submission-media/20261019/`. The thumbnail is original AI-generated conceptual artwork, not a product screenshot. No actual disaster photography, sponsor logos or certification claims are used.
+
+## October28 packet and owner feedback
+
+Current local draft: root devpost-submission.md. Current title/description/own-voice narration/shot plan: output/submission-media/20261028/VIDEO.md; actual retained thumbnail: output/submission-media/20261019/thumbnail.png. The user confirmed current event rules, quality8/10, recommendation8/10, inference experience9/10, learning Significant, career AI value Yes, and both proposed qualitative feedback answers. Personal ratings are not empirical benchmarks. Original FireAfter root history starts July4,2026, consistent with the saved Existing answer. No remote fields, terms or final submission changed. Current footage, user narration/upload, public source/test-build/video access and accepted beta evidence remain open.

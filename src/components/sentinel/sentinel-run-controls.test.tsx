@@ -4,7 +4,7 @@ import {cleanup,render,fireEvent,screen,waitFor} from '@testing-library/react';
 import {webcrypto} from 'node:crypto';
 import {ReadableStream} from 'node:stream/web';
 import {TextEncoder,TextDecoder} from 'node:util';
-import {RunControls} from './sentinel-workspace';
+import {RunControls,SentinelGettingStarted} from './sentinel-workspace';
 import type {EvidenceSummary} from '@/lib/sentinel/workspace-client';
 const id=(n:number)=>`79000000-0000-4000-8000-${String(n).padStart(12,'0')}`;
 const scope={organizationId:id(1),incidentId:id(2),mode:'synthetic' as const},identity={id:id(3),organizationId:id(1),role:'analyst' as const};
@@ -35,4 +35,27 @@ it('keeps the confirmed queued run and exact original admission intent until dis
  expect(screen.getByLabelText('Original run ID')).toHaveProperty('value',id(5));
  fireEvent.click(screen.getByRole('button',{name:'Retry original saved command'}));
  await waitFor(()=>expect(sessionStorage.length).toBe(0));expect(requests).toHaveLength(2);expect(requests[1]).toBe(requests[0]);
+});
+
+// Guidance must preserve scope and authority without admitting work.
+it.each(['viewer','analyst','incident_commander'] as const)('guides %s through scoped first value without network calls',role=>{
+ const fetch=vi.fn();vi.stubGlobal('fetch',fetch);
+ render(<SentinelGettingStarted scope={scope} role={role}/>);
+ expect(screen.getByRole('heading',{name:'Start here for your role'})).toBeTruthy();
+ for(const anchor of screen.getAllByRole('link')){
+  const url=new URL(anchor.getAttribute('href')!,'http://sentinel.test');
+  expect(url.pathname).toBe('/sentinel');expect(url.searchParams.get('incidentId')).toBe(scope.incidentId);expect(url.searchParams.get('mode')).toBe('synthetic');
+ }
+ expect(screen.getByText(/keep this tab and its original command ID/)).toBeTruthy();
+ expect(screen.getByText(/not current field instructions/)).toBeTruthy();
+ expect(screen.queryAllByRole('button')).toHaveLength(0);expect(fetch).not.toHaveBeenCalled();
+ if(role==='viewer'){
+  expect(screen.getByText(/Viewer access cannot approve/)).toBeTruthy();expect(screen.queryByRole('link',{name:'Prepare and review the proposal'})).toBeNull();
+ }else if(role==='analyst'){
+  expect(screen.getByText(/hand its revision and unresolved limitations to the incident commander/)).toBeTruthy();expect(screen.queryByRole('link',{name:'Review coordinator policy'})).toBeNull();
+ }else expect(screen.getByRole('link',{name:'Review coordinator policy'})).toBeTruthy();
+});
+it.each(['live','replay'] as const)('keeps %s mode in every guidance link',mode=>{
+ render(<SentinelGettingStarted scope={{...scope,mode}} role='incident_commander'/>);
+ for(const anchor of screen.getAllByRole('link'))expect(new URL(anchor.getAttribute('href')!,'http://sentinel.test').searchParams.get('mode')).toBe(mode);
 });

@@ -132,3 +132,16 @@ test("a pre-canceled seal does not replace existing evidence or acquire a worksp
   assert.equal(await readFile(target, "utf8"), "existing evidence");
   await assert.rejects(access(path.join(root, ".fireafter-release.lock")), error => error.code === "ENOENT");
 });
+
+
+test("default compiler argv matches the release receipt and uses Webpack on Windows", async () => {
+  const root = await fixture();
+  const compiler = path.join(root, "node_modules/next/dist/bin");
+  await mkdir(compiler, { recursive: true });
+  await writeFile(path.join(compiler, "next"), "require('fs').writeFileSync('.next/compiler-args.json', JSON.stringify(process.argv.slice(2)));require('fs').writeFileSync('.next/compiler-pool.json',JSON.stringify(process.env.UV_THREADPOOL_SIZE ?? null));");
+  const receipt = await buildRelease(root, {});
+  const expected = process.platform === "win32" ? ["--webpack"] : ["--turbopack"];
+  assert.deepEqual(receipt.compilerArgs, expected);
+  assert.deepEqual(JSON.parse(await readFile(path.join(root, ".next/compiler-args.json"), "utf8")), ["build", ...expected]);
+  assert.equal(JSON.parse(await readFile(path.join(root, ".next/compiler-pool.json"), "utf8")), process.platform === "win32" ? "1" : null);
+});
