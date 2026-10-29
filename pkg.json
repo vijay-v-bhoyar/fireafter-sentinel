@@ -1941,8 +1941,8 @@
       "id": "file:README.md",
       "type": "[File]",
       "path": "README.md",
-      "role": "Single final document index and topic/conflict ownership; no version copies in the planning boundary.",
-      "documentCatalogReviewedAt": "2026-10-12T13:21:11.673301+00:00"
+      "role": "Public setup index and current limited-prototype delivery links; dated planning context retained.",
+      "documentCatalogReviewedAt": "2026-10-29T23:23:21.271846+00:00"
     },
     {
       "id": "file:design/sentinel-workflow.html",
@@ -1968,8 +1968,8 @@
       "id": "file:docs/DECISIONS_AND_BUILD_GATE.md",
       "type": "[File]",
       "path": "docs/DECISIONS_AND_BUILD_GATE.md",
-      "role": "Sole current verification owner; recovery source has3862 local passes and171 compiled boundaries; full acceptance pending.",
-      "documentCatalogReviewedAt": "2026-10-14T03:02:33.369029+00:00"
+      "role": "Dated technical decisions/failures and current limited-prototype delivery scope; full beta acceptance remains open.",
+      "documentCatalogReviewedAt": "2026-10-29T23:23:21.271846+00:00"
     },
     {
       "id": "file:docs/DOMAIN_DISCOVERY.md",
@@ -2004,7 +2004,7 @@
       "type": "[File]",
       "path": "docs/PLANNING_MANIFEST.json",
       "role": "Final Sentinel planning artifact; authored specification/evidence, not runtime acceptance.",
-      "documentCatalogReviewedAt": "2026-10-12T13:21:11.673301+00:00"
+      "documentCatalogReviewedAt": "2026-10-29T23:23:21.271846+00:00"
     },
     {
       "id": "file:docs/PRODUCT_REQUIREMENTS.md",
@@ -2148,7 +2148,8 @@
       "id": "file:pkg.json",
       "type": "[File]",
       "path": "pkg.json",
-      "role": "Authoritative project catalog. Catalog membership is not a runtime dependency."
+      "role": "Authoritative project catalog. Catalog membership is not a runtime dependency.",
+      "documentCatalogReviewedAt": "2026-10-29T23:23:21.271846+00:00"
     },
     {
       "id": "file:public/brand/fireafter-logo.jpg",
@@ -31636,7 +31637,8 @@
       "2026-10-12 CI repair: fixed-size FIFO ring removes Map iterator eviction scans without changing geometry/query/time caps. Full GeoJSON parity oracle now runs after consuming the response at the same declared instant; full91511 rows,715 REC reads and feature hashes remain. Local101 focused checks pass; new full Linux CI qualification pending. Hosted DB provisioning on hold only; local build/testing continues, spend ceiling0.",
       "2026-10-12 real local Auth journey exposed Next internal localhost versus browser127.0.0.1 redirects blocked by unchanged form-action self CSP. Login redirects now preserve only validated browser Origin; rejected/cross-site Origin retains request origin. Original legacy assertions unchanged, two new cases and73 focused auth/input regressions pass; actual three-role/six-view mobile empty-workspace journey passes. Hosted/compiled positive/provider/full evidence-to-approved-briefing remains pending.",
       "Isolated proposal: Windows build uses explicit Webpack; Linux remains Turbopack. No provider, hosted or production readiness evidence is implied.",
-      "2026-10-27 Sentinel comparison-capacity repair: model-specific token counting for nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B uses pinned NVIDIA tokenizer revision bf77c3174f68ad409e1c2aa60daeb46e32d1c606 and Hugging Face tokenizers0.2.0, independently checked with Rust/Jinja vectors. Full system/user source text preserved. Both prompt construction and provider admission use this count plus existing512 envelope;24000 cap, owner funding/hash, actual usage, SQL reservation, retries, citation and human authority remain. Unknown models keep conservative byte bound. Generated Graphify/viewer artifacts remain inaccessible/stale; no permission bypass or full graph freshness claim. Local proof does not establish live backend revision, funding or persistent provider journey."
+      "2026-10-27 Sentinel comparison-capacity repair: model-specific token counting for nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B uses pinned NVIDIA tokenizer revision bf77c3174f68ad409e1c2aa60daeb46e32d1c606 and Hugging Face tokenizers0.2.0, independently checked with Rust/Jinja vectors. Full system/user source text preserved. Both prompt construction and provider admission use this count plus existing512 envelope;24000 cap, owner funding/hash, actual usage, SQL reservation, retries, citation and human authority remain. Unknown models keep conservative byte bound. Generated Graphify/viewer artifacts remain inaccessible/stale; no permission bypass or full graph freshness claim. Local proof does not establish live backend revision, funding or persistent provider journey.",
+      "October29 documentation-only delivery refresh: README and decision register distinguish the public Windows/WSL test-build and owner-narrated video from historical private/access-pending checkpoints. Internal process commentary is excluded. Application, tests, provider controls, prompts and dependencies unchanged. Generated graph not refreshed; changed documentation metadata is updated here."
     ],
     "sentinelPlanning": {
       "updated_at": "2026-10-12T13:25:20.045360+00:00",
@@ -32013,7 +32015,7 @@
       "driftRisks": [
         "Documentary coverage is not scenario execution or exhaustive population coverage.",
         "Current runtime unchanged; structural AST graph fresh for current code, excludes documentary semantics.",
-        "New fixture specs F7\u00c3\u0192\u00c2\u00a2\u00c3\u00a2\u00e2\u20ac\u0161\u00c2\u00ac\u00c3\u00a2\u00e2\u201a\u00ac\u00c5\u201cF14 are not created fixtures; real participants/authority/labels remain missing.",
+        "New fixture specs F7ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“F14 are not created fixtures; real participants/authority/labels remain missing.",
         "Named branches and caps cannot be skipped/reset to manufacture case PASS.",
         "Deployment/hosted DB hold, original target isolation and $0 cash ceiling remain."
       ],

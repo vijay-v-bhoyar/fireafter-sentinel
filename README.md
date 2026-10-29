@@ -1,8 +1,17 @@
 # FireAfter Sentinel
 
+## Current limited-prototype delivery — October 29, 2026
+
+Public [Windows/WSL test-build and setup guide](https://github.com/vijay-v-bhoyar/fireafter-sentinel/releases/tag/prototype-docs-20261029) and [2:51 owner-narrated demonstration](https://www.youtube.com/watch?v=uWXtkEE_4wU) are available. The release contains the exact tested application source at `edc73a588a5232d09980c27d60687c40b60e0ad2`. Later documentation changes do not alter that frozen build.
+
+The scoped exact-source synthetic journey exercised analyst, commander and viewer roles, authored tasks/crews, decision receipts, role denials and a verified viewer briefing. The test-build requires local Windows/WSL setup; it is not a hosted service. The separate retained real Tavily/Nemotron run ended unresolved/rejected. An approved provider-backed briefing, paid-response SDK crash recovery, practitioner feedback and measured benefits remain unqualified. No operational dispatch or field-safety claim is made.
+
+The dated planning and verification entries below describe earlier milestones. They do not supersede this delivery summary, expand the verified scope or establish final hackathon entry status.
+
+
 FireAfter Sentinel helps a post-wildfire inspection team review plans when source evidence changes. It connects cited evidence to affected inspection proposals and retains the human decision and its supporting history.
 
-Sentinel is a separate FireAfter-derived local prototype, with its own repository and isolated local database. Hosting and hosted database provisioning are on hold. The reviewed 444-file FireAfter baseline is attributed in [provenance](PROVENANCE.md); a new repository does not make inherited work new. The [decision register](docs/DECISIONS_AND_BUILD_GATE.md) owns current implementation status, verification results and submission blockers.
+Sentinel is a separate FireAfter-derived local prototype, with its own repository and isolated local database. Hosting and hosted database provisioning are on hold. The reviewed 444-file FireAfter baseline is attributed in [provenance](PROVENANCE.md); a new repository does not make inherited work new. The [decision register](docs/DECISIONS_AND_BUILD_GATE.md) retains dated implementation decisions, verification results and limitations.
 
 **Promise:** when official evidence changes, show which inspection proposals need review, explain why and let a coordinator record a revised plan with retained evidence.
 
@@ -16,7 +25,7 @@ Sentinel is a separate FireAfter-derived local prototype, with its own repositor
 
 Local automated checks cover real Auth/database persistence, role boundaries, stale-decision protection and opposing-session races using explicitly synthetic records. These checks do not establish field safety or complete human acceptance. The demo supports inspection planning review; it does not authorize emergency action.
 
-The provider integration uses Tavily for source discovery/extraction and NVIDIA Nemotron through Nebius Token Factory for interpretation. A retained authenticated local SDK run completed real retrieval, claims, comparison and publication. The pinned tokenizer preserves complete notice versions under the existing cap; numbered passages retain exact UTF-8 citation spans. A separate current local-development SDK context-crash test resumes the same logical/runtime run without a provider attempt, preserving its checkpoint, deadline and funds. The approved provider-backed incident briefing, practitioner validation and public judge access remain pending. These scoped runs do not prove hosted operation or SDK recovery after a paid provider response. Synthetic demonstrations remain distinct from real provider execution.
+The provider integration uses Tavily for source discovery/extraction and NVIDIA Nemotron through Nebius Token Factory for interpretation. A retained authenticated local SDK run completed real retrieval, claims, comparison and publication. The pinned tokenizer preserves complete notice versions under the existing cap; numbered passages retain exact UTF-8 citation spans. A separate current local-development SDK context-crash test resumes the same logical/runtime run without a provider attempt, preserving its checkpoint, deadline and funds. The approved provider-backed incident briefing and practitioner validation remain pending; public test-build access is linked above. These scoped runs do not prove hosted operation or SDK recovery after a paid provider response. Synthetic demonstrations remain distinct from real provider execution.
 
 Current local execution and blocked complete-case branches are recorded in the [persona control crosswalk](docs/EVALUATION_AND_TEST_PLAN.md#remaining-local-persona-execution--october-15-2026) and decision register.
 
@@ -24,9 +33,9 @@ For testing and adoption: start with the [persona definitions](docs/DOMAIN_DISCO
 
 ## Judge reproduction status
 
-Tracked commands now prepare a native workspace, start an isolated stack, issue local accounts and seed fresh synthetic scenarios. Follow the [portable setup sequence](docs/OPERATIONS_AND_COST_PLAN.md#portable-setup-sequence). Earlier Windows/WSL qualification downloaded and verified fresh native runtime archives and exercised synthetic authenticated API journeys. The current packaged runtime inputs also passed an independent dependency installation, production build and sign-in-shell check; later documentation updates preserve those runtime inputs. Scoped browser checks pass, but the complete keyboard decision/recovery journey remains unqualified after local test timing and development-server reload failures. These results do not qualify a public clone, a complete Linux-only installation or the intended judge environment. Do not present localhost links as remote judge access or publish private status/account files.
+Tracked commands now prepare a native workspace, start an isolated stack, issue local accounts and seed fresh synthetic scenarios. Follow the [portable setup sequence](docs/OPERATIONS_AND_COST_PLAN.md#portable-setup-sequence). Earlier Windows/WSL qualification downloaded and verified fresh native runtime archives and exercised synthetic authenticated API journeys. The current packaged runtime inputs also passed an independent dependency installation, production build and sign-in-shell check; later documentation updates preserve those runtime inputs. Those earlier checks preceded the later scoped keyboard recovery and Windows/WSL test-build qualification described above. A complete Linux-only installation, other operating systems and a fresh-network installation remain unqualified. Do not present localhost links as remote judge access or publish private status/account files.
 
-The [submission plan](docs/SUBMISSION_PLAN.md#recording-script-and-shot-list) owns the final timed recording script. Media and retained working copies live under `output/submission-media/20261019/`, outside the final planning set.
+The [submission plan](docs/SUBMISSION_PLAN.md#recording-script-and-shot-list) retains the earlier recording plan; the current public video is linked above. Media and retained working copies live under `output/submission-media/20261019/`, outside the final planning set.
 
 ## Local manual testing
 
@@ -58,7 +67,7 @@ The pack contains 29 required artifacts: 18 Markdown documents, seven CSV regist
 
 [requirements.csv](docs/requirements.csv) owns 25 acceptance IDs; [backlog.csv](docs/backlog.csv) owns 24 tasks, current task status, dates, dependencies and provisional hours; [traceability.csv](docs/traceability.csv) binds them to specifications and check IDs. [evaluation_cases.csv](docs/evaluation_cases.csv) contains 39 designed cases; [red_team_probes.csv](docs/red_team_probes.csv) contains 24 designed probes; [cognitive_demands.csv](docs/cognitive_demands.csv) contains 10 hypothesis rows; [hackathon_compliance.csv](docs/hackathon_compliance.csv) maps all 15 official-rules sections through 26 pending obligations.
 
-No target date means completed work. No designed case means a realized labeled corpus or passing test. No planning/check pass means app readiness, security acceptance, entrant eligibility or a winning probability. Source observation dates remain explicit. No field expert interview, private-record import, production mutation or final submission is claimed. Real Tavily adapter tests and a saved Devpost draft are recorded separately; One real standalone Nebius/Nemotron inference passed; integrated persistent provider qualification remains pending.
+No target date means completed work. No designed case means a realized labeled corpus or passing test. No planning/check pass means app readiness, security acceptance, entrant eligibility or a winning probability. Source observation dates remain explicit. No field expert interview, private-record import, production mutation or final submission is claimed. Real Tavily adapter tests and a saved Devpost draft are recorded separately; One real standalone Nebius/Nemotron inference passed; the integrated retained provider run described above is technical evidence only; approved provider-backed acceptance remains pending.
 
 ## Evidence and validation
 

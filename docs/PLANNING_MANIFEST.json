@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "edition": "FINAL_PLANNING",
-  "created_at_utc": "2026-10-28T17:12:05.708960+00:00",
+  "created_at_utc": "2026-10-29T23:23:21.271846+00:00",
   "status": "FINAL_SPECIFICATIONS_LOCAL_BASELINE_ACCEPTANCE_PENDING",
   "counts": {
     "requirements": 25,
@@ -27,18 +27,18 @@
     },
     {
       "path": "PROVENANCE.md",
-      "sha256": "05468b687db1ea4053a36801505180afc78faa6133758fdf07d04a34b29d097c",
-      "bytes": 19532
+      "sha256": "b0cbcc78fc8d2c831907db22e722a65ec9dc6f527f42800c8478b20b7ec8374b",
+      "bytes": 19465
     },
     {
       "path": "README.md",
-      "sha256": "bc173e2efc48b8e198546736c3fdc9a0edea46768a717a8890c7076b57b7e5ae",
-      "bytes": 12439
+      "sha256": "c0132774457ac5f02f0dff65baf2c9d769c4c738a3713d511472328d0f0420b1",
+      "bytes": 13710
     },
     {
       "path": "docs/ARCHITECTURE.md",
-      "sha256": "f6eacb58f5d6adc157d4b17f1d1ee33ccf75e0ce3c1ccbc016b0582a02cde0fb",
-      "bytes": 39762
+      "sha256": "8a98c10c5901aa00bc0875f074a9641b5e1f7a659ad56a93afefdd6bfd9e7768",
+      "bytes": 39576
     },
     {
       "path": "docs/DATA_AND_API_CONTRACTS.md",
@@ -47,48 +47,48 @@
     },
     {
       "path": "docs/DECISIONS_AND_BUILD_GATE.md",
-      "sha256": "ac97cdc5a91ff5295b710b646745f1e4d5c87aeab1db3bdd89402ec0e8c5d527",
-      "bytes": 87864
+      "sha256": "37e1367ba4642fb3f9ac645f59ef084405712a70033c59e29059aa30afa49ccf",
+      "bytes": 87112
     },
     {
       "path": "docs/DOMAIN_DISCOVERY.md",
-      "sha256": "b84a8e94f28a2104b2b3f358789e57a400efd609bef96e06cc91e7269ef1a04f",
-      "bytes": 20988
+      "sha256": "c9f1c4ffd3b077ebc098068ddf35e34bd50a46271debe8077e928f52ebd911c9",
+      "bytes": 20908
     },
     {
       "path": "docs/EVALUATION_AND_TEST_PLAN.md",
-      "sha256": "bc9650bbdd1d1c68ab87dda6a30fe65b8b499de926030dba02e2ca6ade2572e5",
-      "bytes": 372064
+      "sha256": "797c9777ae94abff8a3e70f107671b55d585ec98c305b3094c5f64a7313021c8",
+      "bytes": 370886
     },
     {
       "path": "docs/FIREAFTER_BASELINE.md",
-      "sha256": "57ec14ac0b5a5e331bea01afcee03b056566e4321e79f2822eaabacef054dbf0",
-      "bytes": 6865
+      "sha256": "5f69ad7c0148392bf5240ee09832b6bc6a16dd6182bbdb9f7f8f636f2571990d",
+      "bytes": 6807
     },
     {
       "path": "docs/OPERATIONS_AND_COST_PLAN.md",
-      "sha256": "9bfd80b368460ad63131e1b560cf84af77f5dacaf16992f8d437a1bb210ff792",
-      "bytes": 46387
+      "sha256": "5b4e165ae1fed882931daacc2952dca25c6390002d361bea2ac12fdf19da97c4",
+      "bytes": 46161
     },
     {
       "path": "docs/PRODUCT_REQUIREMENTS.md",
-      "sha256": "44e2f59ed30bd87c94230cf3d02686343e49c5a9adb69933c136610289c08c94",
-      "bytes": 17079
+      "sha256": "0d1c0527ddaaa42f184761ad0d1d9aa6c17ebe745a0e4241d5a3de58fec13559",
+      "bytes": 16999
     },
     {
       "path": "docs/PRODUCT_STRATEGY.md",
-      "sha256": "8ffccfd369619428187e54f3624cd28b2a682b9c3980cc29509d618428ddd6c6",
-      "bytes": 30540
+      "sha256": "48a2a5c734eb5ab674b0269eb914ebf50ba8fcdf6fcba95fa6ec37ef3a3e0325",
+      "bytes": 30372
     },
     {
       "path": "docs/PROJECT_ISOLATION.md",
-      "sha256": "c0eb1f6ccced57e8803704aed828213d1138b89df3fdda437c9669690d757c5a",
-      "bytes": 6577
+      "sha256": "76d606358fe95949d98f14d0ed9f2cb3c7d21ed8d98450255d6671150a76f735",
+      "bytes": 6536
     },
     {
       "path": "docs/RED_TEAM_PLAN.md",
-      "sha256": "1c2813bcb6b27c23df572bb87a1c7250d454adff37559ef633f7914755d60d07",
-      "bytes": 9748
+      "sha256": "c67a8bed75ac942e15824940f10e769d454a6c97d93167e4c8a72f3c328967ce",
+      "bytes": 9699
     },
     {
       "path": "docs/SECURITY_AND_HUMAN_REVIEW.md",
@@ -97,28 +97,28 @@
     },
     {
       "path": "docs/SOURCE_AND_TOOL_CONTRACTS.md",
-      "sha256": "a9117c8f09c784ab085ef335128b7de2f5c6d207b1f663296baf73ff284a896e",
-      "bytes": 15841
+      "sha256": "13d536f6dcc78fa17f59c47a09316b57571f74fa71db3e661df7023f0a281933",
+      "bytes": 15791
     },
     {
       "path": "docs/SUBMISSION_PLAN.md",
-      "sha256": "2a3bbc582025336ce8b978af58933b7cf1275b854b8a93ba03b7175faed0cc17",
-      "bytes": 21700
+      "sha256": "1d50e5a69b5b2895a571932c5dcf791d1f79fe29ce508b9f3728055f54ae9acd",
+      "bytes": 21550
     },
     {
       "path": "docs/UX_SPEC.md",
-      "sha256": "7240525964b8af4431c34a953ed87ac332c21a19555213d846c0372165c6fe03",
-      "bytes": 35826
+      "sha256": "53857fc6716910bac9701dba712e024bd47cd8c2bb6c23360bd6ac2c4c189a3e",
+      "bytes": 35729
     },
     {
       "path": "docs/backlog.csv",
-      "sha256": "563daa1251802adafbca011b4053b67b4e6b49d63b7033cee61e8a2985832f8a",
-      "bytes": 8129
+      "sha256": "0a34bb1c6dffc0f943fd92077d57a169f355826cefe983e0a298afa5c9f0ce47",
+      "bytes": 8104
     },
     {
       "path": "docs/cognitive_demands.csv",
-      "sha256": "819a1f998e74718a5d768c6382f4d52112eb55c5e6408e9a18b950d2aa137504",
-      "bytes": 3386
+      "sha256": "3550c258d81e503d92507c0069ba6a5b07dbd7ec8f4dd3a28a9590443fb8a66e",
+      "bytes": 3375
     },
     {
       "path": "docs/evaluation_cases.csv",
@@ -127,28 +127,28 @@
     },
     {
       "path": "docs/evidence/source-baseline.json",
-      "sha256": "ef0519f96e9930bc3b4da83746f30fbd87882b805d03bcb0b08e2df7b598960e",
-      "bytes": 90225
+      "sha256": "5ecb5267b059fc5984816bc0a3124e9c2e8f7ee5b3757eb8aefa8495fb904ae8",
+      "bytes": 87803
     },
     {
       "path": "docs/evidence/validate_documents.py",
-      "sha256": "fa7e7d2672a4c73190de662c93f71fcb3f67b66fed8ba7822feff2686bc12843",
-      "bytes": 39526
+      "sha256": "dcc94ea043ac6a2d16f47b0013eee63d2e651f5ce0e9783aa95835ea9c79464c",
+      "bytes": 38875
     },
     {
       "path": "docs/hackathon_compliance.csv",
-      "sha256": "96fa9e26775aaf8c4124a1480ac75f13926be06da3f18444d7cd3fc9b6709711",
-      "bytes": 5866
+      "sha256": "c80d14d6fc5c417126780fcb75cdd6c5954547ab7cbc57942bce8b0435dc76c3",
+      "bytes": 5839
     },
     {
       "path": "docs/red_team_probes.csv",
-      "sha256": "f60910d80f64d7d43347e65726ddd2726409e426b1bf29b3826c91ae3e9a2d8a",
-      "bytes": 6857
+      "sha256": "3f0a34227f803382060ecaab88c71aff787dcc3f3c91ee220e46b8a9de4412aa",
+      "bytes": 6832
     },
     {
       "path": "docs/requirements.csv",
-      "sha256": "9d6756668edcbf446d958028e799e1e968a9e17b7846f7db3f7ca1a632c59960",
-      "bytes": 5409
+      "sha256": "8bb0df26f12de8a1d8091961d425754b1fe7a04b86ae59664e0ae093c53d26e7",
+      "bytes": 5383
     },
     {
       "path": "docs/traceability.csv",
